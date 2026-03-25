@@ -604,6 +604,58 @@
     }
 </style>
 
+
+<style>
+    /* --- Mobile Specific Fixes for Expedition Section --- */
+@media (max-width: 768px) {
+    /* 1. Stack the grid vertically */
+    .exp-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 0 10px !important;
+    }
+
+    /* 2. Adjust the card container */
+    .exp-card {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. Make the footer (Button + Siliguri tag) fit side-by-side */
+    .exp-footer {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+
+    /* 4. Ensure the Secure Seat button is large and clickable */
+    .pop-btn {
+        flex: 2 !important;
+        padding: 15px 10px !important;
+        font-size: 13px !important;
+        text-align: center !important;
+        border-radius: 15px !important; /* Matches your image style */
+    }
+
+    /* 5. Fix the Siliguri ↔ Siliguri tag so it doesn't overflow */
+    .origin-tag {
+        flex: 1 !important;
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+        text-align: right !important;
+        white-space: nowrap !important;
+    }
+
+    /* 6. Adjust the Title size for mobile screens */
+    .exp-title {
+        font-size: 28px !important;
+        padding: 0 15px !important;
+    }
+}
+</style>
+
 <section class="expedition-wrap">
     <div class="expedition-container">
         
