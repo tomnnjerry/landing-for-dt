@@ -1,0 +1,1021 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    :root {
+        --arch-black: #000000;
+        --arch-white: #ffffff;
+        --arch-fire: #FF4500;
+        --arch-forest: #0F3D2E;
+        --arch-grey: #f5f5f7;
+    }
+
+    .focus-hero {
+        background: var(--arch-white);
+        padding: 220px 8% 120px;
+        font-family: 'Inter', sans-serif;
+        color: var(--arch-black);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .focus-container { 
+        max-width: 1600px; 
+        margin: 0 auto; 
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 100px;
+        align-items: center;
+    }
+
+    /* --- THE CONTENT: BRUTAL HONESTY --- */
+    .focus-header { position: relative; z-index: 10; }
+
+    .focus-kicker {
+        color: var(--arch-fire);
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        font-weight: 900;
+        font-size: 13px;
+        margin-bottom: 2.5rem;
+        display: block;
+    }
+
+    .focus-title {
+        font-size: clamp(4rem, 10vw, 9rem);
+        font-weight: 900;
+        line-height: 0.8;
+        letter-spacing: -8px;
+        margin-bottom: 40px;
+    }
+
+    .focus-title span {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: var(--arch-forest);
+        letter-spacing: -2px;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .focus-narrative {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        color: #1d1d1f;
+        max-width: 650px;
+        font-weight: 400;
+        margin-bottom: 60px;
+    }
+
+    .focus-narrative b { 
+        color: var(--arch-black); 
+        font-weight: 900; 
+        border-bottom: 3px solid var(--arch-fire);
+    }
+
+    /* --- THE "02" ARCHITECTURAL ELEMENT --- */
+    .focus-count {
+        position: absolute;
+        bottom: -50px;
+        left: 8%;
+        font-size: 25rem;
+        font-weight: 900;
+        color: var(--arch-grey);
+        z-index: 1;
+        letter-spacing: -20px;
+        line-height: 1;
+        opacity: 0.5;
+        user-select: none;
+    }
+
+    /* --- THE ACTION: CONTACT COMMAND --- */
+    .focus-cta-group {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .contact-command-btn {
+        background: var(--arch-black);
+        color: #fff;
+        padding: 30px 80px;
+        border-radius: 0; /* Hardware edge */
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        display: inline-block;
+    }
+
+    .contact-command-btn:hover {
+        background: var(--arch-fire);
+        transform: translateX(20px);
+    }
+
+    .focus-note {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #86868b;
+        font-weight: 700;
+        max-width: 200px;
+        line-height: 1.4;
+    }
+
+    /* --- THE VISUAL ANCHOR --- */
+    .focus-frame {
+        width: 100%;
+        height: 750px;
+        background: var(--arch-black);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+        box-shadow: 0 80px 160px rgba(0,0,0,0.1);
+    }
+
+    .focus-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        filter: grayscale(1);
+        transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .focus-frame:hover img {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1100px) {
+        .focus-container { grid-template-columns: 1fr; gap: 60px; }
+        .focus-title { font-size: 4rem; letter-spacing: -3px; }
+        .focus-count { display: none; }
+        .focus-frame { height: 450px; }
+        .focus-cta-group { flex-direction: column; align-items: flex-start; }
+    }
+</style>
+
+<section class="focus-hero">
+    <div class="focus-count">02</div>
+
+    <div class="focus-container">
+        
+        <div class="focus-header">
+            <span class="focus-kicker">Limited Intent</span>
+            <h1 class="focus-title">Built for <span>the Few</span></h1>
+            
+            <p class="focus-narrative">
+                Most agencies offer a hundred paths. <b>We currently only offer two.</b> 
+                <br><br>
+                These are our baselines. Every other detail of your journey is custom-built after we speak. We prefer to do two things perfectly than ten things adequately.
+            </p>
+
+            <div class="focus-cta-group">
+                <a href="#contact" class="contact-command-btn">Contact Our Hosts</a>
+                <span class="focus-note">The real experience begins with a dialogue.</span>
+            </div>
+        </div>
+
+        <div class="focus-frame" style="border-radius: 20px;">
+            <img src="https://placehold.co/1000x1500/000/fff?text=Unmapped+Focus" alt="Mountain Focus">
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    :root {
+        --p-black: #000000;
+        --p-white: #ffffff;
+        --p-gold: #D4AF37; /* Custom Golden Theme */
+        --p-fire: #FF4500;
+        --p-grey: #1a1a1a;
+    }
+
+    .pillars-section {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+        background: var(--p-black);
+    }
+
+    /* --- THE PILLAR HOVER LOGIC --- */
+    .pillar {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 8%;
+        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .pillar:hover { flex: 1.5; }
+
+    /* Pillar 01: The Dark Saga */
+    .p-dark { background: var(--p-black); color: var(--p-white); border-right: 1px solid rgba(255,255,255,0.1); }
+    /* Pillar 02: The Light Saga */
+    .p-light { background: var(--p-white); color: var(--p-black); }
+
+    /* --- CONTENT LAYOUT --- */
+    .p-count {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        display: block;
+        color: var(--p-gold);
+    }
+
+    .p-title {
+        font-size: clamp(3rem, 6vw, 6rem);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -4px;
+        margin-bottom: 40px;
+    }
+
+    .p-title span {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        display: block;
+        font-size: 0.8em;
+        letter-spacing: -1px;
+    }
+
+    .p-light .p-title span { color: var(--p-gold); }
+
+    /* --- THE "FEW THINGS" (TECHNICAL SPECS) --- */
+    .p-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 500px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.6s all ease;
+    }
+
+    .pillar:hover .p-specs { opacity: 1; transform: translateY(0); }
+
+    .spec-item { display: flex; flex-direction: column; gap: 8px; }
+    .spec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; opacity: 0.5; }
+    .spec-value { font-size: 16px; font-weight: 700; }
+
+    /* --- THE ACTION: READ MORE --- */
+    .p-btn {
+        margin-top: 60px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: inherit;
+        transition: 0.3s;
+    }
+
+    .p-btn i {
+        width: 40px; height: 40px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+    }
+
+    .p-btn:hover i { background: var(--p-fire); border-color: var(--p-fire); color: #fff; transform: rotate(-45deg); }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .pillars-section { flex-direction: column; height: auto; }
+        .pillar { padding: 100px 8%; height: 600px; }
+        .p-specs { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<section class="pillars-section">
+    
+    <div class="pillar p-dark">
+        <span class="p-count">Archive // 01</span>
+        <h2 class="p-title">The Nepal <span>Odyssey.</span></h2>
+        
+        <div class="p-specs">
+            <div class="spec-item">
+                <span class="spec-label">Peak Altitude</span>
+                <span class="spec-value">5,545M (EBC)</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">14 Sovereign Days</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Soul Level</span>
+                <span class="spec-value">Extreme / Raw</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Lead Host</span>
+                <span class="spec-value">Manish Giri</span>
+            </div>
+        </div>
+
+        <a href="/itineraries/nepal-tour/" class="p-btn">
+            Read Archive <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="pillar p-light">
+        <span class="p-count">Archive // 02</span>
+        <h2 class="p-title">The Darjeeling <span>Saga.</span></h2>
+        
+        <div class="p-specs">
+            <div class="spec-item">
+                <span class="spec-label">Terrain</span>
+                <span class="spec-value">Heritage Tea Estates</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">07 Curated Days</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Soul Level</span>
+                <span class="spec-value">Refined / Calm</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Lead Host</span>
+                <span class="spec-value">Deepika G.</span>
+            </div>
+        </div>
+
+        <a href="/itineraries/darjeeling-tour/" class="p-btn">
+            Read Archive <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+</section>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* --- The Manifesto Variables --- */
+    :root {
+        --m-black: #000000;
+        --m-white: #ffffff;
+        --m-fire: #FF4500;
+        --m-gold: #D4AF37;
+        --m-grey: #f5f5f7;
+        --m-border: rgba(0, 0, 0, 0.08);
+    }
+
+    .m-section {
+        background: var(--m-white);
+        padding: 180px 8%;
+        font-family: 'Inter', sans-serif;
+        color: var(--m-black);
+    }
+
+    .m-container { max-width: 1400px; margin: 0 auto; }
+
+    /* --- THE GRID: HEART VS HARDWARE --- */
+    .m-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 120px;
+        align-items: start;
+    }
+
+    /* Column 1: The Why (The Heart) */
+    .m-kicker {
+        color: var(--m-fire);
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 900;
+        font-size: 13px;
+        margin-bottom: 2.5rem;
+        display: block;
+    }
+
+    .m-title {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -4px;
+        margin-bottom: 40px;
+    }
+
+    .m-title span {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: var(--m-gold);
+        letter-spacing: -1px;
+    }
+
+    .m-narrative {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: #1d1d1f;
+        margin-bottom: 50px;
+    }
+
+    .m-narrative b { color: var(--m-fire); }
+
+    /* Column 2: The How (The Comparison) */
+    .m-table-wrap {
+        background: var(--m-grey);
+        padding: 60px;
+        border-radius: 40px;
+        border: 1px solid var(--m-border);
+        box-shadow: 0 40px 80px rgba(0,0,0,0.03);
+    }
+
+    .m-table-title {
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 12px;
+        margin-bottom: 40px;
+        display: block;
+        color: #86868b;
+    }
+
+    .m-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 25px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .m-row:last-child { border-bottom: none; }
+
+    .m-label { font-size: 11px; text-transform: uppercase; font-weight: 800; color: #86868b; letter-spacing: 1px; }
+    .m-value { font-size: 16px; font-weight: 700; color: var(--m-black); margin-top: 8px; }
+    .m-value i { color: var(--m-fire); margin-right: 8px; }
+
+    /* --- THE COMMAND FOOTER --- */
+    .m-footer {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .m-btn {
+        background: var(--m-black);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .m-btn:hover {
+        transform: scale(1.1) translateY(-10px);
+        background: var(--m-fire);
+        box-shadow: 0 30px 60px rgba(255, 69, 0, 0.3);
+    }
+
+    /* Mobile */
+    @media (max-width: 1100px) {
+        .m-grid { grid-template-columns: 1fr; gap: 80px; }
+        .m-table-wrap { padding: 40px 25px; }
+        .m-footer { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="m-section">
+    <div class="m-container">
+        
+        <div class="m-grid">
+            
+            <div class="m-about">
+                <span class="m-kicker">Our Intent</span>
+                <h2 class="m-title">To protect <br> <span>the Silence</span></h2>
+                <div class="m-narrative">
+                    <p>
+                        Mass tourism is loud. <b>We are not.</b> Most agencies treat our home like a bucket list to be checked. We treat it like a heritage to be guarded.
+                    </p>
+                    <br>
+                    <p>
+                        We do this to restore the narrative of the East—to ensure the value of your journey goes directly back to the <b>local mountain families</b> who walk these trails with you.
+                    </p>
+                </div>
+
+                <div class="m-footer">
+                    <a href="#contact" class="m-btn">Talk to a Host</a>
+                    <p style="font-size: 13px; font-weight: 700; color: #86868b; max-width: 250px;">We prefer an honest dialogue over a sales pitch.</p>
+                </div>
+            </div>
+
+            <div class="m-table-wrap">
+                <span class="m-table-title">The Sovereign Edge // Comparison</span>
+                
+                <div class="m-row">
+                    <div>
+                        <span class="m-label">The Others</span>
+                        <p class="m-value">Mass Volume (100+ Trips)</p>
+                    </div>
+                    <div>
+                        <span class="m-label">Darjeeling Trips</span>
+                        <p class="m-value"><i class="fa-solid fa-gem"></i>Extreme Focus (04 Trips)</p>
+                    </div>
+                </div>
+
+                <div class="m-row">
+                    <div>
+                        <span class="m-label">Guides</span>
+                        <p class="m-value">Freelance Agents</p>
+                    </div>
+                    <div>
+                        <span class="m-label">Hosts</span>
+                        <p class="m-value"><i class="fa-solid fa-shield-heart"></i>The Family (Internal)</p>
+                    </div>
+                </div>
+
+                <div class="m-row">
+                    <div>
+                        <span class="m-label">Infrastructure</span>
+                        <p class="m-value">Rentals & Vendors</p>
+                    </div>
+                    <div>
+                        <span class="m-label">Command</span>
+                        <p class="m-value"><i class="fa-solid fa-satellite"></i>Direct Ground Control</p>
+                    </div>
+                </div>
+
+                <div class="m-row">
+                    <div>
+                        <span class="m-label">Philosophy</span>
+                        <p class="m-value">"See" the Peaks</p>
+                    </div>
+                    <div>
+                        <span class="m-label">Sovereign Soul</span>
+                        <p class="m-value"><i class="fa-solid fa-mountain"></i>Live the Story</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* --- The Review Variables --- */
+    :root {
+        --r-black: #000000;
+        --r-white: #ffffff;
+        --r-fire: #FF4500;
+        --r-gold: #D4AF37;
+        --r-grey: #f5f5f7;
+        --r-glass: rgba(255, 255, 255, 0.03);
+    }
+
+    .r-section {
+        background: var(--r-black); /* Deep Black for High-End feel */
+        padding: 180px 8%;
+        font-family: 'Inter', sans-serif;
+        color: var(--r-white);
+        overflow: hidden;
+    }
+
+    .r-container { max-width: 1400px; margin: 0 auto; }
+
+    /* --- THE HEADLINE: ARCHITECTURAL POWER --- */
+    .r-header { margin-bottom: 100px; text-align: center; }
+
+    .r-kicker {
+        color: var(--r-fire);
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        font-weight: 900;
+        font-size: 13px;
+        margin-bottom: 2.5rem;
+        display: block;
+    }
+
+    .r-title {
+        font-size: clamp(3.5rem, 8vw, 7rem);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -6px;
+    }
+
+    .r-title span {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: var(--r-gold);
+        letter-spacing: -2px;
+    }
+
+    /* --- THE BENTO GRID UX --- */
+    .r-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .r-card {
+        background: var(--r-glass);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 60px 50px;
+        border-radius: 40px;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+    }
+
+    /* Asymmetric Sizing for the "Vayunex Pop" */
+    .r-large { grid-column: span 2; }
+
+    .r-card:hover {
+        background: var(--r-white);
+        color: var(--r-black);
+        transform: translateY(-20px);
+    }
+
+    .r-card i.fa-quote-left {
+        font-size: 40px;
+        color: var(--r-fire);
+        margin-bottom: 30px;
+        display: block;
+        opacity: 0.5;
+    }
+
+    .r-quote {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        font-weight: 500;
+        margin-bottom: 40px;
+        letter-spacing: -0.5px;
+    }
+
+    /* --- THE USER BIO --- */
+    .r-user {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+    }
+
+    .r-card:hover .r-user { border-color: rgba(0,0,0,0.1); }
+
+    .r-avatar {
+        width: 60px; height: 60px;
+        border-radius: 50%;
+        background: var(--r-grey);
+        object-fit: cover;
+    }
+
+    .r-info b { display: block; font-size: 18px; font-weight: 900; }
+    .r-info span { 
+        font-size: 12px; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        color: var(--r-gold); 
+        font-weight: 800;
+    }
+
+    .r-verified {
+        position: absolute;
+        top: 40px; right: 40px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        color: var(--r-fire);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1100px) {
+        .r-grid { grid-template-columns: 1fr; }
+        .r-large { grid-column: span 1; }
+        .r-title { font-size: 3.5rem; letter-spacing: -3px; }
+    }
+</style>
+
+<section class="r-section">
+    <div class="r-container">
+        
+        <div class="r-header">
+            <span class="r-kicker">Social Intelligence</span>
+            <h2 class="r-title">The Sovereign <span>Verdict.</span></h2>
+        </div>
+
+        <div class="r-grid">
+            
+            <div class="r-card r-large">
+                <span class="r-verified"><i class="fa-solid fa-certificate"></i> Verified Mission</span>
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="r-quote">
+                    "I’ve trekked Nepal four times with major agencies, but this was different. Manish doesn't just guide; he hosts. We spent an evening with a local tea planter that no 'tour' could ever book. <b>Absolute silence. Absolute luxury.</b>"
+                </p>
+                <div class="r-user">
+                    <img src="https://placehold.co/100x100/333/fff?text=AS" class="r-avatar" alt="User">
+                    <div class="r-info">
+                        <b>Aditya Sharma</b>
+                        <span>The Nepal Odyssey // 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-card">
+                <span class="r-verified"><i class="fa-solid fa-certificate"></i> Verified</span>
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="r-quote">
+                    "The Sandakphu route with Bindu was flawless. The hardware (cars) and the heart (service) were 10/10."
+                </p>
+                <div class="r-user">
+                    <img src="https://placehold.co/100x100/444/fff?text=RP" class="r-avatar" alt="User">
+                    <div class="r-info">
+                        <b>Rohan Patel</b>
+                        <span>Darjeeling Saga</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-card">
+                <span class="r-verified"><i class="fa-solid fa-certificate"></i> Verified</span>
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="r-quote">
+                    "Privacy is hard to find in the East. Darjeeling Trips found it for us. The hidden estate stay was the highlight of our year."
+                </p>
+                <div class="r-user">
+                    <img src="https://placehold.co/100x100/555/fff?text=MK" class="r-avatar" alt="User">
+                    <div class="r-info">
+                        <b>Meera Kapoor</b>
+                        <span>Honeymoon Retreat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-card r-large">
+                <span class="r-verified"><i class="fa-solid fa-certificate"></i> Verified Mission</span>
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="r-quote">
+                    "Most agencies scale volume. These guys scale <b>soul</b>. Every detail was custom-built after a 20-minute call with Manish. If you want the 'Real East,' this is the only door to walk through."
+                </p>
+                <div class="r-user">
+                    <img src="https://placehold.co/100x100/666/fff?text=JL" class="r-avatar" alt="User">
+                    <div class="r-info">
+                        <b>James Lowther</b>
+                        <span>Custom Expedition</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+        --d-black: #000000;
+        --d-white: #ffffff;
+        --d-fire: #FF4500;
+        --d-gold: #0F3D2E;
+        --d-grey: #f5f5f7;
+    }
+
+    .dest-section {
+        background: var(--d-white);
+        padding: 180px 8%;
+        font-family: 'Inter', sans-serif;
+        color: var(--d-black);
+    }
+
+    .dest-container { max-width: 1500px; margin: 0 auto; }
+
+    /* --- THE HEADLINE: ARCHITECTURAL AUTHORITY --- */
+    .dest-header { margin-bottom: 100px; }
+
+    .dest-kicker {
+        color: var(--d-fire);
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        font-weight: 900;
+        font-size: 13px;
+        margin-bottom: 2.5rem;
+        display: block;
+    }
+
+    .dest-title {
+        font-size: clamp(3.5rem, 8vw, 7.5rem);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -6px;
+        max-width: 900px;
+    }
+
+    .dest-title span {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: var(--d-gold);
+        letter-spacing: -2px;
+    }
+
+    /* --- THE MOSAIC GRID UX --- */
+    .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 400px);
+        gap: 30px;
+    }
+
+    .dest-card {
+        position: relative;
+        border-radius: 4px; /* Hardware edges */
+        overflow: hidden;
+        background: var(--d-black);
+        cursor: pointer;
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ASYMMETRIC SIZING */
+    .d-large { grid-column: span 2; grid-row: span 2; }
+    .d-tall { grid-row: span 2; }
+
+    .dest-card img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+        filter: grayscale(0.3);
+        transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dest-card:hover img {
+        opacity: 1;
+        filter: grayscale(0);
+        transform: scale(1.08);
+    }
+
+    /* --- THE OVERLAY CONTENT --- */
+    .d-content {
+        position: absolute;
+        bottom: 0; left: 0; width: 100%;
+        padding: 50px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        color: #fff;
+        z-index: 5;
+    }
+
+    .d-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 900;
+        color: var(--d-fire);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .d-name {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .d-specs {
+        display: flex;
+        gap: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.5s ease;
+    }
+
+    .dest-card:hover .d-specs { opacity: 1; transform: translateY(0); }
+
+    .d-spec-item b { display: block; font-size: 11px; text-transform: uppercase; color: var(--d-gold); }
+    .d-spec-item span { font-size: 14px; font-weight: 600; }
+
+    /* Mobile Logic */
+    @media (max-width: 1100px) {
+        .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+        .d-large, .d-tall { grid-column: span 2; height: 450px; }
+        .dest-title { font-size: 3.5rem; letter-spacing: -3px; }
+    }
+</style>
+
+<section class="dest-section">
+    <div class="dest-container">
+        
+        <div class="dest-header">
+            <span class="dest-kicker">Territory Command</span>
+            <h2 class="dest-title">The Map of <span>Our Expertise.</span></h2>
+        </div>
+
+        <div class="dest-grid">
+            
+            <div class="dest-card d-large" onclick="openQuote('Nepal Territory')">
+                <img src="https://placehold.co/1200x1200/000/fff?text=The+Nepal+Odyssey" alt="Nepal">
+                <div class="d-content">
+                    <span class="d-label">The High Odyssey</span>
+                    <h3 class="d-name">Nepal</h3>
+                    <div class="d-specs">
+                        <div class="d-spec-item"><b>Primary Essence</b><span>Extreme / Raw</span></div>
+                        <div class="d-spec-item"><b>Sub-Territories</b><span>Kathmandu, Pokhara, Mustang</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card d-tall" onclick="openQuote('Darjeeling Territory')">
+                <img src="https://placehold.co/600x1200/111/fff?text=Darjeeling+Heritage" alt="Darjeeling">
+                <div class="d-content">
+                    <span class="d-label">The Heritage Saga</span>
+                    <h3 class="d-name">Darjeeling</h3>
+                    <div class="d-specs">
+                        <div class="d-spec-item"><b>Primary Essence</b><span>Refined / Calm</span></div>
+                        <div class="d-spec-item"><b>Sub-Territories</b><span>Mirik, Kurseong, Sandakphu</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card" onclick="openQuote('Meghalaya Territory')">
+                <img src="https://placehold.co/600x600/222/fff?text=Meghalaya+Clouds" alt="Meghalaya">
+                <div class="d-content">
+                    <span class="d-label">The Cloud Kingdom</span>
+                    <h3 class="d-name">Meghalaya</h3>
+                    <div class="d-specs">
+                        <div class="d-spec-item"><b>Primary Essence</b><span>Mystical / Rain</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card" onclick="openQuote('Assam Territory')">
+                <img src="https://placehold.co/600x600/333/fff?text=Assam+Wilds" alt="Assam">
+                <div class="d-content">
+                    <span class="d-label">The Wild East</span>
+                    <h3 class="d-name">Assam</h3>
+                    <div class="d-specs">
+                        <div class="d-spec-item"><b>Primary Essence</b><span>Primitive / Untamed</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 80px; text-align: center;">
+            <p style="font-size: 1.2rem; color: #86868b; max-width: 600px; margin: 0 auto 40px;">
+                While we only release **02 baseline itineraries** per month, we manage custom expeditions across all four territories for those who seek the unmapped.
+            </p>
+            <a href="javascript:void(0)" onclick="openQuote('Custom Territory Request')" style="color: var(--d-fire); text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; font-size: 14px;">
+                Request Custom Command <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock css %}
+    
+
+
+{% block body %}
+    
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}
+    
