@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -403,10 +404,15 @@
 </style>
 
 <nav class="v-nav" id="mainNav">
-    <a href="#home" class="v-logo">
-        <img src="https://placehold.co/40x40/000/fff?text=D" style="border-radius: 50%;" />
-        Darjeeling<span>Trips</span>
-    </a>
+    <a href="#home" class="v-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+    <img src="{% static 'dtlogo.png' %}" 
+         style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" 
+         alt="Logo" />
+    
+    <span style="font-size: 18px; font-weight: 900; color: #000; letter-spacing: -0.5px; line-height: 1;">
+        Darjeeling<span style="color: var(--n-fire);">Trips</span>
+    </span>
+</a>
 
     <div class="v-nav-links">
         <a href="#home">Home</a>
@@ -425,6 +431,124 @@
         <div class="v-menu-toggle"><i class="fa-solid fa-bars-staggered"></i></div>
     </div>
 </nav>
+
+
+<style>
+
+    /* --- Mobile Overlay Styles --- */
+.v-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%); /* Start hidden above */
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.v-mobile-overlay.active {
+    transform: translateY(0); /* Slide down into view */
+}
+
+.v-close-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.v-mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.v-mobile-links a {
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.v-quote-btn-mobile {
+    margin-top: 20px;
+    background: var(--n-fire);
+    color: #fff !important;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 14px !important;
+}
+
+/* Adjustments for the main nav on small screens */
+@media (max-width: 600px) {
+    .v-nav {
+        height: 65px;
+        padding: 0 20px;
+        top: 10px;
+        left: 3%;
+        right: 3%;
+    }
+    .v-logo { font-size: 18px; }
+    .v-quote-btn { display: none; } /* Hide the big button on very small screens to save space */
+}
+</style>
+
+<div class="v-mobile-overlay" id="mobileMenu">
+    <div class="v-close-menu" id="closeMenu"><i class="fa-solid fa-xmark"></i></div>
+    <div class="v-mobile-links">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#itineraries">Itineraries</a>
+        <a href="#team">The Team</a>
+        <a href="#locations">Locations</a>
+        <a href="javascript:void(0)" onclick="openQuote('Mobile Inquiry')" class="v-quote-btn-mobile">Get Quote</a>
+    </div>
+</div>
+
+
+<script>
+    const menuToggle = document.querySelector('.v-menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileLinks = document.querySelectorAll('.v-mobile-links a');
+
+    // Open Menu
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+    });
+
+    // Close Menu
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+
+    // Close Menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
+
+    // Optional: Scroll effect for the main nav
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('mainNav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+</script>
 
 <script>
     // Scroll Logic for the Glass Bar
