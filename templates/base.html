@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    {% block header %}
+
+    {% endblock header %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* --- CSS Variables (Theme Colors) --- */
+        :root {
+            /* --- Core Backgrounds --- */
+            --bg-black: #000000;       /* Pure Apple Black */
+            --bg-charcoal: #0a0a0a;    /* Deep Card Background */
+            --bg-white: #ffffff;      /* Stark White */
+            --bg-soft: #fbfbfd;       /* Apple-style Off White */
+
+            /* --- Brand Colors (Gold-Free) --- */
+            --brand-orange: #FF4500;   /* Vibrant Orangered (Action) */
+            --brand-green: #0F3D2E;    /* Deep Forest Green (Expertise) */
+            --brand-green-light: rgba(15, 61, 46, 0.1); /* Soft Sage for icons */
+
+            /* --- Typography Colors --- */
+            --text-main: #1d1d1f;      /* Deep Charcoal (High Readability) */
+            --text-muted: #86868b;     /* Gray for secondary info */
+            --text-on-dark: #f4f4f4;   /* White for dark sections */
+
+            /* --- Typography Fonts --- */
+            --font-heading: 'Playfair Display', serif; /* Luxury & Grand */
+            --font-body: 'Inter', sans-serif;          /* Modern & Bold */
+
+            /* --- Modern Accent (Replacing Gold Gradient) --- */
+            /* A "Nature-Metal" Green Gradient for that same shiny impact */
+            --green-shimmer: linear-gradient(72deg, #0F3D2E 0%, #2D5A27 40%, #4A7c44 60%, #0F3D2E 100%);
+            
+            /* Transition Speed */
+            --transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            --grey-apple: #f5f5f7;
+            --deep-black: #000000;
+            --forest: #0F3D2E;
+            --pop-orange: #FF4500;
+            --text-sub: #86868b;
+            --radius: 56px;
+
+            --light-grey: #f5f5f7;   /* Apple Standard Light Grey */
+            --deep-black: #1d1d1f;   /* Apple Standard Text Black */
+            --action-orange: #FF4500;
+            --forest-green: #0F3D2E;
+            /* Shiny Forest Green Gradient (Replaces Gold) */
+            --green-shimmer: linear-gradient(72deg, #0F3D2E 0%, #2D5A27 30%, #4A7c44 50%, #2D5A27 70%, #0F3D2E 100%);
+        
+        }
+        /* --- Global Reset & Typography --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        * {  -webkit-font-smoothing: antialiased; }
+        
+        
+        body {
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light-grey); 
+            color: var(--deep-black); 
+            font-family: 'Inter', sans-serif; 
+        
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--brand-gold);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--brand-orange);
+        }
+
+        .shiny-green {
+            background: var(--green-shimmer);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: greenSweep 5s linear infinite;
+        }
+        @keyframes greenSweep { 
+            to { background-position: 200% center; } 
+        }
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 5, 5, 0.95);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--brand-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .btn {
+            background: var(--brand-orange);
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #cc3300;
+            color: #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--brand-gold);
+            color: var(--brand-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--brand-gold);
+            color: var(--bg-dark);
+        }
+
+        /* --- Sections Layout --- */
+        section {
+            padding: 120px 5% 80px;
+            min-height: 100vh;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #aaa;
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('https://images.unsplash.com/photo-1544634076-a900ce0fc561?auto=format&fit=crop&q=80') center/cover;
+        }
+
+        #home h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Grid Layouts --- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-darker);
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--brand-orange);
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: var(--brand-orange);
+            margin-bottom: 20px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--bg-darker);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        main{
+            padding-top:80px ;
+            padding-bottom: 80px;
+        }
+        .manish-down{
+             padding-top:100px ;
+            padding-bottom: 0px!important;
+        }
+    </style>
+
+
+
+    {% block css %}{% endblock css %}
+
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* --- The Master Nav Variables --- */
+    :root {
+        --n-bg: rgba(255, 255, 255, 0.8);
+        --n-blur: 20px;
+        --n-border: rgba(0, 0, 0, 0.05);
+        --n-fire: #FF4500;
+        --n-forest: #0F3D2E;
+        --n-wa: #25D366; /* WhatsApp Green */
+    }
+
+    /* --- THE BAR: Floating Glass Logic --- */
+    .v-nav {
+        position: fixed;
+        top: 20px;
+        left: 5%;
+        right: 5%;
+        height: 90px;
+        background: var(--n-bg);
+        backdrop-filter: blur(var(--n-blur));
+        -webkit-backdrop-filter: blur(var(--n-blur));
+        border: 1px solid var(--n-border);
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+        z-index: 9999;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Shrink on Scroll Effect */
+    .v-nav.scrolled {
+        top: 10px;
+        height: 75px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+
+    /* --- LOGO: ARCHITECTURAL --- */
+    .v-logo {
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 22px;
+        color: #000;
+        letter-spacing: -1.5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .v-logo span { color: var(--n-fire); }
+
+    /* --- THE LINKS: MINIMALIST --- */
+    .v-nav-links {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+    }
+
+    .v-nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .v-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px; left: 0;
+        width: 0; height: 2px;
+        background: var(--n-fire);
+        transition: 0.3s;
+    }
+
+    .v-nav-links a:hover { color: var(--n-fire); }
+    .v-nav-links a:hover::after { width: 100%; }
+
+    /* --- THE ACTION GROUP --- */
+    .v-action-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* WhatsApp Human Link */
+    .v-wa-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+
+    .v-wa-link i { color: var(--n-wa); font-size: 20px; }
+    .v-wa-link:hover { color: var(--n-wa); }
+
+    /* The Main CTA: Get Quote */
+    .v-quote-btn {
+        background: #000;
+        color: #fff;
+        padding: 18px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .v-quote-btn:hover {
+        background: var(--n-fire);
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.3);
+    }
+
+    /* Mobile Menu Toggle */
+    .v-menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+    @media (max-width: 1100px) {
+        .v-nav-links { display: none; }
+        .v-menu-toggle { display: block; }
+        .v-nav { height: 70px; padding: 0 25px; }
+        .v-wa-link span { display: none; }
+    }
+</style>
+
+<nav class="v-nav" id="mainNav">
+    <a href="#home" class="v-logo">
+        <img src="https://placehold.co/40x40/000/fff?text=D" style="border-radius: 50%;" />
+        Darjeeling<span>Trips</span>
+    </a>
+
+    <div class="v-nav-links">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#itineraries">Itineraries</a>
+        <a href="#team">The Team</a>
+        <a href="#locations">Locations</a>
+    </div>
+
+    <div class="v-action-group">
+        <a href="https://wa.me/YOURNUMBER" class="v-wa-link" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Chat with Host</span>
+        </a>
+        <a href="javascript:void(0)" onclick="openQuote('General Inquiry')" class="v-quote-btn">Get Quote</a>
+        <div class="v-menu-toggle"><i class="fa-solid fa-bars-staggered"></i></div>
+    </div>
+</nav>
+
+<script>
+    // Scroll Logic for the Glass Bar
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('mainNav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+</script>
+
+
+    <main>
+            {% block body %}
+    {% endblock body %}
+
+    </main>
+
+   
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* --- The Anchor Variables --- */
+    :root {
+        --dt-deep-black: #000000;
+        --dt-apple-grey: #f5f5f7;
+        --dt-vibrant-fire: #FF4500;
+        --dt-forest-green: #0F3D2E;
+        --dt-text-soft: #a1a1a6;
+        --dt-border-light: rgba(255, 255, 255, 0.1);
+        --dt-font-pro: 'Inter', sans-serif;
+        --dt-font-serif: 'Playfair Display', serif;
+    }
+
+    /* --- THE MAIN FOOTER STAGE --- */
+    .dt-anchor {
+        background: var(--dt-deep-black);
+        padding: 160px 8% 80px;
+        font-family: var(--dt-font-pro);
+        color: #ffffff;
+        font-size: 1.1rem; /* Larger Base Font */
+    }
+
+    .dt-anchor-container {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    /* --- THE ARCHITECTURAL GRID UX --- */
+    .dt-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+        gap: 80px;
+        margin-bottom: 120px;
+    }
+
+    /* Column 1: Brand & Logo */
+    .dt-brand-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dt-logo-place {
+        width: 200px;
+        height: 60px;
+        background: #f5f5f7; /* Contrast with black footer */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+
+    .dt-logo-place img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .dt-brand-col h2 {
+        font-family: var(--dt-font-serif);
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .dt-brand-col p {
+        color: var(--dt-text-soft);
+        line-height: 1.7;
+        max-width: 350px;
+    }
+
+    .dt-socials-anchor { margin-top: 30px; }
+    .dt-socials-anchor a {
+        color: #ffffff;
+        font-size: 20px;
+        margin-right: 25px;
+        transition: 0.4s;
+        display: inline-block;
+    }
+
+    .dt-socials-anchor a:hover {
+        color: var(--dt-vibrant-fire);
+        transform: translateY(-8px) scale(1.1);
+    }
+
+    /* Standard Columns */
+    .dt-col-anchor h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: var(--dt-vibrant-fire);
+        margin-bottom: 35px;
+        font-weight: 900;
+    }
+
+    .dt-links-anchor {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dt-links-anchor li { margin-bottom: 20px; }
+
+    .dt-links-anchor a {
+        color: var(--dt-text-soft);
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s ease;
+    }
+
+    .dt-links-anchor a:hover {
+        color: #ffffff;
+        padding-left: 10px;
+    }
+
+    /* THE PARTNER CTA */
+    .dt-links-anchor .partner-btn-anchor {
+        color: var(--dt-vibrant-fire);
+        font-weight: 900;
+        margin-top: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Column 4: Newsletter */
+    .dt-dossier-col h4 {
+        font-family: var(--dt-font-serif);
+        font-size: 1.8rem;
+        text-transform: none;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+    }
+
+    .dt-dossier-col p {
+        font-size: 1rem;
+        color: var(--dt-text-soft);
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .dt-pill-anchor {
+        display: flex;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--dt-border-light);
+        border-radius: 100px;
+        padding: 8px;
+    }
+
+    .dt-pill-anchor input {
+        background: transparent;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        font-family: var(--dt-font-pro);
+        flex: 1;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .dt-pill-anchor button {
+        background: var(--dt-vibrant-fire);
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 100px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .dt-pill-anchor button:hover {
+        background: #ffffff;
+        color: #000;
+        transform: scale(1.05);
+    }
+
+    /* --- THE SUB-FOOTER (LOCATION CLOUD) --- */
+    .territory-stage {
+        background: var(--dt-apple-grey);
+        padding: 100px 8%;
+        color: #000;
+    }
+
+    .territory-stage-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: var(--dt-deep-black);
+        font-weight: 900;
+        margin-bottom: 50px;
+        text-align: center;
+        display: block;
+    }
+
+    .territory-grid-pro {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+    }
+
+    .ter-col b { display: block; margin-bottom: 20px; font-size: 17px; color: var(--dt-deep-black); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .loc-tag-pro {
+        background: #ffffff;
+        border: 1px solid #e5e5e7;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 13px;
+        color: #515154;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .loc-tag-pro:hover {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+        transform: translateY(-5px);
+    }
+
+    /* --- THE BOTTOM BAR: THE SIGNATURE --- */
+    .dt-bottom-anchor {
+        background: #000;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 40px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: #424245;
+        font-weight: 600;
+    }
+
+    .vayunex-tag- anchor {
+        text-decoration: none;
+        color: #86868b;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .vayunex-tag- anchor:hover { color: var(--dt-vibrant-fire); }
+    .vayunex-tag- anchor span { color: #ffffff; font-weight: 900; }
+
+    /* --- THE QUOTE MODAL (CRO Power) --- */
+    .quote-modal- stage {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        backdrop-filter: blur(10px);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quote-card- stage {
+        background: #ffffff;
+        width: 90%;
+        max-width: 500px;
+        padding: 70px;
+        border-radius: 40px;
+        position: relative;
+        color: #000;
+        animation: popUpStage 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popUpStage { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    .close-modal- stage { position: absolute; top: 30px; right: 30px; font-size: 24px; cursor: pointer; color: #aaa; transition: 0.3s; }
+    .close-modal- stage:hover { color: var(--dt-vibrant-fire); }
+
+    .modal-title- stage { font-family: var(--dt-font-serif); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
+    .modal-sub- stage { color: #666; margin-bottom: 40px; font-size: 1.1rem; }
+
+    /* Modal Form Inputs */
+    .modal-input- stage {
+        width: 100%;
+        padding: 22px 25px;
+        border-radius: 15px;
+        border: 2px solid #f5f5f7;
+        background: #f5f5f7;
+        margin-bottom: 20px;
+        font-family: var(--dt-font-pro);
+        font-size: 1rem;
+        font-weight: 600;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .modal-input- stage:focus {
+        border-color: var(--dt-vibrant-fire);
+        background: #fff;
+    }
+
+    .modal-btn- stage {
+        width: 100%;
+        background: var(--dt-vibrant-fire);
+        color: #fff;
+        padding: 22px;
+        border-radius: 100px;
+        border: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 3px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3);
+    }
+
+    .modal-btn- stage:hover { transform: scale(1.05); background: #000; }
+
+    /* Mobile */
+    @media (max-width: 1200px) {
+        .dt-grid, .territory-grid-pro { grid-template-columns: 1fr 1fr; gap: 60px; }
+    }
+    @media (max-width: 768px) {
+        .dt-grid, .territory-grid-pro { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+        .dt-logo-place { margin: 0 auto 30px; }
+        .dt-brand-col p { margin: 0 auto; }
+        .dt-pill-anchor { flex-direction: column; border-radius: 20px; padding: 15px; }
+        .dt-pill-anchor button { width: 100%; margin-top: 15px; }
+        .dt-bottom-anchor { flex-direction: column; gap: 20px; text-align: center; }
+        .dt-bottom-anchor a { margin: 0 10px; }
+    }
+</style>
+
+<footer class="dt-anchor">
+    <div class="dt-anchor-container">
+        
+        <div class="dt-grid">
+            
+            <div class="dt-brand-col">
+                <div class="dt-logo-place">
+                    <img src="https://placehold.co/200x60/f5f5f7/FF4500?text=Logo+Here" alt="Darjeeling Trips Logo">
+                </div>
+                <h2>Darjeeling Trips</h2>
+                <p>Born on the trails, not in boardrooms. locally guide luxury managed from Siliguri across the entire East.</p>
+                <div class="dt-socials-anchor">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="dt-col-anchor">
+                <h4>Neighborhood</h4>
+                <ul class="dt-links-anchor">
+                    <li><a href="#">The Team</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Expertise Studio</a></li>
+                    <li><a href="#">Territory of Truth</a></li>
+                    <li><a href="#" class="partner-btn-anchor">Partner with Us →</a></li>
+                </ul>
+            </div>
+
+            <div class="dt-col-anchor">
+                <h4>Intelligence</h4>
+                <ul class="dt-links-anchor">
+                    <li><a href="#">Contact Hosts</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Sovereign Safety</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+
+            <div class="dt-dossier-col">
+                <h4>Himalayan Dossier</h4>
+                <p>Private briefing on hidden tea estates, unmapped sunrises, and luxury stays we keep off the public record.</p>
+                <form class="dt-pill-anchor">
+                    <input type="email" placeholder="Private Email" required>
+                    <button type="submit">Secure</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<div class="territory-stage">
+    <div class="dt-anchor-container">
+        <span class="territory-stage-title">Every Trail We Cover</span>
+        <div class="territory-grid-pro">
+            
+            <div class="ter-col">
+                <b>Darjeeling Territory</b>
+                <div class="tag-cloud">
+                    <span class="loc-tag-pro" onclick="openQuote('Mirik')">Mirik</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Kurseong')">Kurseong</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Sandakphu')">Sandakphu</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Kalimpong')">Kalimpong</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Bijanbari')">Bijanbari</span>
+                </div>
+            </div>
+
+            <div class="ter-col">
+                <b>Nepal Territory</b>
+                <div class="tag-cloud">
+                    <span class="loc-tag-pro" onclick="openQuote('Kathmandu')">Kathmandu</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Pokhara')">Pokhara</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Mustang')">Mustang</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Ilam')">Ilam</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Everest Base')">Everest Base</span>
+                </div>
+            </div>
+
+            <div class="ter-col">
+                <b>Meghalaya Territory</b>
+                <div class="tag-cloud">
+                    <span class="loc-tag-pro" onclick="openQuote('Shillong')">Shillong</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Cherrapunji')">Cherrapunji</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Dawki')">Dawki</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Jowai')">Jowai</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Mawlynnong')">Mawlynnong</span>
+                </div>
+            </div>
+
+            <div class="ter-col">
+                <b>Assam Territory</b>
+                <div class="tag-cloud">
+                    <span class="loc-tag-pro" onclick="openQuote('Kaziranga')">Kaziranga</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Majuli')">Majuli</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Guwahati')">Guwahati</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Manas')">Manas</span>
+                    <span class="loc-tag-pro" onclick="openQuote('Haflong')">Haflong</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="dt-bottom-anchor">
+    <div class="dt-anchor-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div>Copyright &copy; 2026 Darjeeling Trips. LocallyOwned in West Bengal.</div>
+        <div style="display: flex; align-items: center;">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="https://vayunex.com" class="vayunex-tag- anchor" style="margin-left: 40px;">
+                Designed & Developed by <span>Vayunex Technologies</span> <i class="fa-solid fa-bolt-lightning"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* --- THE OVERLAY: Premium Glass Blur --- */
+    .v-modal-overlay {
+        display: none; /* Controlled by JS */
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        transition: all 0.5s ease;
+    }
+
+    /* --- THE CARD: 3D Hardware Feel --- */
+    .v-modal-card {
+        background: #ffffff;
+        width: 100%;
+        max-width: 700px;
+        border-radius: 50px;
+        padding: 80px;
+        position: relative;
+        box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+        transform: scale(0.9) translateY(30px);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Active State for Animation */
+    .v-modal-overlay.active { display: flex; }
+    .v-modal-overlay.active .v-modal-card {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    /* --- THE TYPOGRAPHY: Massive & Bold --- */
+    .v-modal-header { margin-bottom: 50px; }
+    
+    .v-modal-kicker {
+        color: #FF4500;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        font-weight: 900;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .v-modal-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1;
+        color: #000;
+        letter-spacing: -2px;
+    }
+
+    .v-modal-title span {
+        display: block;
+        color: #0F3D2E;
+        font-style: italic;
+        font-size: 0.8em;
+    }
+
+    /* --- THE FORM UX: Technical & Clean --- */
+    .v-modal-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .v-input-group { grid-column: span 2; position: relative; }
+    .v-input-half { grid-column: span 1; }
+
+    .v-field {
+        width: 100%;
+        padding: 25px 30px;
+        background: #f5f5f7;
+        border: 2px solid #f5f5f7;
+        border-radius: 20px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .v-field:focus {
+        background: #fff;
+        border-color: #FF4500;
+        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.1);
+    }
+
+    /* --- THE CLOSE BUTTON: Minimalist X --- */
+    .v-modal-close {
+        position: absolute;
+        top: 40px; right: 40px;
+        width: 50px; height: 50px;
+        background: #f5f5f7;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .v-modal-close:hover {
+        background: #000;
+        color: #fff;
+        transform: rotate(90deg);
+    }
+
+    /* --- THE ACTION: Massive Pop Button --- */
+    .v-modal-btn {
+        grid-column: span 2;
+        background: #000;
+        color: #fff;
+        padding: 28px;
+        border-radius: 100px;
+        border: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 20px;
+    }
+
+    .v-modal-btn:hover {
+        background: #FF4500;
+        transform: scale(1.05);
+        box-shadow: 0 30px 60px rgba(255, 69, 0, 0.3);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 768px) {
+        .v-modal-card { padding: 50px 30px; border-radius: 30px; }
+        .v-modal-form { grid-template-columns: 1fr; }
+        .v-input-half { grid-column: span 2; }
+    }
+</style>
+
+<div class="v-modal-overlay" id="vQuoteModal">
+    <div class="v-modal-card">
+        <div class="v-modal-close" onclick="closeVModal()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="v-modal-header">
+            <span class="v-modal-kicker">Territory Request</span>
+            <h3 class="v-modal-title" id="vModalTarget">Visit <span>Location</span></h3>
+        </div>
+
+        <form class="v-modal-form" onsubmit="handleVSubmit(event)">
+            <div class="v-input-group">
+                <input type="text" class="v-field" placeholder="Full Name" required>
+            </div>
+            <div class="v-input-half">
+                <input type="email" class="v-field" placeholder="Email Address" required>
+            </div>
+            <div class="v-input-half">
+                <input type="tel" class="v-field" placeholder="Phone Number" required>
+            </div>
+            <div class="v-input-group">
+                <input type="text" class="v-field" placeholder="Preferred Travel Month (e.g. October 2026)">
+            </div>
+            
+            <button type="submit" class="v-modal-btn">Secure My Quote</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const vModal = document.getElementById('vQuoteModal');
+    const vTitle = document.getElementById('vModalTarget');
+
+    // OPEN LOGIC
+    function openQuote(locationName) {
+        vTitle.innerHTML = "Visit <span>" + locationName + "</span>";
+        vModal.style.display = 'flex';
+        // Small timeout to allow browser to register display:flex before adding animation class
+        setTimeout(() => {
+            vModal.classList.add('active');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    // CLOSE LOGIC
+    function closeVModal() {
+        vModal.classList.remove('active');
+        setTimeout(() => {
+            vModal.style.display = 'none';
+        }, 500); // Matches transition time
+        document.body.style.overflow = 'auto';
+    }
+
+    // SUBMIT LOGIC
+    function handleVSubmit(e) {
+        e.preventDefault();
+        alert("Quote Request Sent. Our Hosts will contact you shortly.");
+        closeVModal();
+    }
+
+    // CLICK OUTSIDE TO CLOSE
+    window.onclick = function(event) {
+        if (event.target == vModal) {
+            closeVModal();
+        }
+    }
+</script>
+
+
+
+
+
+
+    
+
+    <script>
+        $(document).ready(function(){
+            // Smooth scrolling for navigation links
+            $(".scroll-link").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    
+                    // Animate scroll (800ms)
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 70 // Offset for fixed header
+                    }, 800);
+                }
+            });
+        });
+    </script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mainSwiper', {
+            loop: true,
+            effect: 'fade',
+            autoplay: { delay: 4000 },
+            speed: 1500,
+        });
+    </script>
+  {% block js %}{% endblock js %}
+    
+
+
+</body>
+</html>
