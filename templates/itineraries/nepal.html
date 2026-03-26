@@ -12,7 +12,4873 @@
 
 
 {% block body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    :root {
+        --v-fire: #FF4500;
+        --v-dark: #0a0a0a;
+        --v-carbon: #1c1c1c;
+        --v-white: #ffffff;
+        --v-grey: #86868b;
+        /* The "Manish" Gradient - Deep, Clean, Professional */
+        --v-grad: linear-gradient(160deg, #0a0a0a 0%, #1c1c1c 100%);
+    }
+
+    .n-hero {
+        background: var(--v-grad);
+        padding: 160px 8% 100px;
+        font-family: 'Inter', -apple-system, sans-serif;
+        color: var(--v-white);
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .n-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+    }
+
+    /* --- THE CONTENT: BRUTAL SIMPLICITY --- */
+    .n-kicker {
+        color: var(--v-fire);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        font-weight: 900;
+        font-size: 13px;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .n-title {
+        font-size: clamp(3rem, 7vw, 6rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -4px;
+        margin-bottom: 35px;
+    }
+
+    .n-desc {
+        font-size: 1.4rem;
+        color: var(--v-grey);
+        max-width: 550px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+
+    .n-desc b { color: var(--v-white); font-weight: 700; }
+
+    /* --- THE INTERACTIVE CARD (The "Hardware" UX) --- */
+    .n-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 60px;
+        border-radius: 40px;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    }
+
+    .n-stat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .n-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .n-stat-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--v-fire);
+        font-weight: 800;
+    }
+
+    .n-stat-value {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--v-white);
+    }
+
+    /* --- THE CALL TO ACTION --- */
+    .n-actions {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .n-btn-main {
+        background: var(--v-fire);
+        color: #fff;
+        padding: 25px 50px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .n-btn-main:hover {
+        transform: scale(1.08) translateY(-5px);
+        box-shadow: 0 20px 40px rgba(255, 69, 0, 0.3);
+    }
+
+    .n-wa-btn {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .n-wa-btn i { color: #25D366; font-size: 22px; }
+    .n-wa-btn:hover { color: var(--v-fire); }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .n-container { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+        .n-desc { margin: 0 auto 40px; }
+        .n-actions { flex-direction: column; }
+        .n-card { padding: 40px 25px; }
+    }
+</style>
+
+<section class="n-hero">
+    <div class="n-container">
+        
+        <div class="n-content">
+            <span class="n-kicker">Direct from Siliguri</span>
+            <h1 class="n-title">8 Days <br>Beautiful Nepal</h1>
+            <p class="n-desc">
+                We handle the <b>Flights,  Hotels, and Mountain Walks.</b>  No long bus rides. No messy planning. Just show up.
+            </p>
+            
+            <div class="n-actions">
+                <a href="javascript:void(0)" onclick="openQuote('Nepal Full Plan')" class="n-btn-main">Get the Price</a>
+                <a href="https://wa.me/YOURNUMBER" class="n-wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Chat with a Local
+                </a>
+            </div>
+        </div>
+
+        <div class="n-card">
+            <div class="n-stat-grid">
+                <div class="n-stat">
+                    <span class="n-stat-label">The Route</span>
+                    <span class="n-stat-value">Siliguri — KTM — PKR</span>
+                </div>
+                <div class="n-stat">
+                    <span class="n-stat-label">Transport</span>
+                    <span class="n-stat-value">Private Car & Flights</span>
+                </div>
+                <div class="n-stat">
+                    <span class="n-stat-label">Stay</span>
+                    <span class="n-stat-value">4-Star & Lakeside</span>
+                </div>
+                <div class="n-stat">
+                    <span class="n-stat-label">Trek</span>
+                    <span class="n-stat-value">A Private Walk to Peaks</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 13px; color: var(--v-grey);">
+                <i class="fa-solid fa-circle-check" style="color: var(--v-fire); margin-right: 8px;"></i>
+                Fully managed by the Darjeeling Trips Team.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* STICKING TO YOUR ROOTS */
+    .n-highlights {
+        background: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+
+    .n-header {
+        margin-bottom: 60px;
+        text-align: left;
+    }
+
+    .n-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+    }
+
+    /* THE LIST DESIGN */
+    .h-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .h-item {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--grey-apple);
+        align-items: center;
+        transition: var(--transition);
+    }
+
+    /* Hidden items by default */
+    .h-item.hidden {
+        display: none;
+    }
+
+    .h-number {
+        font-weight: 900;
+        font-size: 18px;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .h-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+    /* THE BUTTON */
+    .h-btn-wrap {
+        margin-top: 50px;
+        text-align: left;
+    }
+
+    .h-read-more {
+        background: var(--bg-charcoal);
+        color: var(--bg-white);
+        padding: 20px 40px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .h-read-more:hover {
+        background: var(--fire);
+        transform: scale(1.05);
+    }
+
+    /* THE TRUTH BOX (Disclaimer) */
+    .h-truth {
+        margin-top: 60px;
+        background: var(--grey-apple);
+        padding: 30px;
+        border-radius: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        border-left: 5px solid var(--fire);
+    }
+
+    .h-truth i { color: var(--fire); font-size: 20px; }
+    .h-truth p { font-size: 14px; font-weight: 600; color: var(--text-muted); margin: 0; }
+</style>
+
+<section class="n-highlights">
+    <div class="n-container">
+        
+        <div class="n-header">
+            <h2 class="n-title">Everything you get on this trip.</h2>
+        </div>
+
+        <div class="h-list" id="highlightsList">
+            <div class="h-item"><span class="h-number">01.</span><span class="h-text">Start the trip from Siliguri.</span></div>
+            <div class="h-item"><span class="h-number">02.</span><span class="h-text">Private car drive to Bhadrapur.</span></div>
+            <div class="h-item"><span class="h-number">03.</span><span class="h-text">Flight to Kathmandu (Save 15 hours of driving).</span></div>
+            <div class="h-item"><span class="h-number">04.</span><span class="h-text">Airport pickup in Kathmandu.</span></div>
+            <div class="h-item"><span class="h-number">05.</span><span class="h-text">Stay in Thamel (The main market and food area).</span></div>
+            <div class="h-item"><span class="h-number">06.</span><span class="h-text">A night out in the city center.</span></div>
+            <div class="h-item"><span class="h-number">07.</span><span class="h-text">Guided tour of famous local heritage sites.</span></div>
+            <div class="h-item"><span class="h-number">08.</span><span class="h-text">Special visit to local temples.</span></div>
+
+            <div class="h-item hidden"><span class="h-number">09.</span><span class="h-text">Morning flight to Pokhara with mountain views.</span></div>
+            <div class="h-item hidden"><span class="h-number">10.</span><span class="h-text">Stay in a hotel right next to the lake.</span></div>
+            <div class="h-item hidden"><span class="h-number">11.</span><span class="h-text">Private boat ride on the lake.</span></div>
+            <div class="h-item hidden"><span class="h-number">12.</span><span class="h-text">Visit to 3 secret local spots for coffee and views.</span></div>
+            <div class="h-item hidden"><span class="h-number">13.</span><span class="h-text">A 1-day trek to a quiet mountain place.</span></div>
+            <div class="h-item hidden"><span class="h-number">14.</span><span class="h-text">Clean and safe local lodge for the trek.</span></div>
+            <div class="h-item hidden"><span class="h-number">15.</span><span class="h-text">Walk on quiet trails away from other tourists.</span></div>
+            <div class="h-item hidden"><span class="h-number">16.</span><span class="h-text">Great views of the high peaks during the walk.</span></div>
+            <div class="h-item hidden"><span class="h-number">17.</span><span class="h-text">Private car for all local city travel.</span></div>
+            <div class="h-item hidden"><span class="h-number">18.</span><span class="h-text">Flight back to Kathmandu.</span></div>
+            <div class="h-item hidden"><span class="h-number">19.</span><span class="h-text">One full free day to do whatever you want.</span></div>
+            <div class="h-item hidden"><span class="h-number">20.</span><span class="h-text">Time for shopping for local gear and gifts.</span></div>
+            <div class="h-item hidden"><span class="h-number">21.</span><span class="h-text">Hand-picked hotels that are safe and clean.</span></div>
+            <div class="h-item hidden"><span class="h-number">22.</span><span class="h-text">Small group sizes so you get personal help.</span></div>
+            <div class="h-item hidden"><span class="h-number">23.</span><span class="h-text">Return flight to Bhadrapur airport.</span></div>
+            <div class="h-item hidden"><span class="h-number">24.</span><span class="h-text">Drive from the airport back to Siliguri.</span></div>
+            <div class="h-item hidden"><span class="h-number">25.</span><span class="h-text">End the trip with all memories sorted.</span></div>
+        </div>
+
+        <div class="h-btn-wrap">
+            <button class="h-read-more" id="showMoreBtn" onclick="toggleHighlights()">Show All  Highlights</button>
+        </div>
+
+        <div class="h-truth">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>Important: This list is what we usually do. However, we may change some things depending on the season and if the mountain views are clear. We want you to be safe and see the best views.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function toggleHighlights() {
+        const hiddenItems = document.querySelectorAll('.h-item.hidden');
+        const btn = document.getElementById('showMoreBtn');
+        
+        hiddenItems.forEach(item => {
+            item.style.display = 'grid';
+        });
+        
+        btn.style.display = 'none';
+    }
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* STICKING STRICTLY TO YOUR DEFINED ROOTS */
+    .day-section {
+        background: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .day-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    /* --- LEFT SIDE: THE INFO --- */
+    .day-num {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 900;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .day-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 30px;
+        letter-spacing: -2px;
+    }
+
+    .day-route {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: var(--fire);
+        margin-bottom: 40px;
+    }
+
+    /* --- RIGHT SIDE: THE TACTICAL DETAILS --- */
+    .day-card {
+        background: var(--bg-soft);
+        padding: 50px;
+        border-radius: var(--radius);
+        border: 1px solid var(--grey-apple);
+    }
+
+    .day-card h4 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--forest);
+    }
+
+    .day-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+    }
+
+    /* THE PRO SPECS (Grid) */
+    .pro-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding-top: 30px;
+        border-top: 1px solid var(--grey-apple);
+    }
+
+    .spec-item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .spec-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: var(--text-muted);
+    }
+
+    .spec-value {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-main);
+    }
+
+    /* THE VIEW ALERT */
+    .view-alert {
+        margin-top: 30px;
+        padding: 20px;
+        background: var(--bg-white);
+        border: 1px solid var(--fire);
+        border-radius: 20px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .view-alert i { color: var(--fire); font-size: 20px; }
+    .view-alert span { font-size: 13px; font-weight: 700; }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .day-container { grid-template-columns: 1fr; gap: 40px; }
+        .day-card { padding: 35px 25px; }
+    }
+</style>
+
+<section class="day-section">
+    <div class="day-container">
+        
+        <div class="day-intro">
+            <span class="day-num">Day 01</span>
+            <h2 class="day-title">Siliguri to <br>Kathmandu.</h2>
+            <div class="day-route">
+                <span>Siliguri</span>
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Bhadrapur</span>
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>KTM</span>
+            </div>
+            <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.6;">
+                We start the journey early to avoid traffic at the border. The goal is to get you into Kathmandu by afternoon so you have time to see the city lights.
+            </p>
+        </div>
+
+        <div class="day-card">
+            <h4>The Morning Mission</h4>
+            <p>
+                We pick you up from Siliguri in a private car. The drive to the <b>Kakarbhitta Border</b> takes about 45 minutes. After a quick paper check, we drive another 30 minutes to <b>Bhadrapur Airport</b>.
+            </p>
+
+            <h4>The Flight Experience</h4>
+            <p>
+                You will board a short 45-minute flight to Kathmandu. This is much better than the 15-hour bus ride. Upon landing, our private driver will pick you up and take you straight to your hotel in <b>Thamel</b>.
+            </p>
+
+            <div class="pro-specs">
+                <div class="spec-item">
+                    <span class="spec-label">Total Distance</span>
+                    <span class="spec-value">~300 KM (Air + Road)</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Aircraft Type</span>
+                    <span class="spec-value">ATR-72 Turboprop</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Drive Time</span>
+                    <span class="spec-value">1.5 Hours total</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Flight Time</span>
+                    <span class="spec-value">45 Minutes</span>
+                </div>
+            </div>
+
+            <div class="view-alert">
+                <i class="fa-solid fa-mountain"></i>
+                <span><b>PRO TIP:</b> When checking in at Bhadrapur, ask for a seat on the <b>RIGHT SIDE</b> of the plane. You will get the best view of the Himalayan peaks during the flight.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET (Unique Classes: djt-) */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; /* Large top padding to clear the navbar */
+        font-family: var(--font-body);
+        color: var(--text-main);
+        overflow: hidden;
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER: HIGH READABILITY */
+    .djt-header-area {
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        color: var(--text-main);
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID: STABLE & RESPONSIVE */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    /* Feature Card with Local Pro Image */
+    .djt-card-featured {
+        grid-row: span 2;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .djt-img-hold {
+        height: 400px;
+        width: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 40px; }
+
+    /* Typography inside cards */
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE HIGHLIGHT BAR (Forest Green Accent) */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-pro-bar h4 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1.1rem; }
+    .djt-pro-bar b { color: var(--brand-orange); }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-card-featured { grid-row: span 1; }
+        .djt-pro-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 20px; }
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 02</span>
+            <h1 class="djt-main-h1">Temples, Squares <br>& Local Flavor.</h1>
+            <p class="djt-intro-text">A relaxed day seeing the best heritage sites and eating local food like a pro.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-card djt-card-featured">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x600/f5f5f7/1d1d1f?text=Durbar+Square+Carvings" alt="Kathmandu">
+                </div>
+                <div class="djt-card-content">
+                    <h3>The Old Palace</h3>
+                    <p>We walk through Durbar Square. Look at the wood carvings—they are hundreds of years old. If we are lucky, we see the <b>Living Goddess (Kumari)</b> at her window.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Best View</h3>
+                <p>At Boudhanath, we go to a <b>hidden rooftop</b>. You get a private view of the giant stupa and the mountains without the crowds.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>Evening Prayer</h3>
+                <p>We finish at Pashupatinath. We watch the <b>Evening Aarti</b> ceremony by the river. It is very peaceful and special.</p>
+            </div>
+
+            <div class="djt-pro-bar">
+                <div class="djt-food-txt">
+                    <h4>The Local Snack Run</h4>
+                    <p>We grab spicy <b>Momos</b> from a backlane spot and cold <b>Bubble Tea</b> to cool down.</p>
+                </div>
+                <div style="font-size: 45px;">🥟 + 🧋</div>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-clock"></i>
+                <div><b>Time</b><span>7 Hours</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-car"></i>
+                <div><b>Car</b><span>Private SUV</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-bowl-food"></i>
+                <div><b>Lunch</b><span>Local Pro</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-person-walking"></i>
+                <div><b>Walk</b><span>Easy / Flat</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; 
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-header-area {
+        margin-bottom: 60px;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .djt-card-featured {
+        grid-column: span 2;
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .djt-img-hold {
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 50px; }
+
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    /* 4. THE SEAT SECRET BAR (Forest Green Accent) */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .djt-pro-bar i { font-size: 30px; color: var(--brand-orange); }
+    .djt-pro-bar h4 { font-size: 1.4rem; font-weight: 800; margin-bottom: 5px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0; }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-card-featured { grid-template-columns: 1fr; }
+        .djt-pro-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px; }
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 03</span>
+            <h1 class="djt-main-h1">Flight to the Peaks <br>& Lakeside Chill.</h1>
+            <p class="djt-intro-text">Leaving the city behind for the mountains. A short flight followed by a relaxed afternoon by the water in Pokhara.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-pro-bar">
+                <div class="djt-txt">
+                    <h4>The Flight Secret</h4>
+                    <p>When you check in at Kathmandu, ask for a seat on the <b>RIGHT SIDE</b> of the plane. You will see the entire Annapurna range from your window.</p>
+                </div>
+                <i class="fa-solid fa-plane-circle-check"></i>
+            </div>
+
+            <div class="djt-card djt-card-featured">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x800/f5f5f7/1d1d1f?text=Phewa+Lake+Pokhara" alt="Pokhara Lake">
+                </div>
+                <div class="djt-card-content">
+                    <h3>Lakeside Vibe</h3>
+                    <p>After landing, we head straight to the <b>Lakeside</b>. The air is cleaner here and the vibe is much slower. We check into the hotel and head out for a walk by the water.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Coffee Corner</h3>
+                <p>We know a small spot that serves the best local <b>Himalayan Java</b>. It has a tiny balcony that sits right over the edge of the lake. Perfect for a quiet afternoon.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>Sunset Point</h3>
+                <p>Instead of the main crowd, we take a short walk to a <b>hidden pier</b>. You get to watch the sun go down behind the mountains with zero noise.</p>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-plane"></i>
+                <div><b>Flight</b><span>25 Minutes</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-mountain"></i>
+                <div><b>Views</b><span>Annapurna Range</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <div><b>Afternoon</b><span>Lakeside Chill</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-bed"></i>
+                <div><b>Stay</b><span>Luxury Lakeside</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; 
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-header-area {
+        margin-bottom: 60px;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .djt-card-featured {
+        grid-column: span 1;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .djt-img-hold {
+        height: 300px;
+        width: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 40px; }
+
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE PRO BAR */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-pro-bar h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0; }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-pro-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px; }
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 04</span>
+            <h1 class="djt-main-h1">The Hidden Side <br>of the Lake.</h1>
+            <p class="djt-intro-text">A day to explore the quiet spots around Phewa Lake. No crowds, just good views and local food.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-pro-bar">
+                <div class="djt-txt">
+                    <h4>The Local Way</h4>
+                    <p>Don't take the big group boats. We take a <b>small private wooden boat</b> to the other side of the lake where it's dead quiet.</p>
+                </div>
+                <i class="fa-solid fa-anchor" style="font-size: 30px; color: var(--brand-orange);"></i>
+            </div>
+
+            <div class="djt-card djt-card-featured">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x600/f5f5f7/1d1d1f?text=Phewa+Lake+Boat" alt="Phewa Lake">
+                </div>
+                <div class="djt-card-content">
+                    <h3>Phewa Lake Boat Ride</h3>
+                    <p>We spend an hour on the water. We visit the <b>Tal Barahi Temple</b> in the middle of the lake, but we do it early to avoid the main tourist rush.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Best Momos</h3>
+                <p>We walk to a small shop that only locals know. Their <b>buff momos</b> and spicy sesame chutney are the best in the city. Very simple, very real.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Secret Ridge</h3>
+                <p>We take a short walk up a small ridge. From here, you see the whole lake on one side and the big white mountains on the other. It's a great spot for photos.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>Coffee & Quiet</h3>
+                <p>We finish at a tiny cafe with wooden chairs right by the water. You can just sit, watch the paragliders in the sky, and relax.</p>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-sailboat"></i>
+                <div><b>Activity</b><span>Boat Ride</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-shoe-prints"></i>
+                <div><b>Walk</b><span>~2 KM</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-utensils"></i>
+                <div><b>Lunch</b><span>Local Shop</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-camera"></i>
+                <div><b>Focus</b><span>Mountain Views</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; 
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-header-area {
+        margin-bottom: 60px;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    /* Top Full-Width Card */
+    .djt-card-hero {
+        grid-column: span 2;
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .djt-img-hold {
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 50px; }
+
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE PRO BAR */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-pro-bar h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0; }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-card-hero { grid-template-columns: 1fr; grid-column: span 1; }
+        .djt-pro-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px; grid-column: span 1;}
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 05</span>
+            <h1 class="djt-main-h1">The High Ridge Walk.</h1>
+            <p class="djt-intro-text">Today we leave the car behind. We walk up to a high ridge to get closer to the big peaks. It's quiet, clean, and very beautiful.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-pro-bar">
+                <div class="djt-txt">
+                    <h4>Pack Light</h4>
+                    <p>You only need your camera and water for the walk. We handle the heavy bags. Wear your best walking shoes today.</p>
+                </div>
+                <i class="fa-solid fa-person-hiking" style="font-size: 35px; color: var(--brand-orange);"></i>
+            </div>
+
+            <div class="djt-card djt-card-hero">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x800/f5f5f7/1d1d1f?text=The+Mountain+Path" alt="Nepal Trek">
+                </div>
+                <div class="djt-card-content">
+                    <h3>The Morning Ascent</h3>
+                    <p>We drive 45 minutes to the start of the trail. The walk up takes about 3 to 4 hours. It is an uphill path through local villages and forests. You will see the local life away from the city.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>The "Big Three" View</h3>
+                <p>When we reach the ridge, the view opens up. You see <b>Machhapuchhre (Fishtail)</b>, <b>Annapurna</b>, and <b>Dhaulagiri</b> right in front of you. There are no crowds here—just the wind and the mountains.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Local Stay</h3>
+                <p>We stay the night in a simple, clean local lodge on the ridge. The rooms are basic but the view from the window is better than any 5-star hotel. We have hot local tea and dinner by the fire.</p>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-stopwatch"></i>
+                <div><b>Walk Time</b><span>4-5 Hours</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-mountain-city"></i>
+                <div><b>Height</b><span>~2,100 Meters</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-mug-hot"></i>
+                <div><b>Food</b><span>Local Lodge</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-temperature-low"></i>
+                <div><b>Night</b><span>Cold / Fresh</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; 
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-header-area {
+        margin-bottom: 60px;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .djt-card-featured {
+        grid-column: span 1;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .djt-img-hold {
+        height: 350px;
+        width: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 40px; }
+
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE PRO BAR */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-pro-bar h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0; }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-pro-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px; }
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 06</span>
+            <h1 class="djt-main-h1">Down the Mountain <br>& Back to the City.</h1>
+            <p class="djt-intro-text">We finish our walk on the ridge and catch a flight from Pokhara back to the lights of Kathmandu.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-pro-bar">
+                <div class="djt-txt">
+                    <h4>The Flight Secret #2</h4>
+                    <p>On the way back from Pokhara to Kathmandu, ask for a seat on the <b>LEFT SIDE</b>. You will get a final look at the white peaks as you fly home.</p>
+                </div>
+                <i class="fa-solid fa-plane-up" style="font-size: 35px; color: var(--brand-orange);"></i>
+            </div>
+
+            <div class="djt-card djt-card-featured">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x600/f5f5f7/1d1d1f?text=Walking+Downhill" alt="Trek Down">
+                </div>
+                <div class="djt-card-content">
+                    <h3>The Morning Walk</h3>
+                    <p>We wake up early for the mountain sunrise and then walk back down the trail. It takes about 2 to 3 hours to reach the bottom. It's easier than the climb, but good for the legs.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>Fly Back to KTM</h3>
+                <p>We take a short flight back to Kathmandu. Our car will be waiting at the airport to take you back to your hotel in <b>Thamel</b>. The hot shower and the city energy feel great after the trek.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>Thamel Nightlife</h3>
+                <p>Back in the city. You have the evening to visit your favorite cafes or explore new backlanes. We recommend a local live music bar to celebrate the successful trek.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>The Celebration</h3>
+                <p>Enjoy a heavy local dinner. After 2 days on the mountain, the wide choice of food in Thamel is a perfect reward. We can guide you to a quiet spot if you're tired.</p>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                <div><b>Walk Down</b><span>3 Hours</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-plane-arrival"></i>
+                <div><b>Flight back</b><span>25 Minutes</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-city"></i>
+                <div><b>Location</b><span>Thamel, KTM</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-music"></i>
+                <div><b>Evening</b><span>Relaxed / Music</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-day-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px; 
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-header-area {
+        margin-bottom: 60px;
+    }
+
+    .djt-day-indicator {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-main-h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 0 20px 0;
+    }
+
+    .djt-intro-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    /* 3. THE BENTO GRID */
+    .djt-bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .djt-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+    }
+
+    .djt-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    /* Top Full-Width Card */
+    .djt-card-hero {
+        grid-column: span 2;
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .djt-img-hold {
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .djt-img-hold img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-card-content { padding: 50px; }
+
+    .djt-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    /* 4. THE PRO BAR */
+    .djt-pro-bar {
+        grid-column: span 2;
+        background: var(--brand-green);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-pro-bar h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+    .djt-pro-bar p { color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0; }
+
+    /* 5. TECHNICAL SPECS */
+    .djt-spec-strip {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-spec-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-spec-pill i { color: var(--brand-orange); font-size: 20px; }
+    .djt-spec-pill div b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); }
+    .djt-spec-pill div span { font-size: 14px; font-weight: 800; }
+
+    @media (max-width: 1000px) {
+        .djt-bento-grid { grid-template-columns: 1fr; }
+        .djt-card-hero { grid-template-columns: 1fr; grid-column: span 1; }
+        .djt-pro-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px; grid-column: span 1;}
+        .djt-spec-strip { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-day-wrapper">
+    <div class="djt-max-width">
+        
+        <div class="djt-header-area">
+            <span class="djt-day-indicator">Day 07</span>
+            <h1 class="djt-main-h1">Zero Schedule. <br>Your Day, Your City.</h1>
+            <p class="djt-intro-text">No early alarms today. This is a full day to explore the corners of Kathmandu you missed, or just relax in Thamel.</p>
+        </div>
+
+        <div class="djt-bento-grid">
+            
+            <div class="djt-pro-bar">
+                <div class="djt-txt">
+                    <h4>The Shopping Secret</h4>
+                    <p>If you're buying jackets or bags, head to the shops near <b>Jyatha</b>. The quality is better and the prices are more honest than the main tourist street.</p>
+                </div>
+                <i class="fa-solid fa-tags" style="font-size: 35px; color: var(--brand-orange);"></i>
+            </div>
+
+            <div class="djt-card djt-card-hero">
+                <div class="djt-img-hold">
+                    <img src="https://placehold.co/800x800/f5f5f7/1d1d1f?text=Thamel+Market+Life" alt="Thamel Market">
+                </div>
+                <div class="djt-card-content">
+                    <h3>Explore Thamel</h3>
+                    <p>Thamel has hundreds of tiny lanes. Today is the day to get lost in them. You can find everything from handmade incense and singing bowls to high-quality mountain gear at local prices.</p>
+                </div>
+            </div>
+
+            <div class="djt-card">
+                <h3>Cafe Culture</h3>
+                <p>Kathmandu has some of the best coffee spots in the East. We recommend finding a <b>garden cafe</b> hidden away from the main road. It’s the perfect place to write your notes or just watch the world go by.</p>
+            </div>
+
+            <div class="djt-card">
+                <h3>Monkey Temple</h3>
+                <p>If you still have energy, take a short taxi to <b>Swayambhunath</b>. It sits on a hill and gives you a 360-degree view of the whole Kathmandu valley. It’s best visited during the late afternoon.</p>
+            </div>
+
+        </div>
+
+        <div class="djt-spec-strip">
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div><b>Schedule</b><span>None / Free</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div><b>Activity</b><span>Local Shopping</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <div><b>Vibe</b><span>Relaxed / Slow</span></div>
+            </div>
+            <div class="djt-spec-pill">
+                <i class="fa-solid fa-utensils"></i>
+                <div><b>Dinner</b><span>Your Choice</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-service-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8% 80px;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-service-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-service-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-service-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-service-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE END-TO-END GRID */
+    .djt-service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .djt-service-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .djt-service-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        transform: translateY(-10px);
+        box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+    }
+
+    .djt-service-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--bg-white);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-orange);
+        font-size: 24px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .djt-service-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin: 0;
+    }
+
+    .djt-service-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE 24/7 SUPPORT BAR */
+    .djt-support-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-support-txt h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+    .djt-support-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; max-width: 700px; }
     
+    .djt-wa-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 20px 40px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+
+    .djt-wa-btn:hover {
+        background: #fff;
+        color: var(--text-main);
+        transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+        .djt-service-grid { grid-template-columns: 1fr 1fr; }
+        .djt-support-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .djt-service-grid { grid-template-columns: 1fr; }
+        .djt-support-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+    }
+</style>
+
+<section class="djt-service-wrapper">
+    <div class="djt-service-max">
+        
+        <div class="djt-service-header">
+            <span class="djt-service-kicker">End-To-End Management</span>
+            <h2 class="djt-service-title">We handle everything. <br>You just show up.</h2>
+        </div>
+
+        <div class="djt-service-grid">
+            
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-house-user"></i></div>
+                <h3>Home Pickup</h3>
+                <p>We start at your door in Siliguri. Our private car picks you up and handles the drive to the border and the airport. No taxis, no waiting.</p>
+            </div>
+
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-passport"></i></div>
+                <h3>Border Command</h3>
+                <p>Crossing at Kakarbhitta can be messy. Our team handles the paperwork and logistics so you walk through the border in minutes, not hours.</p>
+            </div>
+
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-plane-lock"></i></div>
+                <h3>Flight Control</h3>
+                <p>We book your domestic flights in Nepal. We don't use buses for long distances. You fly over the traffic and save days of travel time.</p>
+            </div>
+
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-hotel"></i></div>
+                <h3>Verified Stays</h3>
+                <p>We don't use "random" hotels. Every hotel in Kathmandu and Pokhara is hand-checked by us for cleanliness, safety, and the best views.</p>
+            </div>
+
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-user-check"></i></div>
+                <h3>Local Pro Guide</h3>
+                <p>A local expert is with you for every major move. From finding the best Momos to knowing which ridge has the best mountain view, we lead the way.</p>
+            </div>
+
+            <div class="djt-service-card">
+                <div class="djt-service-icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <h3>Total Return</h3>
+                <p>At the end of the 8 days, we fly you back and drive you directly to your home in Siliguri. The service only ends when you are safely back.</p>
+            </div>
+
+            <div class="djt-support-bar">
+                <div class="djt-support-txt">
+                    <h4>24/7 On-Call Support</h4>
+                    <p>When you are in Nepal, our team is always awake. If you need a doctor, a pharmacy, or just a different dinner spot, we are one WhatsApp message away.</p>
+                </div>
+                <a href="https://wa.me/YOURNUMBER" class="djt-wa-btn">Chat with Host</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-myth-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-myth-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-myth-header {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .djt-myth-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-myth-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE MYTH/REAL GRID */
+    .djt-myth-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .djt-myth-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px; /* Small line between them */
+        background: var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        border: 1px solid var(--grey-apple);
+    }
+
+    .djt-side {
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Left Side: The Myth */
+    .djt-myth-side {
+        background: var(--bg-white);
+        position: relative;
+    }
+
+    .djt-myth-side i { color: var(--brand-orange); font-size: 24px; }
+    .djt-myth-side h4 { color: var(--brand-orange); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; }
+
+    /* Right Side: The Real */
+    .djt-real-side {
+        background: var(--bg-soft);
+    }
+
+    .djt-real-side i { color: var(--brand-green); font-size: 24px; }
+    .djt-real-side h4 { color: var(--brand-green); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; }
+
+    .djt-side p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .djt-side b { color: var(--text-main); font-weight: 800; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-myth-row { grid-template-columns: 1fr; }
+        .djt-side { padding: 40px 30px; }
+    }
+</style>
+
+<section class="djt-myth-wrapper">
+    <div class="djt-myth-max">
+        
+        <div class="djt-myth-header">
+            <span class="djt-myth-kicker">Honest Intelligence</span>
+            <h2 class="djt-myth-title">Myth vs. Reality</h2>
+        </div>
+
+        <div class="djt-myth-grid">
+            
+            <div class="djt-myth-row">
+                <div class="djt-side djt-myth-side">
+                    <i class="fa-solid fa-bus"></i>
+                    <h4>The Myth</h4>
+                    <p>“It’s just a short drive from the border to Kathmandu. We can take a bus to save money.”</p>
+                </div>
+                <div class="djt-side djt-real-side">
+                    <i class="fa-solid fa-plane-up"></i>
+                    <h4>The Real</h4>
+                    <p>The road is narrow, twisty, and full of trucks. A bus can take <b>15 hours</b>. We fly you from Bhadrapur in <b>45 minutes</b> so you don't waste your first two days being tired.</p>
+                </div>
+            </div>
+
+            <div class="djt-myth-row">
+                <div class="djt-side djt-myth-side">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <h4>The Myth</h4>
+                    <p>“Indian ₹500 and ₹200 notes are illegal in Nepal. I should only carry small change.”</p>
+                </div>
+                <div class="djt-side djt-real-side">
+                    <i class="fa-solid fa-check-double"></i>
+                    <h4>The Real</h4>
+                    <p>As of 2026, <b>₹500 notes are legal</b> for Indian tourists up to a limit. However, <b>₹100 notes</b> are still the "Local King"—they are accepted everywhere without questions or bad exchange rates.</p>
+                </div>
+            </div>
+
+            <div class="djt-myth-row">
+                <div class="djt-side djt-myth-side">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h4>The Myth</h4>
+                    <p>“Nepal food is exactly like North Indian food. I will just get Daal-Roti everywhere.”</p>
+                </div>
+                <div class="djt-side djt-real-side">
+                    <i class="fa-solid fa-pepper-hot"></i>
+                    <h4>The Real</h4>
+                    <p>Nepal has its own soul. You haven't tasted Nepal until you try <b>Buff Momos</b> (Buffalo meat) and <b>Newari Khaja</b> sets. The spices are different, and the <b>Bubble Tea</b> in Thamel is a must.</p>
+            </div>
+            </div>
+
+            <div class="djt-myth-row">
+                <div class="djt-side djt-myth-side">
+                    <i class="fa-solid fa-mountain"></i>
+                    <h4>The Myth</h4>
+                    <p>“Trekking is only for athletes. I am not fit enough to see the big mountains.”</p>
+                </div>
+                <div class="djt-side djt-real-side">
+                    <i class="fa-solid fa-person-hiking"></i>
+                    <h4>The Real</h4>
+                    <p>Our <b>1-Day Ridge Walk</b> is built for regular people. If you can walk for 3 hours, you can do it. You don't need to be a climber to stand in front of the <b>Annapurna peaks</b>.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-guide-wrapper {
+        background: var(--bg-white);
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-guide-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-guide-header {
+        margin-bottom: 80px;
+    }
+
+    .djt-guide-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-guide-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE WEATHER & ROAD GRID */
+    .djt-guide-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .djt-guide-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .djt-guide-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .djt-guide-card i { color: var(--brand-orange); }
+
+    /* Weather Specifics */
+    .djt-season-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .djt-season-row:last-child { border: none; }
+    .djt-season-name { font-weight: 800; color: var(--text-main); }
+    .djt-season-vibe { font-size: 0.95rem; color: var(--text-muted); text-align: right; }
+
+    /* 4. THE DISTANCE TABLE */
+    .djt-table-wrap {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        margin-top: 40px;
+    }
+
+    .djt-dist-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    .djt-dist-table th {
+        background: var(--brand-green);
+        color: #fff;
+        padding: 25px 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .djt-dist-table td {
+        padding: 25px 40px;
+        border-bottom: 1px solid var(--grey-apple);
+        font-weight: 600;
+    }
+
+    .djt-dist-table tr:last-child td { border: none; }
+    .djt-dist-table b { color: var(--brand-orange); }
+
+    /* 5. THE ROAD TRUTH BAR */
+    .djt-road-alert {
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px;
+        border-radius: 32px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-guide-grid { grid-template-columns: 1fr; }
+        .djt-dist-table th, .djt-dist-table td { padding: 20px; font-size: 13px; }
+        .djt-road-alert { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="djt-guide-wrapper">
+    <div class="djt-guide-max">
+        
+        <div class="djt-guide-header">
+            <span class="djt-guide-kicker">Technical Specs</span>
+            <h2 class="djt-guide-title">The Field Guide</h2>
+        </div>
+
+        <div class="djt-guide-grid">
+            
+            <div class="djt-guide-card">
+                <h3><i class="fa-solid fa-cloud-sun"></i> Weather Guide</h3>
+                <div class="djt-season-row">
+                    <span class="djt-season-name">Spring (March - May)</span>
+                    <span class="djt-season-vibe">Best for flowers & warm walks. Clear mornings.</span>
+                </div>
+                <div class="djt-season-row">
+                    <span class="djt-season-name">Autumn (Sept - Nov)</span>
+                    <span class="djt-season-vibe">The sharpest mountain views. 10/10 visibility.</span>
+                </div>
+                <div class="djt-season-row">
+                    <span class="djt-season-name">Winter (Dec - Feb)</span>
+                    <span class="djt-season-vibe">Cold but zero crowds. Snowy peaks.</span>
+                </div>
+                <div class="djt-season-row">
+                    <span class="djt-season-name">Summer (June - Aug)</span>
+                    <span class="djt-season-vibe">Rainy season. Lush green but clouds hide peaks.</span>
+                </div>
+            </div>
+
+            <div class="djt-guide-card">
+                <h3><i class="fa-solid fa-road"></i> Road Guide</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">We use the <b>B.P. Highway</b> for all ground travel. It is a Japan-built masterpiece—short, scenic, and safe.</p>
+                <p style="font-size: 1rem; color: var(--text-muted);">The <b>"Old Route"</b> takes 16 hours and is full of heavy trucks. We avoid this completely to keep you fresh and safe.</p>
+            </div>
+
+        </div>
+
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px;">Distance & Time Log</h3>
+        <div class="djt-table-wrap">
+            <table class="djt-dist-table">
+                <thead>
+                    <tr>
+                        <th>Route Segment</th>
+                        <th>Distance</th>
+                        <th>Method</th>
+                        <th>Travel Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Siliguri to Kakarbhitta</td>
+                        <td>32 KM</td>
+                        <td>Private Car</td>
+                        <td><b>~45 Mins</b></td>
+                    </tr>
+                    <tr>
+                        <td>Bhadrapur to Kathmandu</td>
+                        <td>297 KM</td>
+                        <td>Domestic Air</td>
+                        <td><b>45 Mins</b></td>
+                    </tr>
+                    <tr>
+                        <td>Kathmandu to Pokhara</td>
+                        <td>200 KM</td>
+                        <td>Domestic Air</td>
+                        <td><b>25 Mins</b></td>
+                    </tr>
+                    <tr>
+                        <td>Kakarbhitta to Kathmandu</td>
+                        <td>430 KM</td>
+                        <td>B.P. Highway</td>
+                        <td><b>~10 Hours</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="djt-road-alert">
+            <i class="fa-solid fa-circle-exclamation" style="font-size: 40px;"></i>
+            <div>
+                <h4 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">The Truth about the Road</h4>
+                <p style="font-size: 1.1rem; opacity: 0.9;">While the B.P. Highway is beautiful, it is winding. If you get motion sickness, we recommend taking a light tablet before the drive. <b>This is why we prefer flying—it's 45 mins vs 10 hours of curves.</b></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-places-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-places-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-places-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-places-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-places-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE PLACES GRID */
+    .djt-places-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .djt-place-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .djt-place-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .djt-place-img {
+        height: 300px;
+        background: var(--bg-soft);
+    }
+
+    .djt-place-img img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-place-content {
+        padding: 40px;
+    }
+
+    .djt-place-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-place-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+    }
+
+    /* 4. THE PRO TIP INSET */
+    .djt-place-pro {
+        background: var(--bg-soft);
+        padding: 20px 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-left: 4px solid var(--brand-orange);
+    }
+
+    .djt-place-pro i { color: var(--brand-orange); font-size: 18px; }
+    .djt-place-pro span { font-size: 14px; font-weight: 700; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-places-grid { grid-template-columns: 1fr; }
+        .djt-place-content { padding: 30px; }
+    }
+</style>
+
+<section class="djt-places-wrapper">
+    <div class="djt-places-max">
+        
+        <div class="djt-places-header">
+            <span class="djt-places-kicker">The Map</span>
+            <h2 class="djt-places-title">Important Places.</h2>
+        </div>
+
+        <div class="djt-places-grid">
+            
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Thamel+Market+Lanes" alt="Thamel">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Thamel, Kathmandu</h3>
+                    <p>The main hub for travelers. It is full of small shops, local gear, and the best cafes in the city. It is loud, busy, and the best place to feel the energy of the city.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Best place for evening live music and gear shopping.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Boudhanath+Stupa" alt="Boudhanath">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Boudhanath Stupa</h3>
+                    <p>The massive white dome in the city center. It is a very peaceful place where people walk in circles to pray. The eyes of Buddha look out over the whole area.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Go to the rooftops for coffee and a clear photo of the dome.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Pashupatinath+Aarti" alt="Pashupatinath">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Pashupatinath Temple</h3>
+                    <p>The most sacred Hindu site in Nepal. It sits on the banks of the river. It is a deep and spiritual place where you see the real heart of local faith.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Watch the evening Aarti lights from across the river bank.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Old+Palace+Square" alt="Durbar Square">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Kathmandu Durbar Square</h3>
+                    <p>The old palace area. You will see ancient wood carvings that are hundreds of years old. It is the best place to see how kings once lived in Kathmandu.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Look for the Kumari (Living Goddess) at her window.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Phewa+Lake+View" alt="Phewa Lake">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Phewa Lake, Pokhara</h3>
+                    <p>The soul of Pokhara. A giant, quiet lake with the high mountains in the background. It is much cleaner and slower than the capital city.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Take a wooden boat out early in the morning for zero noise.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Mountain+Ridge+View" alt="Ridge">
+                </div>
+                <div class="djt-place-content">
+                    <h3>The High Ridge</h3>
+                    <p>Our favorite spot for mountain views. From here, you see the "Big Three" peaks right in front of you. It is the most beautiful sunrise you will ever see.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Pro Tip:</b> Wake up 30 mins before sunrise. The "Pink light" is the best.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-fit-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-fit-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-fit-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-fit-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-fit-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE FITNESS CARDS */
+    .djt-fit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .djt-fit-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .djt-fit-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .djt-fit-card i {
+        font-size: 35px;
+        color: var(--brand-orange);
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .djt-fit-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-fit-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE REALITY BOX (Green Shimmer) */
+    .djt-truth-box {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-truth-icon { font-size: 50px; color: var(--brand-orange); }
+    .djt-truth-content h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+    .djt-truth-content p { font-size: 1.2rem; opacity: 0.9; line-height: 1.6; margin: 0; }
+
+    /* 5. TECH STATS */
+    .djt-fit-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-stat-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .djt-stat-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .djt-stat-pill span { font-size: 15px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .djt-fit-grid { grid-template-columns: 1fr 1fr; }
+        .djt-truth-box { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .djt-fit-grid { grid-template-columns: 1fr; }
+        .djt-truth-box { grid-column: span 1; flex-direction: column; text-align: center; }
+        .djt-fit-stats { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-fit-wrapper">
+    <div class="djt-fit-max">
+        
+        <div class="djt-fit-header">
+            <span class="djt-fit-kicker">The Reality Check</span>
+            <h2 class="djt-fit-title">Is this trip for you?</h2>
+        </div>
+
+        <div class="djt-fit-grid">
+            
+            <div class="djt-fit-card">
+                <i class="fa-solid fa-person-walking"></i>
+                <h3>City Walking</h3>
+                <p>Most of the trip is easy. We walk through temples and markets for 2 to 3 hours a day. The ground is mostly flat. If you can walk through <b>Hong Kong Market</b> in Siliguri, you are fine.</p>
+            </div>
+
+            <div class="djt-fit-card">
+                <i class="fa-solid fa-mountain"></i>
+                <h3>The Ridge Hike</h3>
+                <p>Day 05 is the only "hard" day. It is a <b>3-hour uphill walk</b> on a stone path. We take many breaks for tea and photos. It is not a race; we go at your speed.</p>
+            </div>
+
+            <div class="djt-fit-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Age & Health</h3>
+                <p>We have taken guests from <b>12 to 65 years old</b>. You don't need to be an athlete. You just need a healthy heart and knees that can handle a few stairs.</p>
+            </div>
+
+            <div class="djt-truth-box">
+                <div class="djt-truth-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="djt-truth-content">
+                    <h4>The Local Pro Truth</h4>
+                    <p>You will get tired, and your legs might ache a little after the ridge walk. But we handle the heavy bags, and there is always a car nearby for the city parts. <b>It is 80% relax and 20% active.</b></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="djt-fit-stats">
+            <div class="djt-stat-pill">
+                <b>Difficulty</b>
+                <span>Easy to Moderate</span>
+            </div>
+            <div class="djt-stat-pill">
+                <b>Total Walking</b>
+                <span>~5-7 KM / Day</span>
+            </div>
+            <div class="djt-stat-pill">
+                <b>Trek Gear</b>
+                <span>Not Required</span>
+            </div>
+            <div class="djt-stat-pill">
+                <b>Prep Needed</b>
+                <span>Basic Daily Walks</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-doc-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-doc-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-doc-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-doc-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-doc-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE DOCUMENTS GRID */
+    .djt-doc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .djt-doc-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .djt-doc-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .djt-doc-card i {
+        font-size: 28px;
+        color: var(--brand-orange);
+        margin-top: 5px;
+    }
+
+    .djt-doc-info h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 12px;
+    }
+
+    .djt-doc-info p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE ID WARNING BOX (Forest Green Shimmer) */
+    .djt-alert-box {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-alert-icon { font-size: 50px; color: var(--brand-orange); }
+    .djt-alert-txt h4 { font-size: 1.6rem; font-weight: 900; margin-bottom: 10px; }
+    .djt-alert-txt p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin: 0; }
+
+    /* 5. TECH PILLS */
+    .djt-doc-pills {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-doc-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .djt-doc-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .djt-doc-pill span { font-size: 14px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-doc-grid { grid-template-columns: 1fr; }
+        .djt-alert-box { grid-column: span 1; flex-direction: column; text-align: center; }
+        .djt-doc-pills { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-doc-wrapper">
+    <div class="djt-doc-max">
+        
+        <div class="djt-doc-header">
+            <span class="djt-doc-kicker">Border Compliance</span>
+            <h2 class="djt-doc-title">Paperwork Sorted.</h2>
+        </div>
+
+        <div class="djt-doc-grid">
+            
+            <div class="djt-doc-card">
+                <i class="fa-solid fa-passport"></i>
+                <div class="djt-doc-info">
+                    <h3>No Visa Required</h3>
+                    <p>For Indian citizens, there is <b>no visa needed</b> to enter Nepal. You can stay as long as you like for your holiday. We handle the entry forms at the Kakarbhitta border for you.</p>
+                </div>
+            </div>
+
+            <div class="djt-doc-card">
+                <i class="fa-solid fa-image"></i>
+                <div class="djt-doc-info">
+                    <h3>Carry Photos</h3>
+                    <p>Bring <b>04 to 06 passport-size photos</b> with a white background. You will need these for your local SIM card, trekking permits, and some heritage site entry forms.</p>
+                </div>
+            </div>
+
+            <div class="djt-doc-card">
+                <i class="fa-solid fa-file-invoice"></i>
+                <div class="djt-doc-info">
+                    <h3>Original Documents</h3>
+                    <p>Digital copies or photocopies are not enough. You must carry the <b>physical original cards</b> with you. Our team will help you keep them safe during the trip.</p>
+                </div>
+            </div>
+
+            <div class="djt-doc-card">
+                <i class="fa-solid fa-sim-card"></i>
+                <div class="djt-doc-info">
+                    <h3>SIM Registration</h3>
+                    <p>You need your ID copy and one photo to get a local Ncell or Nepal Telecom SIM. We help you get this done in the first 10 minutes after crossing the border.</p>
+                </div>
+            </div>
+
+            <div class="djt-alert-box">
+                <div class="djt-alert-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                <div class="djt-alert-txt">
+                    <h4>The Local Pro Truth: ID Selection</h4>
+                    <p>The **Voter ID Card** or **Passport** are the only IDs accepted at the airport for Indian citizens. **Aadhaar Cards are often rejected at airports.** If you are flying with us, please bring your Original Voter ID or Passport. </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="djt-doc-pills">
+            <div class="djt-doc-pill">
+                <b>Primary ID</b>
+                <span>Voter ID / Passport</span>
+            </div>
+            <div class="djt-doc-pill">
+                <b>Photos Needed</b>
+                <span>4 - 6 Prints</span>
+            </div>
+            <div class="djt-doc-pill">
+                <b>Aadhaar</b>
+                <span>Not Recommended</span>
+            </div>
+            <div class="djt-doc-pill">
+                <b>Visa Fee</b>
+                <span>₹0 (Zero)</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-rev-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-rev-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-rev-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-rev-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-rev-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE REVIEWS BENTO GRID */
+    .djt-rev-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .djt-rev-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .djt-rev-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .djt-rev-stars {
+        color: var(--brand-orange);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .djt-rev-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-style: italic;
+    }
+
+    .djt-rev-user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-top: 1px solid var(--grey-apple);
+        padding-top: 25px;
+    }
+
+    .djt-user-info b {
+        display: block;
+        font-size: 15px;
+        color: var(--text-main);
+        font-weight: 800;
+    }
+
+    .djt-user-info span {
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE TRUST BAR (Green Shimmer) */
+    .djt-trust-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-trust-txt h4 { font-size: 1.6rem; font-weight: 900; margin-bottom: 5px; }
+    .djt-trust-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .djt-rev-grid { grid-template-columns: 1fr 1fr; }
+        .djt-trust-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .djt-rev-grid { grid-template-columns: 1fr; }
+        .djt-trust-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+
+<section class="djt-rev-wrapper">
+    <div class="djt-rev-max">
+        
+        <div class="djt-rev-header">
+            <span class="djt-rev-kicker">Guest Experiences</span>
+            <h2 class="djt-rev-title">Real Stories.</h2>
+        </div>
+
+        <div class="djt-rev-grid">
+            
+            <div class="djt-rev-card">
+                <div>
+                    <div class="djt-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="djt-rev-text">"The best part was the border handling. We didn't have to wait or talk to anyone. The flight from Bhadrapur saved us a lot of energy. Highly recommended for families from Siliguri."</p>
+                </div>
+                <div class="djt-rev-user">
+                    <div class="djt-user-info">
+                        <b>Rahul Sharma</b>
+                        <span>Travelled from Siliguri</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-rev-card">
+                <div>
+                    <div class="djt-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="djt-rev-text">"I was worried about the walking, but the ridge walk was very doable. The view of the mountains from the top was 10/10. Simple, honest, and very well managed."</p>
+                </div>
+                <div class="djt-rev-user">
+                    <div class="djt-user-info">
+                        <b>Anjali Gupta</b>
+                        <span>Solo Traveler</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-rev-card">
+                <div>
+                    <div class="djt-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="djt-rev-text">"They know the best food spots. The backlane momos and the rooftop coffee in Kathmandu were highlights. No fake promises, just a solid trip."</p>
+                </div>
+                <div class="djt-rev-user">
+                    <div class="djt-user-info">
+                        <b>Vikram Singh</b>
+                        <span>Food & Photography Trip</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-trust-bar">
+                <div class="djt-trust-txt">
+                    <h4>Why guests trust us.</h4>
+                    <p>We don't hide the truth. We show you the real Nepal, manage every document, and stay with you 24/7.</p>
+                </div>
+                <div style="font-size: 30px;"><i class="fa-solid fa-handshake-angle"></i></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-faq-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-faq-max {
+        max-width: 900px; /* Narrower for better reading */
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-faq-header {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .djt-faq-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+    }
+
+    /* 3. THE ACCORDION UX */
+    .djt-faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .djt-faq-item {
+        border: 1px solid var(--grey-apple);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .djt-faq-item:hover {
+        border-color: var(--brand-green);
+    }
+
+    /* The Question Trigger */
+    .djt-faq-trigger {
+        width: 100%;
+        padding: 30px;
+        background: #ffffff;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .djt-faq-trigger span {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-main);
+        padding-right: 20px;
+    }
+
+    .djt-faq-trigger i {
+        color: var(--brand-orange);
+        transition: transform 0.3s ease;
+    }
+
+    /* The Answer Box */
+    .djt-faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--bg-soft);
+    }
+
+    .djt-faq-inner {
+        padding: 0 30px 30px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .djt-faq-inner b { color: var(--brand-green); font-weight: 800; }
+
+    /* Open State */
+    .djt-faq-item.active .djt-faq-content {
+        max-height: 300px; /* Adjust based on content length */
+    }
+
+    .djt-faq-item.active .djt-faq-trigger i {
+        transform: rotate(180deg);
+    }
+
+    /* 4. THE CALL TO ACTION */
+    .djt-faq-footer {
+        margin-top: 60px;
+        text-align: center;
+        padding: 40px;
+        background: var(--bg-soft);
+        border-radius: 30px;
+    }
+
+    .djt-faq-footer p { font-weight: 700; margin-bottom: 20px; }
+    .djt-faq-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 15px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-block;
+        transition: var(--transition);
+    }
+
+    .djt-faq-btn:hover { transform: scale(1.05); background: var(--brand-green); }
+
+</style>
+
+<section class="djt-faq-wrapper">
+    <div class="djt-faq-max">
+        
+        <div class="djt-faq-header">
+            <span style="color:var(--brand-orange); font-weight:900; letter-spacing:5px; text-transform:uppercase; font-size:12px;">Got Questions?</span>
+            <h2 class="djt-faq-title">The Nepal FAQ.</h2>
+        </div>
+
+        <div class="djt-faq-container">
+            
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Do Indian citizens need a visa for Nepal?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>No.</b> Indian citizens can enter Nepal freely. You just need a valid ID to cross the border.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Which ID card is best for this trip?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        Always carry your <b>Original Voter ID</b> or <b>Passport</b>. Important: Aadhaar Cards are often rejected at airports in Nepal. Don't risk it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Can I use Indian Currency (INR) in Nepal?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Yes.</b> But ₹100 notes are the best to carry. While ₹500 notes are legal in 2026, some small shops might still hesitate to take them.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Does UPI (G-Pay / PhonePe) work there?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Yes!</b> UPI is now active in Nepal. You can scan QR codes in most shops in Kathmandu and Pokhara just like in Siliguri.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>How do I get a local SIM card?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        We help you get one right after crossing the border. You just need <b>one photo and your ID copy</b>. It takes 10 minutes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Is the road from Siliguri safe?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Very safe.</b> We use the B.P. Highway (built by Japan), which is much better and safer than the old truck routes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Why should I fly instead of taking the bus?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        A bus takes <b>15 hours</b> of bumpy driving. A flight takes <b>45 minutes</b>. We value your time and comfort, so we always recommend flying.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>When is the best time for mountain views?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Spring (March-May)</b> and <b>Autumn (October-November)</b> are the best. The skies are blue and the peaks are crystal clear.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Is Nepal safe for female or solo travelers?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Extremely safe.</b> Nepal is known for being one of the most respectful and peaceful countries for travelers in South Asia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Do I need special gear for the ridge walk?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>No.</b> Just a good pair of walking shoes and a jacket. We handle the heavy bags and permits; you just enjoy the view.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>Can I get Pure Veg or Jain food?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        <b>Easily.</b> Most restaurants in Kathmandu and Pokhara have great vegetarian options. We can pre-arrange Jain meals if you tell us in advance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-faq-item">
+                <button class="djt-faq-trigger">
+                    <span>How do I book my spot?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="djt-faq-content">
+                    <div class="djt-faq-inner">
+                        Just click the <b>WhatsApp button</b> below. We will check the dates and give you the final price in 5 minutes.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="djt-faq-footer">
+            <p>Still have a different question?</p>
+            <a href="https://wa.me/YOURNUMBER" class="djt-faq-btn">Ask on WhatsApp</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Simple Toggle Logic
+    const faqItems = document.querySelectorAll('.djt-faq-item');
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.djt-faq-trigger');
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            // Close all others
+            faqItems.forEach(i => i.classList.remove('active'));
+            // Toggle current
+            if (!isActive) item.classList.add('active');
+        });
+    });
+</script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-safe-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-safe-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-safe-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-safe-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-safe-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE SAFETY GRID */
+    .djt-safe-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .djt-safe-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .djt-safe-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .djt-safe-card i {
+        font-size: 32px;
+        color: var(--brand-orange);
+    }
+
+    .djt-safe-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin: 0;
+    }
+
+    .djt-safe-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE EMERGENCY BAR (Forest Green Shimmer) */
+    .djt-emergency-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-em-txt h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+    .djt-em-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; max-width: 750px; }
+
+    .djt-sos-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 18px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: var(--transition);
+    }
+
+    .djt-sos-btn:hover { background: #fff; color: var(--text-main); transform: scale(1.05); }
+
+    /* 5. TECH STATS */
+    .djt-safe-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .djt-safe-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .djt-safe-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .djt-safe-pill span { font-size: 14px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .djt-safe-grid { grid-template-columns: 1fr 1fr; }
+        .djt-emergency-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .djt-safe-grid { grid-template-columns: 1fr; }
+        .djt-emergency-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+        .djt-safe-stats { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="djt-safe-wrapper">
+    <div class="djt-safe-max">
+        
+        <div class="djt-safe-header">
+            <span class="djt-safe-kicker">Peace of Mind</span>
+            <h2 class="djt-safe-title">Your Safety is <br>our Priority.</h2>
+        </div>
+
+        <div class="djt-safe-grid">
+            
+            <div class="djt-safe-card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Local Support</h3>
+                <p>You are never alone. Whether it is 2:00 AM or midday, our team in Siliguri and Kathmandu is one call away. We handle everything from lost bags to missed flights.</p>
+            </div>
+
+            <div class="djt-safe-card">
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>Medical Network</h3>
+                <p>We only stay in areas with quick access to the best hospitals in Kathmandu and Pokhara. Our guides carry basic first-aid and know exactly who to call in an emergency.</p>
+            </div>
+
+            <div class="djt-safe-card">
+                <i class="fa-solid fa-glass-water"></i>
+                <h3>Hygienic Standards</h3>
+                <p>Most "tourist stomach" issues come from bad water. We only provide sealed mineral water and recommend restaurants that we have personally tested for cleanliness.</p>
+            </div>
+
+            <div class="djt-emergency-bar">
+                <div class="djt-em-txt">
+                    <h4>The Local Pro Network</h4>
+                    <p>We have direct contacts with local authorities and flight operators. If a mountain flight is delayed or a road is blocked, we get the news first and fix your schedule instantly.</p>
+                </div>
+                <a href="https://wa.me/YOURNUMBER" class="djt-sos-btn">Direct SOS Line</a>
+            </div>
+
+        </div>
+
+        <div class="djt-safe-stats">
+            <div class="djt-safe-pill">
+                <b>Support</b>
+                <span>24/7 On-Call</span>
+            </div>
+            <div class="djt-safe-pill">
+                <b>Insurance</b>
+                <span>Highly Advised</span>
+            </div>
+            <div class="djt-safe-pill">
+                <b>First Aid</b>
+                <span>Kit with Guide</span>
+            </div>
+            <div class="djt-safe-pill">
+                <b>Risk Level</b>
+                <span>Low / Managed</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-book-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-book-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-book-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-book-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-book-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE STEP-BY-STEP GRID */
+    .djt-book-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .djt-book-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .djt-book-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .djt-step-num {
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .djt-book-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin: 0;
+    }
+
+    .djt-book-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE CALL TO ACTION BAR (Green Shimmer) */
+    .djt-action-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .djt-act-txt h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+    .djt-act-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    .djt-book-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 20px 45px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: var(--transition);
+        white-space: nowrap;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .djt-book-btn:hover { background: #fff; color: var(--text-main); transform: scale(1.05); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .djt-book-grid { grid-template-columns: 1fr 1fr; }
+        .djt-action-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .djt-book-grid { grid-template-columns: 1fr; }
+        .djt-action-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+    }
+</style>
+
+<section class="djt-book-wrapper">
+    <div class="djt-book-max">
+        
+        <div class="djt-book-header">
+            <span class="djt-book-kicker">Simple & Fast</span>
+            <h2 class="djt-book-title">How to lock your spot.</h2>
+        </div>
+
+        <div class="djt-book-grid">
+            
+            <div class="djt-book-card">
+                <span class="djt-step-num">Step 01</span>
+                <h3>Initial Chat</h3>
+                <p>Click the WhatsApp button to tell us your travel dates and how many people are coming. We check flight and hotel availability for you in minutes.</p>
+            </div>
+
+            <div class="djt-book-card">
+                <span class="djt-step-num">Step 02</span>
+                <h3>Send Documents</h3>
+                <p>Send us clear photos of your Voter IDs or Passports via WhatsApp. We need these to book your Nepal domestic flights and permits early.</p>
+            </div>
+
+            <div class="djt-book-card">
+                <span class="djt-step-num">Step 03</span>
+                <h3>Small Deposit</h3>
+                <p>Pay a small token amount to confirm your spot. This money goes directly toward locking your flight tickets and hotel rooms.</p>
+            </div>
+
+            <div class="djt-book-card">
+                <span class="djt-step-num">Step 04</span>
+                <h3>Get Confirmation</h3>
+                <p>Within 24 hours, we send you your flight tickets and tour confirmation voucher. Your seat is now 100% locked.</p>
+            </div>
+
+            <div class="djt-book-card">
+                <span class="djt-step-num">Step 05</span>
+                <h3>The Final Meeting</h3>
+                <p>We meet in Siliguri on Day 01 for the pickup. You pay the remaining balance only when the trip starts. Transparent and honest.</p>
+            </div>
+
+            <div class="djt-action-bar">
+                <div class="djt-act-txt">
+                    <h4>Ready to start?</h4>
+                    <p>We usually have spots for only 2 groups per week. Message us now to check your dates.</p>
+                </div>
+                <a href="https://wa.me/YOURNUMBER" class="djt-book-btn">Check Availability</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-two-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-two-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-two-header {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .djt-two-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-two-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE PRICE BOX (Green Shimmer) */
+    .djt-two-box {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 80px 40px;
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .djt-two-amount {
+        font-size: clamp(3.5rem, 10vw, 7rem);
+        font-weight: 900;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        letter-spacing: -4px;
+        margin-bottom: 10px;
+    }
+
+    .djt-two-sub {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--brand-green);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    /* 4. THE 2X INCLUSION GRID */
+    .djt-grid-2x {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .djt-card-2x {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .djt-card-2x h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 30px;
+    }
+
+    .djt-list-2x {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .djt-list-2x li {
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-bottom: 1px solid var(--grey-apple);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .djt-list-2x li:last-child { border: none; }
+    .djt-list-2x li i { color: var(--brand-orange); font-size: 18px; }
+    .djt-list-2x li b { color: var(--text-main); font-weight: 800; }
+
+    /* 5. THE ADDED VALUE BAR */
+    .djt-value-bar {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .djt-value-bar h4 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+    .djt-value-bar p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* CTA */
+    .djt-cta-2x { text-align: center; }
+    .djt-btn-2x {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-block;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .djt-btn-2x:hover { background: var(--brand-green); transform: scale(1.05); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-grid-2x { grid-template-columns: 1fr; }
+        .djt-value-bar { flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+
+<section class="djt-two-wrapper">
+    <div class="djt-two-max">
+        
+        <div class="djt-two-header">
+            <span class="djt-two-kicker">Premium Value</span>
+            <h2 class="djt-two-title">The 2X Balanced Tier.</h2>
+        </div>
+
+        <div class="djt-two-box">
+            <div class="djt-two-amount">₹ 1,09,998</div>
+            <div class="djt-two-sub">Half-Board & All Entries Included</div>
+        </div>
+
+        <div class="djt-grid-2x">
+            
+            <div class="djt-card-2x">
+                <h3>Upgraded Inclusions</h3>
+                <ul class="djt-list-2x">
+                    <li><i class="fa-solid fa-cloud-moon"></i> <b>Dinner Included:</b> All 7 Nights</li>
+                    <li><i class="fa-solid fa-mountain-sun"></i> <b>Premium Rooms:</b> Best available views</li>
+                    <li><i class="fa-solid fa-ticket"></i> <b>All Entry Fees:</b> Temples & Squares</li>
+                    <li><i class="fa-solid fa-car-side"></i> <b>Private SUV:</b> All city sightseeing</li>
+                    <li><i class="fa-solid fa-sim-card"></i> <b>Nepal SIM Card:</b> With 10GB Data</li>
+                </ul>
+            </div>
+
+            <div class="djt-card-2x">
+                <h3>The Core Service</h3>
+                <ul class="djt-list-2x">
+                    <li><i class="fa-solid fa-plane"></i> <b>All 4 Flights:</b> KTM & Pokhara</li>
+                    <li><i class="fa-solid fa-shuttle-van"></i> <b>Siliguri Pickup:</b> Door-to-door</li>
+                    <li><i class="fa-solid fa-person-hiking"></i> <b>Trek Support:</b> All Ridge permits</li>
+                    <li><i class="fa-solid fa-passport"></i> <b>Border Support:</b> Paperwork handled</li>
+                    <li><i class="fa-solid fa-headset"></i> <b>24/7 Support:</b> On-call expert</li>
+                </ul>
+            </div>
+
+            <div class="djt-value-bar">
+                <div>
+                    <h4>The 2X Promise</h4>
+                    <p>You only need to carry cash for Lunch and Shopping. We handle the rest.</p>
+                </div>
+                <div style="font-size: 35px;"><i class="fa-solid fa-scale-balanced"></i></div>
+            </div>
+
+        </div>
+
+        <div class="djt-cta-2x">
+            <a href="https://wa.me/YOURNUMBER" class="djt-btn-2x">Book the 2X Tier</a>
+            <p style="margin-top: 25px; font-size: 14px; color: var(--text-muted); font-weight: 700;">*Drinks/Alcohol not included.</p>
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-deposit-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-deposit-max {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* 2. THE HEADER */
+    .djt-dep-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .djt-dep-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 40px;
+    }
+
+    /* 3. THE DEPOSIT BOX (Visual Anchor) */
+    .djt-dep-box {
+        background: var(--bg-soft);
+        border: 2px solid var(--brand-green);
+        border-radius: 50px;
+        padding: 80px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+    }
+
+    .djt-dep-amount-area { text-align: left; }
+    
+    .djt-dep-big-num {
+        font-size: clamp(4rem, 8vw, 6rem);
+        font-weight: 900;
+        color: var(--text-main);
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .djt-dep-label {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--brand-green);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* 4. THE STEP LIST */
+    .djt-dep-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .djt-dep-list li {
+        display: flex;
+        gap: 15px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--grey-apple);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .djt-dep-list li:last-child { border: none; }
+    .djt-dep-list li i { color: var(--brand-orange); margin-top: 5px; }
+    .djt-dep-list li b { color: var(--text-main); }
+
+    /* 5. THE CTA */
+    .djt-dep-footer {
+        grid-column: span 2;
+        margin-top: 20px;
+    }
+
+    .djt-pay-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .djt-pay-btn:hover {
+        background: var(--brand-green);
+        transform: scale(1.05);
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-dep-box { grid-template-columns: 1fr; padding: 60px 30px; text-align: center; }
+        .djt-dep-amount-area { text-align: center; }
+        .djt-dep-footer { grid-column: span 1; }
+        .djt-pay-btn { width: 100%; justify-content: center; }
+    }
+</style>
+
+<section class="djt-deposit-wrapper">
+    <div class="djt-deposit-max">
+        
+        <span class="djt-dep-kicker">Limited Spots</span>
+        <h2 class="djt-dep-title">Lock your dates <br>with a token.</h2>
+
+        <div class="djt-dep-box">
+            
+            <div class="djt-dep-amount-area">
+                <div class="djt-dep-big-num">₹ 10,000</div>
+                <div class="djt-dep-label">Initial Deposit</div>
+                <p style="margin-top: 20px; color: var(--text-muted); line-height: 1.5;">This small token amount is used to **instantly book your flight tickets** and lock your hotel rooms before prices change.</p>
+            </div>
+
+            <ul class="djt-dep-list">
+                <li><i class="fa-solid fa-plane-circle-check"></i> <div><b>Flight Lockdown:</b> We book your KTM flights immediately.</div></li>
+                <li><i class="fa-solid fa-hotel"></i> <div><b>Hotel Priority:</b> Your lakeside view is reserved.</div></li>
+                <li><i class="fa-solid fa-hand-holding-dollar"></i> <div><b>Pay Later:</b> Pay the remaining balance in Siliguri.</div></li>
+                <li><i class="fa-solid fa-shield-heart"></i> <div><b>100% Secure:</b> Professional receipt sent instantly.</div></li>
+            </ul>
+
+            <div class="djt-dep-footer">
+                <a href="https://wa.me/YOURNUMBER?text=I%20want%20to%20pay%2010000%20and%20book%20my%20Nepal%20trip" class="djt-pay-btn">
+                    Pay ₹10,000 & Book
+                </a>
+                <p style="margin-top: 25px; font-size: 13px; font-weight: 700; color: var(--text-muted);">
+                    *Remaining balance to be paid on Day 01 in Siliguri.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-date-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-date-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-date-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-date-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-date-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+    }
+
+    /* 3. THE DATES GRID (6-PAX FOCUS) */
+    .djt-date-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .djt-date-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .djt-date-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* THE CALENDAR LIST */
+    .djt-cal-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px solid var(--grey-apple);
+    }
+
+    .djt-cal-row:last-child { border: none; }
+
+    .djt-cal-info b { font-size: 1.2rem; display: block; color: var(--text-main); }
+    .djt-cal-info span { font-size: 0.9rem; color: var(--text-muted); font-weight: 700; }
+
+    .djt-seat-badge {
+        background: var(--bg-soft);
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .djt-seat-badge.filling { color: var(--brand-orange); border: 1px solid var(--brand-orange); }
+    .djt-seat-badge.open { color: var(--brand-green); border: 1px solid var(--brand-green); }
+
+    /* 4. THE CANCELLATION BOX */
+    .djt-cancel-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .djt-cancel-info li {
+        padding: 15px 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        display: flex;
+        gap: 15px;
+    }
+
+    .djt-cancel-info li i { color: var(--brand-orange); margin-top: 5px; }
+    .djt-cancel-info b { color: var(--text-main); font-weight: 800; }
+
+    /* 5. THE SCARCITY BAR (Green Shimmer) */
+    .djt-scarcity-bar {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .djt-scar-txt h4 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+    .djt-scar-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-date-grid { grid-template-columns: 1fr; }
+        .djt-scarcity-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+
+<section class="djt-date-wrapper">
+    <div class="djt-date-max">
+        
+        <div class="djt-date-header">
+            <span class="djt-date-kicker">Strictly Small Groups</span>
+            <h2 class="djt-date-title">Upcoming Departures.</h2>
+        </div>
+
+        <div class="djt-date-grid">
+            
+            <div class="djt-date-card">
+                <h3><i class="fa-solid fa-calendar-days"></i> 2026 Schedule</h3>
+                
+                <div class="djt-cal-row">
+                    <div class="djt-cal-info">
+                        <b>April 15 — April 22</b>
+                        <span>Peak Spring / Rhododendrons</span>
+                    </div>
+                    <div class="djt-seat-badge filling">Only 2 Seats Left</div>
+                </div>
+
+                <div class="djt-cal-row">
+                    <div class="djt-cal-info">
+                        <b>May 05 — May 12</b>
+                        <span>Warm Days / Clear Ridge View</span>
+                    </div>
+                    <div class="djt-seat-badge open">4 Seats Open</div>
+                </div>
+
+                <div class="djt-cal-row">
+                    <div class="djt-cal-info">
+                        <b>October 10 — October 17</b>
+                        <span>10/10 Mountain Visibility</span>
+                    </div>
+                    <div class="djt-seat-badge open">6 Seats Open</div>
+                </div>
+
+                <div class="djt-cal-row">
+                    <div class="djt-cal-info">
+                        <b>November 02 — November 09</b>
+                        <span>Autumn Gold / Post-Festival</span>
+                    </div>
+                    <div class="djt-seat-badge open">6 Seats Open</div>
+                </div>
+            </div>
+
+            <div class="djt-date-card" style="background: var(--bg-soft);">
+                <h3><i class="fa-solid fa-handshake-slash"></i> Fair Policy</h3>
+                <ul class="djt-cancel-info">
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Deposit:</b> The ₹10,000 token is primarily used to book your flights. If flights are booked, this becomes non-refundable as per airline rules.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Change of Date:</b> You can move your trip to a later date for free if you tell us <b>30 days</b> before departure.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Last Minute:</b> Cancellations within 7 days of the trip are non-refundable as hotels are already locked.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Our Promise:</b> If we cancel the trip for any reason, you get a <b>100% Instant Refund</b>. No questions asked.</div></li>
+                </ul>
+            </div>
+
+            <div class="djt-scarcity-bar">
+                <div class="djt-scar-txt">
+                    <h4>Why only 6 people?</h4>
+                    <p>Small groups mean better cars, faster border crossings, and a more private experience at the ridge. We don't do "bus tours."</p>
+                </div>
+                <div style="font-size: 35px;"><i class="fa-solid fa-people-group"></i></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-fam-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-fam-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE CONTENT GRID */
+    .djt-fam-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    /* 3. TEXT SIDE */
+    .djt-fam-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .djt-fam-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 30px;
+    }
+
+    .djt-fam-p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+    }
+
+    /* 4. THE BENTO BENEFITS */
+    .djt-fam-benefits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .djt-benefit-card {
+        background: var(--bg-soft);
+        padding: 30px;
+        border-radius: 30px;
+        border: 1px solid var(--grey-apple);
+        transition: var(--transition);
+    }
+
+    .djt-benefit-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        transform: translateY(-5px);
+    }
+
+    .djt-benefit-card i {
+        font-size: 24px;
+        color: var(--brand-orange);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .djt-benefit-card h4 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 10px;
+    }
+
+    .djt-benefit-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    /* 5. THE FINAL CTA BOX (Green Shimmer) */
+    .djt-final-cta-box {
+        background: var(--green-shimmer);
+        border-radius: 50px;
+        padding: 80px 40px;
+        text-align: center;
+        color: #fff;
+        grid-column: span 2;
+        margin-top: 40px;
+    }
+
+    .djt-final-cta-box h3 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .djt-final-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .djt-final-btn:hover {
+        background: #fff;
+        color: var(--text-main);
+        transform: scale(1.05);
+    }
+
+    /* Mobile */
+    @media (max-width: 1000px) {
+        .djt-fam-grid { grid-template-columns: 1fr; }
+        .djt-final-cta-box { grid-column: span 1; padding: 60px 30px; }
+        .djt-fam-benefits { grid-template-columns: 1fr; }
+    }
+</style>
+
+<section class="djt-fam-wrapper">
+    <div class="djt-fam-max">
+        
+        <div class="djt-fam-grid">
+            
+            <div class="djt-fam-text">
+                <span class="djt-fam-kicker">Exclusively Yours</span>
+                <h2 class="djt-fam-title">Travel with your <br>own circle.</h2>
+                <p class="djt-fam-p">Why share your journey with strangers? If you are a group of 4 to 6 people, you get the entire SUV, the guide, and the schedule all to yourselves. Total privacy. Total freedom.</p>
+                
+                <div class="djt-fam-benefits">
+                    <div class="djt-benefit-card">
+                        <i class="fa-solid fa-users-slash"></i>
+                        <h4>Zero Strangers</h4>
+                        <p>No waiting for other people. The car only moves when you are ready.</p>
+                    </div>
+                    <div class="djt-benefit-card">
+                        <i class="fa-solid fa-child-reaching"></i>
+                        <h4>Family Pace</h4>
+                        <p>Kid-friendly and elder-friendly. We adjust the walking speed for your group.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-fam-visual">
+                <div class="djt-benefit-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 50px;">
+                    <i class="fa-solid fa-house-chimney-user" style="font-size: 50px;"></i>
+                    <h3 style="font-family: var(--font-heading); font-size: 2rem; margin: 20px 0; color: var(--brand-green);">Home-to-Home</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-muted);">We pick your family up directly from your doorstep in Siliguri. No lugging bags to a bus stand or meeting point. The trip starts at your front gate.</p>
+                </div>
+            </div>
+
+            <div class="djt-final-cta-box">
+                <h3>Ready to lock your private dates?</h3>
+                <p style="margin-bottom: 40px; font-size: 1.2rem; opacity: 0.9;">Message us now to see if your preferred dates.</p>
+                
+                <a href="https://wa.me/YOURNUMBER?text=I%20want%20to%20book%20a%20private%20group%20trip%20for%20my%20family" class="djt-final-btn">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i>
+                    Start Your Family Trip
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    
+</section>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+    /* 1. THE NAV CONTAINER */
+    .djt-nav-aside {
+        position: fixed;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 2. DESKTOP LINKS (Vertical Strip) */
+    .djt-nav-strip {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        padding: 20px 12px;
+        border-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    .djt-nav-link {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .djt-nav-link:hover {
+        background: var(--bg-soft);
+        color: var(--brand-orange);
+    }
+
+    /* Tooltip Label (Desktop Only) */
+    .djt-nav-link::after {
+        content: attr(data-label);
+        position: absolute;
+        left: 55px;
+        background: var(--text-main);
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .djt-nav-link:hover::after {
+        opacity: 1;
+        visibility: visible;
+        left: 60px;
+    }
+
+    /* 3. THE MOBILE TOGGLE BUTTON (Hidden on Desktop) */
+    .djt-mobile-toggle {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 65px;
+        height: 65px;
+        background: var(--brand-green);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        z-index: 10001;
+        box-shadow: 0 10px 30px rgba(27, 51, 45, 0.3);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    /* 4. MOBILE OVERLAY MENU */
+    .djt-mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .djt-mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .djt-mobile-overlay a {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--text-main);
+        text-decoration: none;
+        letter-spacing: -1px;
+    }
+
+    .djt-mobile-overlay a span {
+        color: var(--brand-orange);
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    /* 5. RESPONSIVE LOGIC */
+    @media (max-width: 1024px) {
+        .djt-nav-aside { display: none; } /* Hide Desktop Sidebar */
+        .djt-mobile-toggle { display: flex; } /* Show Mobile Button */
+    }
+</style>
+
+<aside class="djt-nav-aside">
+    <div class="djt-nav-strip">
+        <a href="#day01" class="djt-nav-link" data-label="Day 01"><i class="fa-solid fa-map-pin"></i></a>
+        <a href="#day05" class="djt-nav-link" data-label="The Hike"><i class="fa-solid fa-mountain-sun"></i></a>
+        <a href="#pricing" class="djt-nav-link" data-label="Pricing"><i class="fa-solid fa-indian-rupee-sign"></i></a>
+        <a href="#faq" class="djt-nav-link" data-label="FAQ"><i class="fa-solid fa-circle-question"></i></a>
+        <a href="#book" class="djt-nav-link" data-label="Book Now" style="color:var(--brand-orange);"><i class="fa-solid fa-calendar-check"></i></a>
+    </div>
+</aside>
+
+<button class="djt-mobile-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars-staggered" id="menuIcon"></i>
+</button>
+
+<div class="djt-mobile-overlay" id="mobileMenu">
+    <a href="#day01" onclick="toggleMenu()"><span>01</span> Itinerary</a>
+    <a href="#places" onclick="toggleMenu()"><span>02</span> Places</a>
+    <a href="#pricing" onclick="toggleMenu()"><span>03</span> Pricing</a>
+    <a href="#faq" onclick="toggleMenu()"><span>04</span> FAQ</a>
+    <a href="#book" onclick="toggleMenu()" style="color: var(--brand-orange);"><span>05</span> Book Now</a>
+    
+    <div style="margin-top: 40px; text-align: center;">
+        <p style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">Small Groups Only</p>
+        <p style="font-size: 14px; font-weight: 900; color: var(--brand-green);">6 PAX MAX</p>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const icon = document.getElementById('menuIcon');
+        
+        menu.classList.toggle('active');
+        
+        if(menu.classList.contains('active')) {
+            icon.classList.remove('fa-bars-staggered');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars-staggered');
+        }
+    }
+</script>
 {% endblock body %}
     
 
