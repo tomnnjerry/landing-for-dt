@@ -10,7 +10,7 @@
 {% endblock css %}
 {% block body %}
 
-<section class="focus-hero manish">
+<section class="focus-hero pt-0 mt-0">
     <div class="focus-count">02</div>
 
     <div class="focus-container">
@@ -20,29 +20,29 @@
             <h1 class="focus-title">Built for <span>the Few</span></h1>
             
             <p class="focus-narrative">
-                Most travel agencies offer a hundred paths. <b>We currently only offer two.</b> 
+                Most agencies offer a hundred paths. <b>We currently only offer two.</b> 
                 <br><br>
                 These are our baselines. Every other detail of your journey is custom-built after we speak. We prefer to do two things perfectly than ten things adequately.
             </p>
 
             <div class="focus-cta-group">
-                <a href="#contact" class="contact-command-btn">Contact Our Hosts</a>
-                <span class="focus-note">The real experience begins with a dialogue.</span>
+                <a href="#contact" class="contact-command-btn">Contact our Hosts</a>
+                <span class="focus-note">The real experience begins with a dialogue</span>
             </div>
         </div>
 
         <div class="focus-frame" style="border-radius: 20px;">
-            <img src="https://placehold.co/1000x1500/000/fff?text=Unmapped+Focus" alt="Mountain Focus">
+            <img src="{% static '18.png' %}" alt="Mountain Focus">
         </div>
 
     </div>
 </section>
 
-<section class="pillars-section">
+<section class="pillars-section manish">
     
     <div class="pillar p-dark">
-        <span class="p-count">Archive // 01</span>
-        <h2 class="p-title">The Nepal <span>Odyssey.</span></h2>
+        <span class="p-count">Group Tour // 01</span>
+        <h2 class="p-title">The Nepal <span>Odyssey</span></h2>
         
         <div class="p-specs">
             <div class="spec-item">
@@ -59,18 +59,18 @@
             </div>
             <div class="spec-item">
                 <span class="spec-label">Lead Host</span>
-                <span class="spec-value">Manish Giri</span>
+                <span class="spec-value">Deepika Gyawali</span>
             </div>
         </div>
 
         <a href="/itineraries/nepal-tour/" class="p-btn">
-            Read Archive <i class="fa-solid fa-arrow-right"></i>
+            Check The Itinerary <i class="fa-solid fa-arrow-right"></i>
         </a>
     </div>
 
     <div class="pillar p-light">
-        <span class="p-count">Archive // 02</span>
-        <h2 class="p-title">The Darjeeling <span>Saga.</span></h2>
+        <span class="p-count">Group Tour // 02</span>
+        <h2 class="p-title">The Darjeeling <span>Saga</span></h2>
         
         <div class="p-specs">
             <div class="spec-item">
@@ -87,19 +87,19 @@
             </div>
             <div class="spec-item">
                 <span class="spec-label">Lead Host</span>
-                <span class="spec-value">Deepika G.</span>
+                <span class="spec-value">Daiyan Huda Khan</span>
             </div>
         </div>
 
         <a href="/itineraries/darjeeling-tour/" class="p-btn">
-            Read Archive <i class="fa-solid fa-arrow-right"></i>
+            Check The Itinerary <i class="fa-solid fa-arrow-right"></i>
         </a>
     </div>
 
 </section>
 
 
-<section class="m-section">
+<section class="m-section manish">
     <div class="m-container">
         
         <div class="m-grid">
@@ -179,12 +179,12 @@
 
 
 
-<section class="r-section">
+<section class="r-section manish">
     <div class="r-container">
         
         <div class="r-header">
-            <span class="r-kicker">Social Intelligence</span>
-            <h2 class="r-title">The Sovereign <span>Verdict.</span></h2>
+            <span class="r-kicker">Customer Feedback</span>
+            <h2 class="r-title">Hear about <span>The Hives</span></h2>
         </div>
 
         <div class="r-grid">
@@ -255,18 +255,18 @@
 </section>
 
 
-<section class="dest-section">
+<section class="dest-section manish">
     <div class="dest-container">
         
         <div class="dest-header">
-            <span class="dest-kicker">Territory Command</span>
-            <h2 class="dest-title">The Map of <span>Our Expertise.</span></h2>
+            <span class="dest-kicker">Destinations</span>
+            <h2 class="dest-title">The Map of <br> <span>Our Expertise</span></h2>
         </div>
 
         <div class="dest-grid">
             
             <div class="dest-card d-large" onclick="openQuote('Nepal Territory')">
-                <img src="https://placehold.co/1200x1200/000/fff?text=The+Nepal+Odyssey" alt="Nepal">
+                <img src="{% static '18/22.png' %}" alt="Nepal">
                 <div class="d-content">
                     <span class="d-label">The High Odyssey</span>
                     <h3 class="d-name">Nepal</h3>
@@ -278,7 +278,7 @@
             </div>
 
             <div class="dest-card d-tall" onclick="openQuote('Darjeeling Territory')">
-                <img src="https://placehold.co/600x1200/111/fff?text=Darjeeling+Heritage" alt="Darjeeling">
+                <img src="{% static '18/23.png' %}" alt="Darjeeling">
                 <div class="d-content">
                     <span class="d-label">The Heritage Saga</span>
                     <h3 class="d-name">Darjeeling</h3>
@@ -290,7 +290,7 @@
             </div>
 
             <div class="dest-card" onclick="openQuote('Meghalaya Territory')">
-                <img src="https://placehold.co/600x600/222/fff?text=Meghalaya+Clouds" alt="Meghalaya">
+                <img src="{% static '18/24.png' %}" alt="Meghalaya">
                 <div class="d-content">
                     <span class="d-label">The Cloud Kingdom</span>
                     <h3 class="d-name">Meghalaya</h3>
@@ -301,7 +301,7 @@
             </div>
 
             <div class="dest-card" onclick="openQuote('Assam Territory')">
-                <img src="https://placehold.co/600x600/333/fff?text=Assam+Wilds" alt="Assam">
+                <img src="{% static '18/25.png' %}" alt="Assam">
                 <div class="d-content">
                     <span class="d-label">The Wild East</span>
                     <h3 class="d-name">Assam</h3>
@@ -315,7 +315,7 @@
 
         <div style="margin-top: 80px; text-align: center;">
             <p style="font-size: 1.2rem; color: #86868b; max-width: 600px; margin: 0 auto 40px;">
-                While we only release **02 baseline itineraries** per month, we manage custom expeditions across all four territories for those who seek the unmapped.
+                While we only release <b>02 baseline itineraries</b> per month, we manage custom expeditions across all four territories for those who seek the unmapped
             </p>
             <a href="javascript:void(0)" onclick="openQuote('Custom Territory Request')" style="color: var(--d-fire); text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; font-size: 14px;">
                 Request Custom Command <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>

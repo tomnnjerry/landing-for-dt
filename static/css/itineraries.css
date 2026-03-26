@@ -10,7 +10,7 @@
 
     .focus-hero {
         background: var(--arch-white);
-        padding: 220px 8% 120px;
+        padding: 80px 8% 120px;
         font-family: 'Inter', sans-serif;
         color: var(--arch-black);
         position: relative;
