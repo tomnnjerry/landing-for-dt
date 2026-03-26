@@ -418,11 +418,11 @@
 <nav class="v-nav" id="mainNav">
     <a href="/" class="v-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
     <img src="{% static 'dtlogo.png' %}" 
-         style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" 
+         style="width: 62px; height: 62px;border: solid 1px  #cfd6d4;padding: 2px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" 
          alt="Logo" />
     
     <span style="font-size: 18px; font-weight: 900; color: #000; letter-spacing: -0.5px; line-height: 1;">
-        Darjeeling<span style="color: var(--n-fire);">Trips</span>
+        Himalaya <span style="color: var(--n-fire);">Hives</span>
     </span>
 </a>
 
@@ -587,689 +587,570 @@
 
 
 
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
 <style>
-    /* --- The Anchor Variables --- */
+    /* --- The Anchor Variables (Himalayan Hives Palette) --- */
     :root {
-        --dt-deep-black: #000000;
-        --dt-apple-grey: #f5f5f7;
-        --dt-vibrant-fire: #FF4500;
-        --dt-forest-green: #0F3D2E;
-        --dt-text-soft: #a1a1a6;
-        --dt-border-light: rgba(255, 255, 255, 0.1);
-        --dt-font-pro: 'Inter', sans-serif;
-        --dt-font-serif: 'Playfair Display', serif;
+        --hh-deep-black: Black;
+        --hh-apple-grey: #f5f5f7;
+        --hh-warm-orange: #FF4500;
+        --hh-forest-green: #0F3D2E;
+        --hh-text-soft: rgba(255, 255, 255, 0.6);
+        --hh-border-light: rgba(255, 255, 255, 0.1);
+        --hh-font-pro: 'Inter', sans-serif;
+        --hh-font-serif: 'Playfair Display', serif;
     }
 
     /* --- THE MAIN FOOTER STAGE --- */
-    .dt-anchor {
-        background: var(--dt-deep-black);
-        padding: 160px 8% 80px;
-        font-family: var(--dt-font-pro);
+    .hh-anchor {
+        background: var(--hh-deep-black);
+        padding: 120px 8% 0.2px;
+        font-family: var(--hh-font-pro);
         color: #ffffff;
-        font-size: 1.1rem; /* Larger Base Font */
+        font-size: 1.1rem;
     }
 
-    .dt-anchor-container {
-        max-width: 1500px;
+    .hh-anchor-container {
+        max-width: 1300px;
         margin: 0 auto;
     }
 
-    /* --- THE ARCHITECTURAL GRID UX --- */
-    .dt-grid {
+    /* --- THE GRID UX --- */
+    .hh-grid {
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
         gap: 80px;
-        margin-bottom: 120px;
+        margin-bottom: 80px;
     }
 
     /* Column 1: Brand & Logo */
-    .dt-brand-col {
+    .hh-brand-col {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
 
-    .dt-logo-place {
-        width: 200px;
-        height: 60px;
-        background: #f5f5f7; /* Contrast with black footer */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-        margin-bottom: 30px;
-        overflow: hidden;
-    }
-
-    .dt-logo-place img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .dt-brand-col h2 {
-        font-family: var(--dt-font-serif);
-        font-size: 2.5rem;
+    .hh-brand-col h2 {
+        font-family: var(--hh-font-serif);
+        font-size: 2.2rem;
         font-weight: 900;
         margin-bottom: 20px;
         letter-spacing: -1px;
+        color: #ffffff;
     }
 
-    .dt-brand-col p {
-        color: var(--dt-text-soft);
+    .hh-brand-col h2 span {
+        color: var(--hh-warm-orange);
+    }
+
+    .hh-brand-col p {
+        color: var(--hh-text-soft);
         line-height: 1.7;
-        max-width: 350px;
+        max-width: 320px;
+        font-size: 1.05rem;
     }
 
-    .dt-socials-anchor { margin-top: 30px; }
-    .dt-socials-anchor a {
+    .hh-socials-anchor { 
+        margin-top: 35px; 
+    }
+    
+    .hh-socials-anchor a {
         color: #ffffff;
         font-size: 20px;
         margin-right: 25px;
-        transition: 0.4s;
+        transition: 0.4s ease;
         display: inline-block;
     }
 
-    .dt-socials-anchor a:hover {
-        color: var(--dt-vibrant-fire);
-        transform: translateY(-8px) scale(1.1);
+    .hh-socials-anchor a:hover {
+        color: var(--hh-warm-orange);
+        transform: translateY(-5px);
     }
 
-    /* Standard Columns */
-    .dt-col-anchor h4 {
-        font-size: 11px;
+    /* Standard Columns (Links) */
+    .hh-col-anchor h4 {
+        font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 5px;
-        color: var(--dt-vibrant-fire);
+        letter-spacing: 4px;
+        color: var(--hh-warm-orange);
         margin-bottom: 35px;
-        font-weight: 900;
+        font-weight: 800;
     }
 
-    .dt-links-anchor {
+    .hh-links-anchor {
         list-style: none;
         padding: 0;
+        margin: 0;
     }
 
-    .dt-links-anchor li { margin-bottom: 20px; }
+    .hh-links-anchor li { 
+        margin-bottom: 20px; 
+    }
 
-    .dt-links-anchor a {
-        color: var(--dt-text-soft);
+    .hh-links-anchor a {
+        color: var(--hh-text-soft);
         text-decoration: none;
         font-weight: 500;
         transition: 0.3s ease;
+        font-size: 1.05rem;
     }
 
-    .dt-links-anchor a:hover {
+    .hh-links-anchor a:hover {
         color: #ffffff;
-        padding-left: 10px;
+        padding-left: 8px; /* Gentle nudge on hover */
     }
 
-    /* THE PARTNER CTA */
-    .dt-links-anchor .partner-btn-anchor {
-        color: var(--dt-vibrant-fire);
-        font-weight: 900;
+    /* THE PARTNER/JOIN CTA */
+    .hh-links-anchor .hh-partner-btn {
+        color: var(--hh-warm-orange);
+        font-weight: 800;
         margin-top: 30px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        display: inline-block;
+        font-size: 1rem;
+    }
+    
+    .hh-links-anchor .hh-partner-btn:hover {
+        color: #ffffff;
     }
 
     /* Column 4: Newsletter */
-    .dt-dossier-col h4 {
-        font-family: var(--dt-font-serif);
+    .hh-dossier-col h4 {
+        font-family: var(--hh-font-serif);
         font-size: 1.8rem;
         text-transform: none;
-        letter-spacing: -1px;
+        letter-spacing: -0.5px;
         margin-bottom: 20px;
+        color: #ffffff;
     }
 
-    .dt-dossier-col p {
-        font-size: 1rem;
-        color: var(--dt-text-soft);
+    .hh-dossier-col p {
+        font-size: 1.05rem;
+        color: var(--hh-text-soft);
         margin-bottom: 30px;
         line-height: 1.6;
     }
 
-    .dt-pill-anchor {
+    .hh-pill-anchor {
         display: flex;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--dt-border-light);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--hh-border-light);
         border-radius: 100px;
-        padding: 8px;
+        padding: 6px;
+        transition: 0.3s ease;
     }
 
-    .dt-pill-anchor input {
+    .hh-pill-anchor:focus-within {
+        border-color: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hh-pill-anchor input {
         background: transparent;
         border: none;
         padding: 10px 20px;
         color: #fff;
-        font-family: var(--dt-font-pro);
+        font-family: var(--hh-font-pro);
         flex: 1;
         outline: none;
-        font-size: 16px;
+        font-size: 15px;
+    }
+    
+    .hh-pill-anchor input::placeholder {
+        color: rgba(255, 255, 255, 0.3);
     }
 
-    .dt-pill-anchor button {
-        background: var(--dt-vibrant-fire);
+    .hh-pill-anchor button {
+        background: var(--hh-warm-orange);
         color: #fff;
         border: none;
-        padding: 15px 30px;
+        padding: 14px 28px;
         border-radius: 100px;
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 11px;
-        letter-spacing: 2px;
+        font-weight: 800;
+        font-family: var(--hh-font-pro);
+        font-size: 14px;
         cursor: pointer;
-        transition: 0.4s;
+        transition: 0.4s ease;
     }
 
-    .dt-pill-anchor button:hover {
+    .hh-pill-anchor button:hover {
         background: #ffffff;
-        color: #000;
-        transform: scale(1.05);
+        color: var(--hh-deep-black);
     }
 
-    /* --- THE SUB-FOOTER (LOCATION CLOUD) --- */
-    .territory-stage {
-        background: var(--dt-apple-grey);
-        padding: 100px 8%;
-        color: #000;
-    }
-
-    .territory-stage-title {
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        color: var(--dt-deep-black);
-        font-weight: 900;
-        margin-bottom: 50px;
-        text-align: center;
-        display: block;
-    }
-
-    .territory-grid-pro {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 50px;
-    }
-
-    .ter-col b { display: block; margin-bottom: 20px; font-size: 17px; color: var(--dt-deep-black); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-
-    .tag-cloud { display: flex; flex-wrap: wrap; gap: 12px; }
-
-    .loc-tag-pro {
-        background: #ffffff;
-        border: 1px solid #e5e5e7;
-        padding: 10px 20px;
-        border-radius: 50px;
-        font-size: 13px;
-        color: #515154;
-        font-weight: 600;
-        text-decoration: none;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .loc-tag-pro:hover {
-        background: #000;
-        color: #fff;
-        border-color: #000;
-        transform: translateY(-5px);
-    }
-
-    /* --- THE BOTTOM BAR: THE SIGNATURE --- */
-    .dt-bottom-anchor {
-        background: #000;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        padding: 40px 8%;
+    /* --- THE BOTTOM BAR --- */
+    .hh-bottom-bar {
+        border-top: 1px solid var(--hh-border-light);
+        padding-top: 35px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 13px;
-        color: #424245;
-        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--hh-text-soft);
     }
 
-    .vayunex-tag- anchor {
+    .hh-vayunex-tag {
         text-decoration: none;
-        color: #86868b;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        color: var(--hh-text-soft);
+        transition: 0.3s ease;
     }
 
-    .vayunex-tag- anchor:hover { color: var(--dt-vibrant-fire); }
-    .vayunex-tag- anchor span { color: #ffffff; font-weight: 900; }
-
-    /* --- THE QUOTE MODAL (CRO Power) --- */
-    .quote-modal- stage {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.9);
-        backdrop-filter: blur(10px);
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
+    .hh-vayunex-tag:hover {
+        color: var(--hh-warm-orange);
     }
 
-    .quote-card- stage {
-        background: #ffffff;
-        width: 90%;
-        max-width: 500px;
-        padding: 70px;
-        border-radius: 40px;
-        position: relative;
-        color: #000;
-        animation: popUpStage 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
     }
-
-    @keyframes popUpStage { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-    .close-modal- stage { position: absolute; top: 30px; right: 30px; font-size: 24px; cursor: pointer; color: #aaa; transition: 0.3s; }
-    .close-modal- stage:hover { color: var(--dt-vibrant-fire); }
-
-    .modal-title- stage { font-family: var(--dt-font-serif); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
-    .modal-sub- stage { color: #666; margin-bottom: 40px; font-size: 1.1rem; }
-
-    /* Modal Form Inputs */
-    .modal-input- stage {
-        width: 100%;
-        padding: 22px 25px;
-        border-radius: 15px;
-        border: 2px solid #f5f5f7;
-        background: #f5f5f7;
-        margin-bottom: 20px;
-        font-family: var(--dt-font-pro);
-        font-size: 1rem;
-        font-weight: 600;
-        outline: none;
-        transition: 0.3s;
-    }
-
-    .modal-input- stage:focus {
-        border-color: var(--dt-vibrant-fire);
-        background: #fff;
-    }
-
-    .modal-btn- stage {
-        width: 100%;
-        background: var(--dt-vibrant-fire);
-        color: #fff;
-        padding: 22px;
-        border-radius: 100px;
-        border: none;
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 3px;
-        cursor: pointer;
-        transition: 0.4s;
-        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3);
-    }
-
-    .modal-btn- stage:hover { transform: scale(1.05); background: #000; }
-
-    /* Mobile */
-    @media (max-width: 1200px) {
-        .dt-grid, .territory-grid-pro { grid-template-columns: 1fr 1fr; gap: 60px; }
-    }
+    
     @media (max-width: 768px) {
-        .dt-grid, .territory-grid-pro { grid-template-columns: 1fr; gap: 50px; text-align: center; }
-        .dt-logo-place { margin: 0 auto 30px; }
-        .dt-brand-col p { margin: 0 auto; }
-        .dt-pill-anchor { flex-direction: column; border-radius: 20px; padding: 15px; }
-        .dt-pill-anchor button { width: 100%; margin-top: 15px; }
-        .dt-bottom-anchor { flex-direction: column; gap: 20px; text-align: center; }
-        .dt-bottom-anchor a { margin: 0 10px; }
+        .hh-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+        .hh-brand-col p { margin: 0 auto; }
+        .hh-pill-anchor { flex-direction: column; border-radius: 20px; padding: 10px; background: transparent; border: none; }
+        .hh-pill-anchor input { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 18px 20px; margin-bottom: 10px; text-align: center; }
+        .hh-pill-anchor button { width: 100%; border-radius: 15px; padding: 18px; }
+        .hh-bottom-bar { flex-direction: column; gap: 20px; text-align: center; }
     }
 </style>
 
-<footer class="dt-anchor">
-    <div class="dt-anchor-container">
+<footer class="hh-anchor">
+    <div class="hh-anchor-container">
         
-        <div class="dt-grid">
+        <div class="hh-grid">
             
-            <div class="dt-brand-col">
-                <div class="dt-logo-place">
-                    <img src="https://placehold.co/200x60/f5f5f7/FF4500?text=Logo+Here" alt="Darjeeling Trips Logo">
+            <div class="hh-brand-col">
+                <div>
+                    <img src="{% static 'dtlogo.png' %}"  style="width: 120px;height:120px;border-radius: 50%;background: white;padding: 10px;" alt="">
+                
                 </div>
-                <h2>Darjeeling Trips</h2>
-                <p>Born on the trails, not in boardrooms. locally guide luxury managed from Siliguri across the entire East.</p>
-                <div class="dt-socials-anchor">
+                <h2>Himalayan<span> Hives</span></h2>
+                <p>A small team of locals, building quiet, unhurried, and honest journeys through the mountains we call home & our love.</p>
+                <div class="hh-socials-anchor">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
 
-            <div class="dt-col-anchor">
-                <h4>Neighborhood</h4>
-                <ul class="dt-links-anchor">
-                    <li><a href="#">The Team</a></li>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Expertise Studio</a></li>
-                    <li><a href="#">Territory of Truth</a></li>
-                    <li><a href="#" class="partner-btn-anchor">Partner with Us →</a></li>
+            <div class="hh-col-anchor">
+                <h4>The Hive</h4>
+                <ul class="hh-links-anchor">
+                    <li><a href="#">Our Roots (About Us)</a></li>
+                    <li><a href="#">The Hive Standard</a></li>
+                    <li><a href="#">Fair Wage Policy</a></li>
+                    <li><a href="#">Meet the Locals</a></li>
+                    <li><a href="#" class="hh-partner-btn">Join our Team →</a></li>
                 </ul>
             </div>
 
-            <div class="dt-col-anchor">
-                <h4>Intelligence</h4>
-                <ul class="dt-links-anchor">
-                    <li><a href="#">Contact Hosts</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Sovereign Safety</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms</a></li>
+            <div class="hh-col-anchor">
+                <h4>Guest Care</h4>
+                <ul class="hh-links-anchor">
+                    <li><a href="#">Talk to a Host</a></li>
+                    <li><a href="#">Common Questions</a></li>
+                    <li><a href="#">Privacy Promise</a></li>
+                    <li><a href="#">Fair Terms of Travel</a></li>
                 </ul>
             </div>
 
-            <div class="dt-dossier-col">
-                <h4>Himalayan Dossier</h4>
-                <p>Private briefing on hidden tea estates, unmapped sunrises, and luxury stays we keep off the public record.</p>
-                <form class="dt-pill-anchor">
-                    <input type="email" placeholder="Private Email" required>
-                    <button type="submit">Secure</button>
+            <div class="hh-dossier-col">
+                <h4>Letters from the Hills</h4>
+                <p>Occasional stories, mist-covered photos, and quiet updates from our home. No spam, ever.</p>
+                <form class="hh-pill-anchor">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
                 </form>
             </div>
 
         </div>
+
+       
+
     </div>
 </footer>
 
-<div class="territory-stage">
-    <div class="dt-anchor-container">
-        <span class="territory-stage-title">Every Trail We Cover</span>
-        <div class="territory-grid-pro">
-            
-            <div class="ter-col">
-                <b>Darjeeling Territory</b>
-                <div class="tag-cloud">
-                    <span class="loc-tag-pro" onclick="openQuote('Mirik')">Mirik</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Kurseong')">Kurseong</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Sandakphu')">Sandakphu</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Kalimpong')">Kalimpong</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Bijanbari')">Bijanbari</span>
-                </div>
-            </div>
-
-            <div class="ter-col">
-                <b>Nepal Territory</b>
-                <div class="tag-cloud">
-                    <span class="loc-tag-pro" onclick="openQuote('Kathmandu')">Kathmandu</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Pokhara')">Pokhara</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Mustang')">Mustang</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Ilam')">Ilam</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Everest Base')">Everest Base</span>
-                </div>
-            </div>
-
-            <div class="ter-col">
-                <b>Meghalaya Territory</b>
-                <div class="tag-cloud">
-                    <span class="loc-tag-pro" onclick="openQuote('Shillong')">Shillong</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Cherrapunji')">Cherrapunji</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Dawki')">Dawki</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Jowai')">Jowai</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Mawlynnong')">Mawlynnong</span>
-                </div>
-            </div>
-
-            <div class="ter-col">
-                <b>Assam Territory</b>
-                <div class="tag-cloud">
-                    <span class="loc-tag-pro" onclick="openQuote('Kaziranga')">Kaziranga</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Majuli')">Majuli</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Guwahati')">Guwahati</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Manas')">Manas</span>
-                    <span class="loc-tag-pro" onclick="openQuote('Haflong')">Haflong</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="dt-bottom-anchor">
-    <div class="dt-anchor-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        <div>Copyright &copy; 2026 Darjeeling Trips. LocallyOwned in West Bengal.</div>
-        <div style="display: flex; align-items: center;">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="https://vayunex.com" class="vayunex-tag- anchor" style="margin-left: 40px;">
-                Designed & Developed by <span>Vayunex Technologies</span> <i class="fa-solid fa-bolt-lightning"></i>
-            </a>
-        </div>
-    </div>
-</div>
 
 
 
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 <style>
-    /* --- THE OVERLAY: Premium Glass Blur --- */
-    .v-modal-overlay {
-        display: none; /* Controlled by JS */
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(25px) saturate(180%);
-        -webkit-backdrop-filter: blur(25px) saturate(180%);
-        z-index: 10000;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        transition: all 0.5s ease;
-    }
-
-    /* --- THE CARD: 3D Hardware Feel --- */
-    .v-modal-card {
-        background: #ffffff;
-        width: 100%;
-        max-width: 700px;
-        border-radius: 50px;
-        padding: 80px;
+    /* --- HIMALAYAN HIVES: FOOTER WRAPPER --- */
+    .hh-footer-wrapper {
+        background-color: var(--bg-black, #111);
+        padding: 100px 8% 40px; /* Restored bottom padding for breathing room */
+        font-family: var(--font-body, 'Inter', sans-serif);
+        color: var(--text-on-dark, #fff);
+        overflow: hidden; /* Prevents watermark from creating horizontal scroll */
         position: relative;
-        box-shadow: 0 50px 100px rgba(0,0,0,0.5);
-        transform: scale(0.9) translateY(30px);
-        opacity: 0;
-        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    /* Active State for Animation */
-    .v-modal-overlay.active { display: flex; }
-    .v-modal-overlay.active .v-modal-card {
-        transform: scale(1) translateY(0);
-        opacity: 1;
+    .hh-footer-max {
+        max-width: 1300px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2; /* Keeps all text ABOVE the watermark */
     }
 
-    /* --- THE TYPOGRAPHY: Massive & Bold --- */
-    .v-modal-header { margin-bottom: 50px; }
-    
-    .v-modal-kicker {
-        color: #FF4500;
-        text-transform: uppercase;
-        letter-spacing: 8px;
+    /* --- THE FOOTER HEADER --- */
+    .hh-footer-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .hh-footer-kicker {
+        font-size: 13px;
         font-weight: 900;
-        font-size: 12px;
+        color: var(--brand-orange, #FF4500);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 15px;
         display: block;
+    }
+
+    .hh-footer-title {
+        font-family: var(--font-heading, 'Playfair Display', serif);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    /* --- THE FOOTER GEO GRID --- */
+    .hh-footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .hh-footer-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .hh-footer-card:hover {
+        border-color: var(--brand-green, #0F3D2E);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hh-footer-card h3 {
+        font-family: var(--font-heading, 'Playfair Display', serif);
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--brand-green, #0F3D2E);
         margin-bottom: 15px;
     }
 
-    .v-modal-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 900;
-        line-height: 1;
-        color: #000;
-        letter-spacing: -2px;
+    .hh-footer-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 25px;
     }
 
-    .v-modal-title span {
-        display: block;
-        color: #0F3D2E;
-        font-style: italic;
-        font-size: 0.8em;
+    /* --- THE DESTINATION TAGS --- */
+    .hh-footer-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
     }
 
-    /* --- THE FORM UX: Technical & Clean --- */
-    .v-modal-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .hh-footer-tag {
+        font-size: 11px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 6px 14px;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .hh-footer-tag:hover {
+        border-color: var(--brand-orange, #FF4500);
+        background: var(--brand-orange, #FF4500);
+        color: #fff;
+    }
+
+    /* --- THE REFINED DISCLAIMER BOX --- */
+    .hh-disclaimer-box {
+        background: rgba(255, 255, 255, 0.04);
+        border-left: 4px solid var(--brand-orange, #FF4500);
+        padding: 40px;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        margin-bottom: 80px;
+    }
+
+    .hh-disclaimer-icon {
+        color: var(--brand-orange, #FF4500);
+        font-size: 24px;
+        margin-top: 5px;
+    }
+
+    .hh-disclaimer-text h4 {
+        font-family: var(--font-heading, 'Playfair Display', serif);
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hh-disclaimer-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+    }
+
+    /* --- THE FINAL BOTTOM STRIP --- */
+    .hh-bottom-strip {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
-    .v-input-group { grid-column: span 2; position: relative; }
-    .v-input-half { grid-column: span 1; }
-
-    .v-field {
-        width: 100%;
-        padding: 25px 30px;
-        background: #f5f5f7;
-        border: 2px solid #f5f5f7;
-        border-radius: 20px;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        color: #000;
-        outline: none;
-        transition: all 0.3s ease;
-    }
-
-    .v-field:focus {
-        background: #fff;
-        border-color: #FF4500;
-        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.1);
-    }
-
-    /* --- THE CLOSE BUTTON: Minimalist X --- */
-    .v-modal-close {
-        position: absolute;
-        top: 40px; right: 40px;
-        width: 50px; height: 50px;
-        background: #f5f5f7;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: 0.3s;
-        border: 1px solid transparent;
-    }
-
-    .v-modal-close:hover {
-        background: #000;
-        color: #fff;
-        transform: rotate(90deg);
-    }
-
-    /* --- THE ACTION: Massive Pop Button --- */
-    .v-modal-btn {
-        grid-column: span 2;
-        background: #000;
-        color: #fff;
-        padding: 28px;
-        border-radius: 100px;
-        border: none;
+    .hh-footer-logo {
+        font-family: var(--font-heading, 'Playfair Display', serif);
+        font-size: 1.5rem;
         font-weight: 900;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        margin-top: 20px;
+        color: #fff;
     }
 
-    .v-modal-btn:hover {
-        background: #FF4500;
-        transform: scale(1.05);
-        box-shadow: 0 30px 60px rgba(255, 69, 0, 0.3);
+    .hh-footer-logo span { color: var(--brand-orange, #FF4500); }
+
+    .hh-copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hh-vayunex-tag {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .hh-vayunex-tag:hover { color: var(--brand-green, #0F3D2E); }
+
+    /* --- ABSOLUTE BACKGROUND WATERMARK --- */
+    .hh-massive-watermark {
+        position: absolute;
+        bottom: -3vw; /* Sits slightly below the bottom edge */
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--font-heading, 'Playfair Display', serif);
+        font-size: 22vw; 
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.03); /* Faded elegantly into the background */
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        pointer-events: none;
+        z-index: 1; /* Sits BEHIND the copyright text */
     }
 
     /* Mobile Logic */
-    @media (max-width: 768px) {
-        .v-modal-card { padding: 50px 30px; border-radius: 30px; }
-        .v-modal-form { grid-template-columns: 1fr; }
-        .v-input-half { grid-column: span 2; }
+    @media (max-width: 1024px) {
+        .hh-footer-grid { grid-template-columns: 1fr; }
+        .hh-disclaimer-box { flex-direction: column; padding: 30px 20px; gap: 15px; }
+        .hh-bottom-strip { flex-direction: column; text-align: center; }
+        .hh-massive-watermark { font-size: 30vw; bottom: 0; }
     }
 </style>
 
-<div class="v-modal-overlay" id="vQuoteModal">
-    <div class="v-modal-card">
-        <div class="v-modal-close" onclick="closeVModal()">
-            <i class="fa-solid fa-xmark"></i>
+<footer class="hh-footer-wrapper">
+    
+    <div class="hh-massive-watermark">HIVES.</div>
+
+    <div class="hh-footer-max">
+        
+        <div class="hh-footer-header">
+            <span class="hh-footer-kicker">Our Map</span>
+            <h2 class="hh-footer-title">The lands we know by heart.</h2>
         </div>
 
-        <div class="v-modal-header">
-            <span class="v-modal-kicker">Territory Request</span>
-            <h3 class="v-modal-title" id="vModalTarget">Visit <span>Location</span></h3>
-        </div>
-
-        <form class="v-modal-form" onsubmit="handleVSubmit(event)">
-            <div class="v-input-group">
-                <input type="text" class="v-field" placeholder="Full Name" required>
-            </div>
-            <div class="v-input-half">
-                <input type="email" class="v-field" placeholder="Email Address" required>
-            </div>
-            <div class="v-input-half">
-                <input type="tel" class="v-field" placeholder="Phone Number" required>
-            </div>
-            <div class="v-input-group">
-                <input type="text" class="v-field" placeholder="Preferred Travel Month (e.g. October 2026)">
-            </div>
+        <div class="hh-footer-grid">
             
-            <button type="submit" class="v-modal-btn">Secure My Quote</button>
-        </form>
+            <div class="hh-footer-card">
+                <h3>Bengal Hills</h3>
+                <p>Our immediate backyard. From the misty colonial streets of Darjeeling town to the quiet, untouched pine forests.</p>
+                <div class="hh-footer-tags">
+                    <span class="hh-footer-tag" onclick="openQuote('Darjeeling')">Darjeeling</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Kalimpong')">Kalimpong</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Kurseong')">Kurseong</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Lamahatta')">Lamahatta</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Takdah')">Takdah</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Tinchuley')">Tinchuley</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Chatakpur')">Chatakpur</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Sandakphu')">Sandakphu</span>
+                </div>
+            </div>
+
+            <div class="hh-footer-card">
+                <h3>Sikkim Valleys</h3>
+                <p>Our peaceful, pristine neighbor. Safe driving routes to high-altitude frozen lakes and ancient monasteries.</p>
+                <div class="hh-footer-tags">
+                    <span class="hh-footer-tag" onclick="openQuote('Gangtok')">Gangtok</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Pelling')">Pelling</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Lachung')">Lachung</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Lachen')">Lachen</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Yumthang')">Yumthang</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Gurudongmar')">Gurudongmar</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Zuluk')">Zuluk</span>
+                </div>
+            </div>
+
+            <div class="hh-footer-card">
+                <h3>Nepal Kingdom</h3>
+                <p>Across the border lies our extended home. We navigate vibrant temple squares with absolute local familiarity.</p>
+                <div class="hh-footer-tags">
+                    <span class="hh-footer-tag" onclick="openQuote('Kathmandu')">Kathmandu</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Pokhara')">Pokhara</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Chitwan')">Chitwan</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Nagarkot')">Nagarkot</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Bhaktapur')">Bhaktapur</span>
+                    <span class="hh-footer-tag" onclick="openQuote('Mustang')">Mustang</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hh-disclaimer-box">
+            
+            <div class="hh-disclaimer-text">
+                <h4>A Note on Custom Deployments</h4>
+                <p>We believe in doing one thing flawlessly rather than many things adequately. Because of this, Himalayan Hives currently operates exclusively on <b>2 Master Itineraries</b>. We pour all our resources and local expertise into perfecting these specific routes. While we know every hidden trail listed above, we only accept custom trips to other regions on exceedingly rare occasions when our core calendar allows. We deeply appreciate your understanding of our commitment to quality.</p>
+            </div>
+        </div>
+
+        <div class="hh-bottom-strip">
+            <div class="hh-footer-logo">Himalayan<span>Hives.</span></div>
+            <div class="hh-copyright">© 2026 Himalayan Hives. All rights reserved.</div>
+            <a href="#" class="hh-vayunex-tag">Designed & Developed by Vayunex Technologies</a>
+        </div>
+
     </div>
-</div>
+</footer>
 
-<script>
-    const vModal = document.getElementById('vQuoteModal');
-    const vTitle = document.getElementById('vModalTarget');
 
-    // OPEN LOGIC
-    function openQuote(locationName) {
-        vTitle.innerHTML = "Visit <span>" + locationName + "</span>";
-        vModal.style.display = 'flex';
-        // Small timeout to allow browser to register display:flex before adding animation class
-        setTimeout(() => {
-            vModal.classList.add('active');
-        }, 10);
-        document.body.style.overflow = 'hidden';
-    }
 
-    // CLOSE LOGIC
-    function closeVModal() {
-        vModal.classList.remove('active');
-        setTimeout(() => {
-            vModal.style.display = 'none';
-        }, 500); // Matches transition time
-        document.body.style.overflow = 'auto';
-    }
 
-    // SUBMIT LOGIC
-    function handleVSubmit(e) {
-        e.preventDefault();
-        alert("Quote Request Sent. Our Hosts will contact you shortly.");
-        closeVModal();
-    }
 
-    // CLICK OUTSIDE TO CLOSE
-    window.onclick = function(event) {
-        if (event.target == vModal) {
-            closeVModal();
-        }
-    }
-</script>
 
 
 
