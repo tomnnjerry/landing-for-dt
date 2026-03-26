@@ -1,0 +1,2265 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <style>
+    /* --- HIMALAYAN HIVES HERO: PRIVACY FOCUS --- */
+    .hh-hero-wrapper {
+        background-color: var(--bg-black);
+        padding: 160px 8% 100px;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-body);
+        color: var(--text-on-dark);
+        position: relative;
+    }
+
+    .hh-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+    }
+
+    /* --- EMOTIONAL CONTENT --- */
+    .hh-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .hh-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 7vw, 5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 35px;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hh-lead {
+        font-size: 1.5rem;
+        color: var(--text-on-dark);
+        line-height: 1.5;
+        max-width: 600px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+
+    .hh-desc {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        max-width: 550px;
+    }
+
+    /* --- THE PRIVACY CARD --- */
+    .hh-privacy-card {
+        background: var(--bg-charcoal);
+        border: 1px solid var(--brand-green);
+        padding: 60px;
+        border-radius: var(--radius);
+        box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    }
+
+    .hh-priv-item {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .hh-priv-item:last-child { margin-bottom: 0; }
+
+    .hh-priv-icon {
+        width: 24px;
+        height: 24px;
+        color: var(--brand-orange);
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+
+    .hh-priv-text h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .hh-priv-text p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-container { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+        .hh-lead, .hh-desc { margin-left: auto; margin-right: auto; }
+        .hh-privacy-card { padding: 40px 25px; text-align: left; }
+    }
+</style>
+
+<section class="hh-hero-wrapper">
+    <div class="hh-container">
+        
+        <div class="hh-content">
+            <span class="hh-kicker">A Sacred Trust</span>
+            <h1 class="hh-title">Your journey is <br>yours alone.</h1>
+            <p class="hh-lead">We believe the best memories are the ones kept close to the heart.</p>
+            <p class="hh-desc">
+                At <b>Himalayan Hives</b>, we protect your peace as much as we protect your privacy. We don't believe in tracking your steps or sharing your stories with the world. When you are with us, you are in a safe space where your presence remains a secret—known only to the mountains and those you choose to tell.
+            </p>
+        </div>
+
+        <div class="hh-privacy-card">
+            
+            <div class="hh-priv-item">
+                <div class="hh-priv-icon"><i class="fa-solid fa-eye-slash"></i></div>
+                <div class="hh-priv-text">
+                    <h3>Silent Presence</h3>
+                    <p>No one knows you are here with us unless you choose to share it. We never post photos or details of our guests' trips online.</p>
+                </div>
+            </div>
+
+            <div class="hh-priv-item">
+                <div class="hh-priv-icon"><i class="fa-solid fa-user-secret"></i></div>
+                <div class="hh-priv-text">
+                    <h3>Anonymous Voices</h3>
+                    <p>Every story and review shared by our guests is kept anonymous by default. Your identity is always protected.</p>
+                </div>
+            </div>
+
+            <div class="hh-priv-item">
+                <div class="hh-priv-icon"><i class="fa-solid fa-lock"></i></div>
+                <div class="hh-priv-text">
+                    <h3>Zero Data Sharing</h3>
+                    <p>We do not capture or share your personal information. Your contact details and travel history stay within the Hive.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* --- HIMALAYAN HIVES: STORY WRAPPER --- */
+    .hh-story-wrapper {
+        background-color: var(--bg-soft);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-story-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- THE GRID LAYOUT --- */
+    .hh-story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* --- THE STORY TEXT --- */
+    .hh-story-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-story-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        color: var(--brand-green);
+    }
+
+    .hh-story-lead {
+        font-size: 1.4rem;
+        color: var(--text-main);
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .hh-story-p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
+
+    /* --- THE VISUAL ANCHOR CARD --- */
+    .hh-story-card {
+        background: var(--bg-white);
+        border-radius: 40px;
+        padding: 60px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        border: 1px solid var(--grey-apple);
+        position: relative;
+    }
+
+    .hh-story-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: var(--green-shimmer);
+        border-radius: 40px 40px 0 0;
+    }
+
+    .hh-story-icon {
+        font-size: 45px;
+        color: var(--brand-orange);
+        margin-bottom: 30px;
+    }
+
+    .hh-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .hh-card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .hh-card-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .hh-card-list li:last-child { margin-bottom: 0; }
+
+    .hh-card-list i {
+        color: var(--brand-green);
+        font-size: 18px;
+        margin-top: 4px;
+    }
+
+    .hh-card-list b {
+        display: block;
+        color: var(--text-main);
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .hh-card-list span {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        display: block;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-story-grid { grid-template-columns: 1fr; gap: 50px; }
+        .hh-story-card { padding: 40px 30px; }
+    }
+</style>
+
+<section class="hh-story-wrapper">
+    <div class="hh-story-max">
+        
+        <div class="hh-story-grid">
+            
+            <div class="hh-story-text">
+                <span class="hh-story-kicker">Our Philosophy</span>
+                <h2 class="hh-story-title">Why we call it <br>a "Hive".</h2>
+                
+                <p class="hh-story-lead">In nature, a hive is a sanctuary. It is a place of warmth, quiet community, and shelter from the cold.</p>
+                
+                <p class="hh-story-p">When we sat down in Siliguri to create this company, we didn't want to build just another "tour agency." We wanted to build a moving sanctuary for our guests.</p>
+                
+                <p class="hh-story-p">In a hive, everyone works together quietly in the background to create something sweet. That is exactly how our local drivers, guides, and homestay hosts work for you. We handle all the hard work behind the scenes, so you can simply rest, breathe the mountain air, and enjoy the sweetness of the journey.</p>
+            </div>
+
+            <div class="hh-story-card">
+                <i class="fa-solid fa-leaf hh-story-icon"></i>
+                <h3 class="hh-card-title">The Hive Promise</h3>
+                
+                <ul class="hh-card-list">
+                    <li>
+                        <i class="fa-solid fa-sun"></i>
+                        <div>
+                            <b>Enduring Warmth</b>
+                            <span>From the smile at the airport pickup to the heater in your room, we prioritize your physical and emotional comfort.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-people-roof"></i>
+                        <div>
+                            <b>A Local Community</b>
+                            <span>When you travel with us, you are supporting local tea-makers, drivers, and families directly.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                        <div>
+                            <b>A Safe Shelter</b>
+                            <span>The mountains can be unpredictable. We are your safety net, always watching over the roads and the weather so you don't have to.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- HIMALAYAN HIVES: FOUNDER WRAPPER --- */
+    .hh-founder-wrapper {
+        background-color: var(--bg-soft);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-founder-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- THE GRID LAYOUT --- */
+    .hh-founder-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* --- LEFT: THE TEXT NARRATIVE --- */
+    .hh-founder-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-founder-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        color: var(--brand-green);
+    }
+
+    .hh-founder-p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
+
+    .hh-founder-p b {
+        color: var(--text-main);
+        font-weight: 700;
+    }
+
+    .hh-signature {
+        margin-top: 30px;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--brand-orange);
+        font-style: italic;
+    }
+
+    /* --- RIGHT: THE VISUAL & IMPACT --- */
+    .hh-impact-area {
+        position: relative;
+    }
+
+    .hh-impact-img {
+        width: 100%;
+        height: 500px;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+
+    .hh-impact-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* The Overlapping Impact Card */
+    .hh-impact-card {
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        background: var(--bg-white);
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        max-width: 380px;
+        border-left: 6px solid var(--brand-green);
+    }
+
+    .hh-impact-card h4 {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .hh-impact-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE PULL QUOTE --- */
+    .hh-quote-box {
+        grid-column: span 2;
+        margin-top: 80px;
+        text-align: center;
+        padding: 60px 40px;
+        background: var(--bg-white);
+        border-radius: 40px;
+        border: 1px solid var(--grey-apple);
+        position: relative;
+    }
+
+    .hh-quote-box i {
+        font-size: 40px;
+        color: var(--brand-orange);
+        opacity: 0.5;
+        margin-bottom: 20px;
+    }
+
+    .hh-quote-text {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.4;
+        color: var(--brand-green);
+        max-width: 900px;
+        margin: 0 auto 20px;
+    }
+
+    .hh-quote-author {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-founder-grid { grid-template-columns: 1fr; gap: 60px; }
+        .hh-impact-card { position: relative; bottom: 0; left: 0; max-width: 100%; margin-top: -30px; border-left: none; border-top: 6px solid var(--brand-green); border-radius: 0 0 30px 30px; box-shadow: none; border: 1px solid var(--grey-apple); border-top: 6px solid var(--brand-green); }
+        .hh-quote-box { grid-column: span 1; padding: 40px 20px; margin-top: 40px; }
+    }
+</style>
+
+<section class="hh-founder-wrapper">
+    <div class="hh-founder-max">
+        
+        <div class="hh-founder-grid">
+            
+            <div class="hh-founder-text">
+                <span class="hh-founder-kicker">The Origin</span>
+                <h2 class="hh-founder-title">A vision for our people.</h2>
+                
+                <p class="hh-founder-p">
+                    Tourism has always been the lifeblood of our hills. Growing up in Siliguri, I saw the beauty of this industry, but I also saw its quiet struggles. 
+                </p>
+                
+                <p class="hh-founder-p">
+                    For years, I watched the hardest workers—the local drivers navigating dangerous mist, the guides sharing their culture, and the homestay owners cooking warm meals—being heavily underpaid. Big agencies would take the lion's share, leaving the true hosts of the Himalayas struggling to support their own families.
+                </p>
+                
+                <p class="hh-founder-p">
+                    I realized that if we truly love these mountains, we have to respect the people who make them feel like home. That is why <b>Himalayan Hives</b> was born. We removed the middlemen to create a fair, honest ecosystem where local people are paid what they deserve, and travelers get genuine, wholehearted hospitality.
+                </p>
+
+                <div class="hh-signature">Manish Giri</div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 5px;">Founder, Himalayan Hives</div>
+            </div>
+
+            <div class="hh-impact-area">
+                <div class="hh-impact-img">
+                    <img src="https://placehold.co/800x1000/e2e2e2/1d1d1f?text=Local+Community+Portrait" alt="The Himalayan Hives Community">
+                </div>
+                
+                <div class="hh-impact-card">
+                    <h4>The Fair Wage Policy</h4>
+                    <p>When you travel with us, your money goes directly into the local economy. We ensure our drivers and guides are paid above industry standards, so they can focus entirely on your safety and happiness.</p>
+                </div>
+            </div>
+
+            <div class="hh-quote-box">
+                <i class="fa-solid fa-quote-left"></i>
+                <h3 class="hh-quote-text">
+                    "A journey is only as beautiful as the smile of the person guiding you. We built this company to make sure those smiles are genuine."
+                </h3>
+                <span class="hh-quote-author">— Manish Giri</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- HIMALAYAN HIVES: STANDARD WRAPPER --- */
+    .hh-standard-wrapper {
+        background-color: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-standard-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- THE HEADER --- */
+    .hh-standard-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .hh-standard-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-standard-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: var(--brand-green);
+    }
+
+    .hh-standard-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    /* --- THE 3-PILLAR GRID --- */
+    .hh-standard-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .hh-std-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hh-std-card:hover {
+        border-color: var(--brand-green);
+        background: #ffffff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+        transform: translateY(-5px);
+    }
+
+    .hh-std-icon-wrap {
+        width: 80px;
+        height: 80px;
+        background: var(--brand-green-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .hh-std-icon-wrap i {
+        font-size: 32px;
+        color: var(--brand-orange);
+    }
+
+    .hh-std-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .hh-std-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE REASSURANCE BAR (Green Shimmer) --- */
+    .hh-reassure-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        border-radius: 40px;
+        padding: 50px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+    }
+
+    .hh-reassure-text h4 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .hh-reassure-text p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        opacity: 0.9;
+        margin: 0;
+        max-width: 700px;
+    }
+
+    .hh-reassure-icon {
+        font-size: 45px;
+        color: var(--brand-orange);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-standard-grid { grid-template-columns: 1fr; }
+        .hh-reassure-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+    }
+</style>
+
+<section class="hh-standard-wrapper">
+    <div class="hh-standard-max">
+        
+        <div class="hh-standard-header">
+            <span class="hh-standard-kicker">Our Promise</span>
+            <h2 class="hh-standard-title">The Hive Standard.</h2>
+            <p class="hh-standard-subtitle">We measure a good trip not by how many places you rushed to see, but by how peaceful you felt along the way.</p>
+        </div>
+
+        <div class="hh-standard-grid">
+            
+            <div class="hh-std-card">
+                <div class="hh-std-icon-wrap">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <h3>Safe Hands</h3>
+                <p>Our drivers are not just steering wheels for hire; they are your local guardians. They know the mist, the mountain curves, and the quietest roads to keep your family completely safe.</p>
+            </div>
+
+            <div class="hh-std-card">
+                <div class="hh-std-icon-wrap">
+                    <i class="fa-solid fa-mug-saucer"></i>
+                </div>
+                <h3>Slow & Simple</h3>
+                <p>We don’t do "10 spots in 2 hours." If you find a beautiful view and want to stop for an extra hour to drink tea and watch the clouds, the car waits. Your time belongs to you.</p>
+            </div>
+
+            <div class="hh-std-card">
+                <div class="hh-std-icon-wrap">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <h3>Warm Hearths</h3>
+                <p>We personally visit every hotel and homestay we recommend. If the sheets aren't clean, the food isn't fresh, and the hosts aren't welcoming, we won't send you there. Period.</p>
+            </div>
+
+            <div class="hh-reassure-bar">
+                <div class="hh-reassure-text">
+                    <h4>Always Awake. Always Here.</h4>
+                    <p>Whether it's 2:00 PM or 2:00 AM, our team in Siliguri is always on call. If you need a doctor, a change of plans, or just a recommendation for dinner, you are never alone.</p>
+                </div>
+                <div class="hh-reassure-icon">
+                    <i class="fa-solid fa-phone-volume"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- HIMALAYAN HIVES: PEOPLE WRAPPER --- */
+    .hh-people-wrapper {
+        background-color: var(--bg-soft);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-people-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- THE HEADER --- */
+    .hh-people-header {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    .hh-people-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-people-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: var(--brand-green);
+    }
+
+    .hh-people-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    /* --- THE PEOPLE GRID --- */
+    .hh-people-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .hh-person-card {
+        background: var(--bg-white);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hh-person-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+        transform: translateY(-8px);
+    }
+
+    .hh-person-img {
+        height: 320px;
+        background: var(--grey-apple);
+        position: relative;
+    }
+
+    .hh-person-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Gradient overlay for text readability if needed */
+    .hh-person-img::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    }
+
+    .hh-person-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 25px;
+        background: var(--brand-orange);
+        color: #fff;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 2;
+        box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3);
+    }
+
+    .hh-person-content {
+        padding: 40px;
+    }
+
+    .hh-person-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .hh-person-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE RESPECT QUOTE (Green Shimmer) --- */
+    .hh-respect-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        border-radius: 40px;
+        padding: 50px 60px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+    }
+
+    .hh-respect-text h4 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .hh-respect-text p {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        opacity: 0.9;
+        margin: 0;
+        max-width: 700px;
+    }
+
+    .hh-respect-icon {
+        font-size: 45px;
+        color: var(--brand-orange);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-people-grid { grid-template-columns: 1fr; }
+        .hh-respect-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; padding: 40px 30px; }
+    }
+</style>
+
+<section class="hh-people-wrapper">
+    <div class="hh-people-max">
+        
+        <div class="hh-people-header">
+            <span class="hh-people-kicker">The True Hosts</span>
+            <h2 class="hh-people-title">The Heartbeat of the Hive.</h2>
+            <p class="hh-people-subtitle">We are just the bridge. The real magic belongs to the people who welcome you into their mountains.</p>
+        </div>
+
+        <div class="hh-people-grid">
+            
+            <div class="hh-person-card">
+                <div class="hh-person-img">
+                    <img src="https://placehold.co/800x600/e2e2e2/1d1d1f?text=The+Mountain+Pilots" alt="Local Driver">
+                    <div class="hh-person-icon"><i class="fa-solid fa-steering-wheel"></i></div>
+                </div>
+                <div class="hh-person-content">
+                    <h3>The Pilots</h3>
+                    <p>They know every hairpin curve and every hidden tea stall. Our drivers don't just drive; they read the mist, avoid the traffic, and ensure your family feels completely safe on the steepest ridges.</p>
+                </div>
+            </div>
+
+            <div class="hh-person-card">
+                <div class="hh-person-img">
+                    <img src="https://placehold.co/800x600/e2e2e2/1d1d1f?text=The+Warm+Hosts" alt="Homestay Host">
+                    <div class="hh-person-icon"><i class="fa-solid fa-house-chimney-crack"></i></div>
+                </div>
+                <div class="hh-person-content">
+                    <h3>The Hosts</h3>
+                    <p>Waking up at 4:00 AM to make sure your tea is hot and your room is warm. Our hand-picked local hosts open their doors and kitchens to give you a taste of genuine, unscripted Himalayan hospitality.</p>
+                </div>
+            </div>
+
+            <div class="hh-person-card">
+                <div class="hh-person-img">
+                    <img src="https://placehold.co/800x600/e2e2e2/1d1d1f?text=The+Storytellers" alt="Local Guide">
+                    <div class="hh-person-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                </div>
+                <div class="hh-person-content">
+                    <h3>The Storytellers</h3>
+                    <p>They don't just point at buildings; they tell you the folklore of the pines and the history of the tea gardens. They are your local friends, showing you the secrets of their hometown.</p>
+                </div>
+            </div>
+
+            <div class="hh-respect-bar">
+                <div class="hh-respect-text">
+                    <h4>Respect is our currency.</h4>
+                    <p>By removing large corporate middlemen, we ensure these incredible locals are paid fairly and immediately. When they are happy and respected, your journey becomes infinitely more beautiful.</p>
+                </div>
+                <div class="hh-respect-icon">
+                    <i class="fa-solid fa-hands-holding-circle"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- HIMALAYAN HIVES: INVITE WRAPPER --- */
+    .hh-invite-wrapper {
+        background-color: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-invite-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- THE GRID --- */
+    .hh-invite-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* --- LEFT: THE WARM TEXT --- */
+    .hh-invite-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-invite-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        color: var(--brand-green);
+    }
+
+    .hh-invite-p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+    }
+
+    .hh-invite-p b {
+        color: var(--text-main);
+        font-weight: 700;
+    }
+
+    /* --- RIGHT: THE CONTACT CARD --- */
+    .hh-contact-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 60px 50px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .hh-contact-header {
+        margin-bottom: 40px;
+    }
+
+    .hh-contact-header h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 10px;
+    }
+
+    .hh-contact-header p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .hh-contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hh-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hh-contact-icon {
+        width: 50px;
+        height: 50px;
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-orange);
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .hh-contact-text b {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--text-main);
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .hh-contact-text span {
+        font-size: 1rem;
+        color: var(--text-muted);
+    }
+
+    /* --- THE BUTTON --- */
+    .hh-chat-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 22px 40px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 40px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .hh-chat-btn:hover {
+        background: var(--brand-green);
+        transform: translateY(-3px);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-invite-grid { grid-template-columns: 1fr; gap: 60px; }
+        .hh-contact-card { padding: 50px 30px; }
+    }
+</style>
+
+<section class="hh-invite-wrapper">
+    <div class="hh-invite-max">
+        
+        <div class="hh-invite-grid">
+            
+            <div class="hh-invite-text">
+                <span class="hh-invite-kicker">An Open Door</span>
+                <h2 class="hh-invite-title">Let's just talk about the hills.</h2>
+                
+                <p class="hh-invite-p">
+                    No automated bots. No aggressive sales calls pushing you to book a package. When you reach out to <b>Himalayan Hives</b>, you speak directly to our local team here in Siliguri.
+                </p>
+                
+                <p class="hh-invite-p">
+                    Whether you are planning to travel next week, thinking about a trip for next year, or just want honest advice on what the weather is currently like in Darjeeling, our door is always open.
+                </p>
+                
+                <p class="hh-invite-p" style="font-style: italic;">
+                    Take your time. Ask your questions. We are here whenever you are ready to come home to the mountains.
+                </p>
+            </div>
+
+            <div class="hh-contact-card">
+                
+                <div class="hh-contact-header">
+                    <h3>Reach the Hive</h3>
+                    <p>Direct lines to our team in Siliguri.</p>
+                </div>
+
+                <ul class="hh-contact-list">
+                    <li class="hh-contact-item">
+                        <div class="hh-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="hh-contact-text">
+                            <b>Our Basecamp</b>
+                            <span>Siliguri, West Bengal, India</span>
+                        </div>
+                    </li>
+                    <li class="hh-contact-item">
+                        <div class="hh-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="hh-contact-text">
+                            <b>Write to us</b>
+                            <span>hello@himalayanhives.com</span>
+                        </div>
+                    </li>
+                    <li class="hh-contact-item">
+                        <div class="hh-contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="hh-contact-text">
+                            <b>Direct WhatsApp</b>
+                            <span>+91 98765 43210</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="https://wa.me/YOURNUMBER?text=Hi!%20I%20would%20love%20to%20chat%20about%20a%20mountain%20trip." class="hh-chat-btn">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    Start a Conversation
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+    <style>
+    /* --- HIMALAYAN HIVES: COMMUNITY WRAPPER --- */
+    .hh-comm-wrapper {
+        background-color: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-comm-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- THE GRID LAYOUT --- */
+    .hh-comm-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    /* --- LEFT: THE STORY --- */
+    .hh-comm-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-comm-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        color: var(--brand-green);
+    }
+
+    .hh-comm-lead {
+        font-size: 1.4rem;
+        color: var(--text-main);
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .hh-comm-p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
+
+    /* --- RIGHT: THE PILLAR CARDS --- */
+    .hh-comm-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* CHANGED CLASS NAME TO PREVENT CLASH WITH SECTION 02 */
+    .hh-comm-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 30px;
+        padding: 40px;
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        transition: var(--transition);
+        position: relative; /* Resetting position just to be safe */
+        top: 0;
+        left: 0;
+    }
+
+    .hh-comm-card:hover {
+        background: #ffffff;
+        border-color: var(--brand-green);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        transform: translateX(-10px);
+    }
+
+    .hh-comm-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--brand-green-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-orange);
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .hh-comm-text h4 {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 10px;
+    }
+
+    .hh-comm-text p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE FULL WIDTH PROMISE BAR --- */
+    .hh-comm-bar {
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px 60px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .hh-comm-bar-icon {
+        font-size: 50px;
+        color: var(--brand-orange);
+    }
+
+    .hh-comm-bar-text h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .hh-comm-bar-text p {
+        font-size: 1.15rem;
+        opacity: 0.9;
+        margin: 0;
+        line-height: 1.5;
+        max-width: 800px;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-comm-grid { grid-template-columns: 1fr; gap: 60px; }
+        .hh-comm-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+        .hh-comm-card:hover { transform: translateY(-5px); translateX: 0; }
+        .hh-comm-bar { flex-direction: column; text-align: center; padding: 40px 30px; gap: 25px; }
+    }
+</style>
+
+<section class="hh-comm-wrapper">
+    <div class="hh-comm-max">
+        
+        <div class="hh-comm-grid">
+            
+            <div class="hh-comm-content">
+                <span class="hh-comm-kicker">Beyond Tourism</span>
+                <h2 class="hh-comm-title">Leaving a gentle footprint.</h2>
+                
+                <p class="hh-comm-lead">When you visit our home, you help us keep it beautiful and thriving.</p>
+                
+                <p class="hh-comm-p">
+                    Tourism can sometimes take more from a place than it gives back. At Himalayan Hives, we are determined to do things differently. We believe that every trip should leave behind a positive ripple in the communities you visit.
+                </p>
+                
+                <p class="hh-comm-p">
+                    By choosing to travel with a locally-owned company, your money doesn't disappear into a corporate headquarters in a big city. It stays right here in the hills. It pays for a local driver's daughter to attend school, helps a homestay mother repair her roof before the monsoons, and supports the farmers who grow your morning tea.
+                </p>
+            </div>
+
+            <div class="hh-comm-cards">
+                
+                <div class="hh-comm-card">
+                    <div class="hh-comm-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="hh-comm-text">
+                        <h4>Empowering Homestays</h4>
+                        <p>We prioritize family-run homestays, especially those led by women. This brings a direct, reliable income to rural households that often get bypassed by big hotel chains.</p>
+                    </div>
+                </div>
+
+                <div class="hh-comm-card">
+                    <div class="hh-comm-icon"><i class="fa-solid fa-car"></i></div>
+                    <div class="hh-comm-text">
+                        <h4>Micro-Entrepreneurs</h4>
+                        <p>Our drivers are not underpaid employees. We help them own and maintain their own vehicles, turning them into proud, independent business owners.</p>
+                    </div>
+                </div>
+
+                <div class="hh-comm-card">
+                    <div class="hh-comm-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                    <div class="hh-comm-text">
+                        <h4>Silent Trails</h4>
+                        <p>We educate our guests on how to respect sacred spaces. We carry our own trash, use zero single-use plastics in our cars, and always leave the hills exactly as we found them.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hh-comm-bar">
+            <div class="hh-comm-bar-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <div class="hh-comm-bar-text">
+                <h3>A Shared Success</h3>
+                <p>You get the trip of a lifetime, and the local community gets a fair, honest living. It is a beautiful exchange of cultures, built entirely on mutual respect.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<style>
+    /* --- HIMALAYAN HIVES: SLOW DAY WRAPPER --- */
+    .hh-slow-wrapper {
+        background-color: var(--bg-soft);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-slow-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- THE HEADER --- */
+    .hh-slow-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .hh-slow-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-slow-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: var(--brand-green);
+    }
+
+    .hh-slow-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 750px;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    /* --- THE TIMELINE GRID --- */
+    .hh-slow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        position: relative;
+    }
+
+    /* Subtle connecting line behind the cards (Desktop only) */
+    .hh-slow-grid::before {
+        content: '';
+        position: absolute;
+        top: 60px;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: var(--grey-apple);
+        z-index: 1;
+    }
+
+    .hh-time-card {
+        background: var(--bg-white);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        position: relative;
+        z-index: 2;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hh-time-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .hh-time-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--bg-soft);
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-orange);
+        font-size: 24px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .hh-time-badge {
+        font-size: 12px;
+        font-weight: 800;
+        background: var(--brand-green-light);
+        color: var(--brand-green);
+        padding: 6px 15px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .hh-time-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--text-main);
+        margin-bottom: 15px;
+    }
+
+    .hh-time-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE NO-RUSH BAR (Green Shimmer) --- */
+    .hh-norush-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        border-radius: 40px;
+        padding: 50px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+    }
+
+    .hh-norush-bar h4 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .hh-norush-bar p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin: 0;
+        max-width: 800px;
+        font-style: italic;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-slow-grid { grid-template-columns: 1fr; }
+        .hh-slow-grid::before { display: none; } /* Hide line on mobile */
+        .hh-norush-bar { grid-column: span 1; padding: 40px 30px; }
+    }
+</style>
+
+<section class="hh-slow-wrapper">
+    <div class="hh-slow-max">
+        
+        <div class="hh-slow-header">
+            <span class="hh-slow-kicker">The Art of Slowness</span>
+            <h2 class="hh-slow-title">The anatomy of a slow day.</h2>
+        </div>
+
+        <div class="hh-slow-grid">
+            
+            <div class="hh-time-card">
+                <div class="hh-time-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                <div class="hh-time-badge">The Morning</div>
+                <h3>The Gentle Wake</h3>
+                <p>Wake up naturally to the sound of birds, not a tour guide knocking on your door. Step onto your balcony where a hot cup of local Darjeeling tea is already waiting for you as the morning mist slowly clears.</p>
+            </div>
+
+            <div class="hh-time-card">
+                <div class="hh-time-icon"><i class="fa-solid fa-leaf"></i></div>
+                <div class="hh-time-badge">The Afternoon</div>
+                <h3>The Unplanned Stop</h3>
+                <p>We take a scenic drive. You see a beautiful pine forest and want to stop for an hour just to sit and listen to the wind. There is no rush to reach the next "tourist point." Your driver happily waits.</p>
+            </div>
+
+            <div class="hh-time-card">
+                <div class="hh-time-icon"><i class="fa-solid fa-moon"></i></div>
+                <div class="hh-time-badge">The Evening</div>
+                <h3>The Warm Hearth</h3>
+                <p>You return to your homestay feeling refreshed, not exhausted. A warm, home-cooked meal is being prepared. You spend the evening by the fire, sharing quiet stories with your hosts and family.</p>
+            </div>
+
+            <div class="hh-norush-bar">
+                <h4>Your time belongs to you.</h4>
+                <p>"When you travel with Himalayan Hives, the car only moves when you are ready. You are the author of your day, and we are just here to make the pages beautiful."</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* --- HIMALAYAN HIVES: PRICE WRAPPER --- */
+    .hh-price-wrapper {
+        background-color: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-price-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- THE HEADER --- */
+    .hh-price-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .hh-price-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-price-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: var(--brand-green);
+    }
+
+    .hh-price-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 750px;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    /* --- THE VALUE GRID --- */
+    .hh-price-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .hh-value-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hh-value-card:hover {
+        border-color: var(--brand-green);
+        background: #ffffff;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+        transform: translateY(-5px);
+    }
+
+    .hh-value-icon {
+        width: 65px;
+        height: 65px;
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-orange);
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .hh-value-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .hh-value-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* --- THE TRANSPARENCY BAR (Green Shimmer) --- */
+    .hh-transparency-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        border-radius: 40px;
+        padding: 50px 60px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+    }
+
+    .hh-trans-text h4 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .hh-trans-text p {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        opacity: 0.9;
+        margin: 0;
+        max-width: 700px;
+    }
+
+    .hh-trans-icon {
+        font-size: 45px;
+        color: var(--brand-orange);
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 1024px) {
+        .hh-price-grid { grid-template-columns: 1fr; }
+        .hh-transparency-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; padding: 40px 30px; }
+    }
+</style>
+
+<section class="hh-price-wrapper">
+    <div class="hh-price-max">
+        
+        <div class="hh-price-header">
+            <span class="hh-price-kicker">Radical Transparency</span>
+            <h2 class="hh-price-title">We are not the cheapest. <br>And we are proud of it.</h2>
+            <p class="hh-price-subtitle">A cheap trip usually means someone else is quietly paying the price. <br> At Himalayan Hives, we believe in a fair and honest exchange that respects everyone involved.</p>
+        </div>
+
+        <div class="hh-price-grid">
+            
+            <div class="hh-value-card">
+                <div class="hh-value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3>Fair Local Wages</h3>
+                <p>Budget agencies cut corners by underpaying their staff. We pay our drivers, guides, and homestay hosts a dignified, premium wage. This means they are happy, well-rested, and genuinely invested in your safety, rather than rushing to finish the job.</p>
+            </div>
+
+            <div class="hh-value-card">
+                <div class="hh-value-icon"><i class="fa-solid fa-store-slash"></i></div>
+                <h3>No Commission Traps</h3>
+                <p>Many cheap tours force drivers to stop at specific tourist shops and restaurants where they get a hidden cut. We pay our team upfront, meaning your time is yours, and you will never feel pressured to buy anything you don't want.</p>
+            </div>
+
+            <div class="hh-value-card">
+                <div class="hh-value-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Zero Hidden Corners</h3>
+                <p>We don't bait you with a low starting price only to ask for "parking fees," "AC charges," or "permit tips" on the road. The quote you receive from us covers every tax and toll. You simply bring cash for your lunch and shopping.</p>
+            </div>
+
+            <div class="hh-transparency-bar">
+                <div class="hh-trans-text">
+                    <h4>Peace of mind has a true cost.</h4>
+                    <p>It is the cost of a well-maintained SUV that won't break down, a warm bed with clean sheets, and a local guide who looks after you like family. We refuse to compromise on your comfort.</p>
+                </div>
+                <div class="hh-trans-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- HIMALAYAN HIVES: FAQ WRAPPER --- */
+    .hh-faq-wrapper {
+        background-color: var(--bg-soft);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .hh-faq-max {
+        max-width: 900px; /* Narrower for comfortable reading */
+        margin: 0 auto;
+    }
+
+    /* --- THE HEADER --- */
+    .hh-faq-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .hh-faq-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hh-faq-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: var(--brand-green);
+    }
+
+    .hh-faq-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-weight: 500;
+    }
+
+    /* --- THE ACCORDION UX --- */
+    .hh-faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hh-faq-item {
+        background: var(--bg-white);
+        border: 1px solid var(--grey-apple);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .hh-faq-item:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    /* The Question Trigger */
+    .hh-faq-trigger {
+        width: 100%;
+        padding: 30px 35px;
+        background: transparent;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .hh-faq-trigger span {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text-main);
+        padding-right: 20px;
+    }
+
+    .hh-faq-trigger i {
+        color: var(--brand-orange);
+        font-size: 18px;
+        transition: transform 0.4s ease;
+    }
+
+    /* The Answer Box */
+    .hh-faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hh-faq-inner {
+        padding: 0 35px 35px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    /* Open State */
+    .hh-faq-item.active .hh-faq-content {
+        max-height: 400px; 
+    }
+
+    .hh-faq-item.active .hh-faq-trigger i {
+        transform: rotate(180deg);
+    }
+
+    /* --- THE CALL TO ACTION --- */
+    .hh-faq-footer {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .hh-faq-footer p {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+    }
+
+    .hh-faq-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 20px 45px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: inline-block;
+        transition: var(--transition);
+        box-shadow: 0 10px 20px rgba(255, 69, 0, 0.2);
+    }
+
+    .hh-faq-btn:hover { 
+        background: var(--brand-green); 
+        transform: translateY(-3px); 
+    }
+
+</style>
+
+<section class="hh-faq-wrapper">
+    <div class="hh-faq-max">
+        
+        <div class="hh-faq-header">
+            <span class="hh-faq-kicker">Clear & Simple</span>
+            <h2 class="hh-faq-title">Questions from the heart.</h2>
+            <p class="hh-faq-subtitle">We believe in complete honesty. Here are a few things our guests often ask before joining the Hive.</p>
+        </div>
+
+        <div class="hh-faq-container">
+            
+            <div class="hh-faq-item">
+                <button class="hh-faq-trigger">
+                    <span>Do you organize group tours where we can join others?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hh-faq-content">
+                    <div class="hh-faq-inner">
+                        No, we do not. To protect your privacy and ensure your comfort, we only organize private trips for you and your chosen circle (family or friends). We believe a journey is best experienced at your own pace, without the stress of waiting for strangers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hh-faq-item">
+                <button class="hh-faq-trigger">
+                    <span>Are your daily itineraries completely fixed?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hh-faq-content">
+                    <div class="hh-faq-inner">
+                        Not at all. Think of our itineraries as a gentle guide. If you find a beautiful forest and want to spend an extra hour drinking tea, the car waits. Your comfort and happiness dictate the schedule, not a clock.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hh-faq-item">
+                <button class="hh-faq-trigger">
+                    <span>What happens if the mountain weather turns bad?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hh-faq-content">
+                    <div class="hh-faq-inner">
+                        The mountains are our home, and we know their moods. Our local team in Siliguri monitors the weather constantly. If a specific road or viewpoint isn't safe, we calmly adjust the plan and offer a beautiful alternative, always keeping your family's safety as our highest priority.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hh-faq-item">
+                <button class="hh-faq-trigger">
+                    <span>Are your trips suitable for elderly parents or young children?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hh-faq-content">
+                    <div class="hh-faq-inner">
+                        Absolutely. Because our trips are completely private and slow-paced, they are perfect for families. We select hotels with minimal stairs, choose drivers who navigate mountain curves gently, and make sure meal timings suit your family's routine.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hh-faq-item">
+                <button class="hh-faq-trigger">
+                    <span>How do I know my money is actually helping the locals?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hh-faq-content">
+                    <div class="hh-faq-inner">
+                        We have removed the corporate middlemen. We work directly with independent local drivers, family-run homestays, and community guides. You will meet these wonderful people face-to-face and experience their genuine hospitality firsthand.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hh-faq-footer">
+            <p>Did we miss something you'd like to know?</p>
+            <a href="https://wa.me/YOURNUMBER?text=Hi!%20I%20have%20a%20question%20about%20traveling%20with%20Himalayan%20Hives." class="hh-faq-btn">Ask us directly</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Gentle Accordion Logic for HH
+    const hhFaqItems = document.querySelectorAll('.hh-faq-item');
+    hhFaqItems.forEach(item => {
+        const trigger = item.querySelector('.hh-faq-trigger');
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Gently close others
+            hhFaqItems.forEach(i => i.classList.remove('active'));
+            
+            // Open clicked
+            if (!isActive) item.classList.add('active');
+        });
+    });
+</script>
+
+<style>
+    /* --- HIMALAYAN HIVES: FINAL CTA WRAPPER --- */
+    .hh-final-wrapper {
+        background-color: var(--bg-soft);
+        padding: 100px 8% 120px;
+        font-family: var(--font-body);
+        display: flex;
+        justify-content: center;
+    }
+
+    .hh-final-max {
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    /* --- THE CTA BOX (Green Shimmer) --- */
+    .hh-cta-box {
+        background: var(--green-shimmer);
+        border-radius: 50px;
+        padding: 80px 60px;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 40px 80px rgba(15, 61, 46, 0.15);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Soft overlay pattern for depth */
+    .hh-cta-box::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    .hh-cta-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hh-cta-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hh-cta-p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        max-width: 650px;
+        margin: 0 auto 40px;
+        font-weight: 500;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hh-cta-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 22px 50px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+
+    .hh-cta-btn:hover {
+        background: #fff;
+        color: var(--text-main);
+        transform: translateY(-5px);
+    }
+
+    /* --- THE HONEST NOTE (The 400+ Query Disclaimer) --- */
+    .hh-sidenote-box {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 30px 40px;
+        margin-top: 50px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hh-sidenote-icon {
+        color: var(--brand-orange);
+        font-size: 28px;
+        margin-top: 5px;
+        flex-shrink: 0;
+    }
+
+    .hh-sidenote-text h4 {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hh-sidenote-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 900px) {
+        .hh-cta-box { padding: 60px 30px; }
+        .hh-sidenote-box { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
+        .hh-sidenote-icon { margin-top: 0; margin-bottom: 10px; }
+    }
+</style>
+
+<section class="hh-final-wrapper">
+    <div class="hh-final-max">
+        
+        <div class="hh-cta-box">
+            
+            <span class="hh-cta-kicker">Your Next Chapter</span>
+            <h2 class="hh-cta-title">Let’s plan your <br>homecoming.</h2>
+            
+            <p class="hh-cta-p">
+                Whenever you are ready to see the mountains, we are here waiting with an open map and a warm cup of tea. No rush, no pressure.
+            </p>
+            
+            <a href="https://wa.me/YOURNUMBER?text=Hi%20Himalayan%20Hives!%20I%20would%20love%20to%20plan%20a%20trip." class="hh-cta-btn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i>
+                Write to the Hive
+            </a>
+
+            <div class="hh-sidenote-box">
+                <div class="hh-sidenote-icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div class="hh-sidenote-text">
+                    <h4>A gentle note regarding response times</h4>
+                    <p>We are incredibly grateful to receive over <b>400+ travel inquiries</b> every single day. Because we refuse to use automated bots and insist on our local team reading and replying to every message personally, it might take us a few hours to get back to you. Please bear with us—we promise to reply with the care, honesty, and detail your trip deserves.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}
+    

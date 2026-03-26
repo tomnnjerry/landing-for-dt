@@ -1,0 +1,3719 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+<style>
+    /* --- STRUCTURAL RESET --- */
+    .dj-hero-section {
+        background-color: var(--bg-black);
+        background-image: radial-gradient(circle at 80% 20%, rgba(15, 61, 46, 0.15) 0%, transparent 40%);
+        padding: 160px 8% 100px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-body);
+        color: var(--text-on-dark);
+        overflow: hidden;
+    }
+
+    .dj-hero-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* --- CONTENT AREA --- */
+    .dj-kicker {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        margin-bottom: 24px;
+        display: block;
+    }
+
+    .dj-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3.2rem, 7vw, 5.8rem);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -3px;
+        margin-bottom: 32px;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .dj-description {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 520px;
+        margin-bottom: 48px;
+    }
+
+    .dj-description b {
+        color: var(--text-on-dark);
+        font-weight: 700;
+    }
+
+    /* --- THE TACTICAL ROUTE CARD --- */
+    .dj-op-card {
+        background: var(--bg-charcoal);
+        border: 1px solid var(--brand-green);
+        padding: 56px;
+        border-radius: var(--radius);
+        position: relative;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    }
+
+    .dj-route-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .dj-point {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dj-point-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--brand-orange);
+        font-weight: 800;
+    }
+
+    .dj-point-val {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-on-dark);
+    }
+
+    .dj-point-intel {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    /* --- ACTION BUTTONS --- */
+    .dj-action-group {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .dj-btn-primary {
+        background: var(--brand-orange);
+        color: var(--bg-white);
+        padding: 24px 48px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2px;
+        transition: var(--transition);
+        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .dj-btn-primary:hover {
+        transform: scale(1.05) translateY(-4px);
+        filter: brightness(1.1);
+    }
+
+    .dj-wa-link {
+        color: var(--text-on-dark);
+        text-decoration: none;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        transition: 0.3s ease;
+    }
+
+    .dj-wa-link i { color: #25D366; font-size: 22px; }
+    .dj-wa-link:hover { color: var(--brand-orange); }
+
+    /* --- MOBILE RESPONSIVE --- */
+    @media (max-width: 1024px) {
+        .dj-hero-container { grid-template-columns: 1fr; text-align: center; gap: 60px; }
+        .dj-description { margin: 0 auto 40px; }
+        .dj-action-group { flex-direction: column; }
+        .dj-op-card { padding: 40px 24px; }
+        .dj-point { text-align: left; }
+    }
+</style>
+
+<section class="dj-hero-section">
+    <div class="dj-hero-container">
+        
+        <div class="dj-content-box">
+            <span class="dj-kicker">The Ridge Circuit</span>
+            <h1 class="dj-title">4 Days <br>High Loop.</h1>
+            <p class="dj-description">
+                Experience Darjeeling through the <b>"OP" Routes.</b> Ascend via the Kurseong clouds, touch the peaks at Tiger Hill, and descend via the <b>Mirik Border Road.</b> No traffic, just views.
+            </p>
+            
+            <div class="dj-action-group">
+                <a href="#quote" class="dj-btn-primary">Secure the SUV</a>
+                <a href="https://wa.me/YOURNUMBER" class="dj-wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Route Intel
+                </a>
+            </div>
+        </div>
+
+        <div class="dj-op-card">
+            <div class="dj-route-grid">
+                
+                <div class="dj-point">
+                    <span class="dj-point-label">Day 01 / Ascent</span>
+                    <span class="dj-point-val">Via Kurseong</span>
+                    <p class="dj-point-intel">Escape the Rohini crowd. Heritage tracks & clouds.</p>
+                </div>
+
+                <div class="dj-point">
+                    <span class="dj-point-label">Day 02 / The Peak</span>
+                    <span class="dj-point-val">Tiger Hill</span>
+                    <p class="dj-point-intel">4:00 AM Tactical Sunrise + Mall Road vibes.</p>
+                </div>
+
+                <div class="dj-point">
+                    <span class="dj-point-label">Day 03 / Nature</span>
+                    <span class="dj-point-val">Lamahatta</span>
+                    <p class="dj-point-intel">Pine forest eco-trails & silent monastery walks.</p>
+                </div>
+
+                <div class="dj-point">
+                    <span class="dj-point-label">Day 04 / Descent</span>
+                    <span class="dj-point-val">Via Mirik Lake</span>
+                    <p class="dj-point-intel">Exit through the Nepal border orchards & tea gardens.</p>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--brand-green-light); display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 13px; color: var(--text-muted);">
+                    <i class="fa-solid fa-gauge-high" style="color: var(--brand-orange); margin-right: 8px;"></i>
+                    Private AWD / SUV Only
+                </div>
+                <div style="font-size: 11px; font-weight: 900; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 2px;">
+                    3N / 4D Planned Loop
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- DAY 01 WRAPPER --- */
+    .dj-day-container {
+        background: var(--bg-white);
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-max-width {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER SECTION --- */
+    .dj-itinerary-header {
+        margin-bottom: 60px;
+    }
+
+    .dj-day-tag {
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-day-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        color: var(--forest);
+        margin: 0;
+    }
+
+    /* --- THE BENTO TIMELINE --- */
+    .dj-bento-timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        grid-template-rows: auto auto;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .dj-bento-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 40px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dj-bento-card:hover {
+        border-color: var(--brand-green);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+    }
+
+    /* Specialty Cards */
+    .dj-card-wide { grid-column: span 2; }
+    .dj-card-tall { grid-row: span 2; background: var(--brand-green); color: #fff; }
+
+    /* Card Content */
+    .dj-time {
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .dj-bento-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .dj-bento-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .dj-card-tall p { color: rgba(255,255,255,0.8); }
+    .dj-card-tall h3 { color: #fff; }
+
+    /* --- THE LOCAL INTEL BAR --- */
+    .dj-intel-bar {
+        margin-top: 40px;
+        background: var(--green-shimmer);
+        padding: 30px 45px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        color: #fff;
+    }
+
+    .dj-intel-icon { font-size: 30px; color: var(--brand-orange); }
+    .dj-intel-text b { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+    .dj-intel-text span { font-size: 1rem; opacity: 0.9; }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .dj-bento-timeline { grid-template-columns: 1fr; }
+        .dj-card-wide, .dj-card-tall { grid-column: span 1; grid-row: span 1; }
+        .dj-intel-bar { flex-direction: column; text-align: center; }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    /* --- DJ HIGHLIGHTS WRAPPER --- */
+    .dj-highlights {
+        background: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-h-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .dj-h-header {
+        margin-bottom: 60px;
+        text-align: left;
+    }
+
+    .dj-h-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+        color: var(--brand-green);
+    }
+
+    /* --- THE TACTICAL CHECKLIST --- */
+    .dj-h-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .dj-h-item {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--grey-apple);
+        align-items: center;
+        transition: var(--transition);
+    }
+
+    /* Hidden items logic */
+    .dj-h-item.dj-hidden {
+        display: none;
+    }
+
+    .dj-h-number {
+        font-weight: 900;
+        font-size: 18px;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .dj-h-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+    /* --- THE SHOW MORE BUTTON --- */
+    .dj-h-btn-wrap {
+        margin-top: 50px;
+        text-align: left;
+    }
+
+    .dj-h-read-more {
+        background: var(--bg-charcoal);
+        color: var(--bg-white);
+        padding: 20px 45px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .dj-h-read-more:hover {
+        background: var(--brand-orange);
+        transform: scale(1.05);
+    }
+
+    /* --- THE LOCAL TRUTH BOX --- */
+    .dj-h-truth {
+        margin-top: 60px;
+        background: var(--grey-apple);
+        padding: 35px;
+        border-radius: 30px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        border-left: 6px solid var(--brand-orange);
+    }
+
+    .dj-h-truth i { color: var(--brand-orange); font-size: 24px; }
+    .dj-h-truth p { font-size: 14px; font-weight: 600; color: var(--text-muted); margin: 0; line-height: 1.5; }
+</style>
+
+<section class="dj-highlights">
+    <div class="dj-h-container">
+        
+        <div class="dj-h-header">
+            <h2 class="dj-h-title">The High Loop Checklist.</h2>
+        </div>
+
+        <div class="dj-h-list" id="djHighlightsList">
+            <div class="dj-h-item"><span class="dj-h-number">01.</span><span class="dj-h-text">Doorstep pickup from Siliguri in a private SUV.</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">02.</span><span class="dj-h-text">Ascent via the clouds of Kurseong (The Scenic Route).</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">03.</span><span class="dj-h-text">Drive through the Dow Hill Pine Forest & Old Military Road.</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">04.</span><span class="dj-h-text">Hand-picked Darjeeling hotel with direct Mountain Views.</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">05.</span><span class="dj-h-text">Evening walking tour of the hidden bakeries in Mall Road.</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">06.</span><span class="dj-h-text">Tactical 4:00 AM departure for Tiger Hill (Beat the traffic).</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">07.</span><span class="dj-h-text">Sunrise view of Kanchenjunga from our secret North-West spot.</span></div>
+            <div class="dj-h-item"><span class="dj-h-number">08.</span><span class="dj-h-text">Full Batasia Loop & Ghoom Monastery circuit.</span></div>
+
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">09.</span><span class="dj-h-text">Escape the town to the misty Lamahatta Pine Forest.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">10.</span><span class="dj-h-text">Guided silent walk to the hidden "Pokhari" (Sacred Lake).</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">11.</span><span class="dj-h-text">British Legacy tour of the Takdah stone cottages.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">12.</span><span class="dj-h-text">Tea Orchard walk at the Tinchuley Ridge.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">13.</span><span class="dj-h-text">High-altitude descent via the Nepal Border Road (Simana).</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">14.</span><span class="dj-h-text">International crossing for shopping at Pashupati Market (Nepal).</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">15.</span><span class="dj-h-text">Horse-shoe lake lunch at the Mirik Lake South Bank.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">16.</span><span class="dj-h-text">Smooth return drive through Dudhia Orange Orchards.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">17.</span><span class="dj-h-text">All local parking, toll taxes, and permits managed by us.</span></div>
+            <div class="dj-h-item dj-hidden"><span class="dj-h-number">18.</span><span class="dj-h-text">Final drop-off directly back to your home in Siliguri.</span></div>
+        </div>
+
+        <div class="dj-h-btn-wrap">
+            <button class="dj-h-read-more" id="djShowMoreBtn" onclick="toggleDjHighlights()">Show Full Circuit Plan</button>
+        </div>
+
+        <div class="dj-h-truth">
+            <i class="fa-solid fa-mountain-city"></i>
+            <p>Important: We prioritize the "Loop" experience. If the Nepal border road is blocked or the weather at Tiger Hill is poor, our Local Pro drivers will instantly pivot to the best alternative route to ensure you don't miss the views.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function toggleDjHighlights() {
+        const hiddenItems = document.querySelectorAll('.dj-h-item.dj-hidden');
+        const btn = document.getElementById('djShowMoreBtn');
+        
+        hiddenItems.forEach(item => {
+            item.style.display = 'grid';
+        });
+        
+        btn.style.display = 'none';
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<section class="dj-day-container">
+    <div class="dj-max-width">
+        
+        <div class="dj-itinerary-header">
+            <span class="dj-day-tag">Phase 01 / Ascent</span>
+            <h2 class="dj-day-title">Into the Clouds.</h2>
+        </div>
+
+        <div class="dj-bento-timeline">
+            
+            <div class="dj-bento-card">
+                <div>
+                    <span class="dj-time">08:00 AM</span>
+                    <h3>The Doorstep Start</h3>
+                    <p>We skip the taxi stands. Our SUV picks you up from your home in Siliguri. Bags in, AC on, we head toward the foothills.</p>
+                </div>
+                <i class="fa-solid fa-house-chimney-user" style="font-size: 24px; color: var(--brand-orange); margin-top: 20px;"></i>
+            </div>
+
+            <div class="dj-bento-card">
+                <div>
+                    <span class="dj-time">10:30 AM</span>
+                    <h3>Kurseong Pitstop</h3>
+                    <p>Instead of the highway dhaba, we stop at a local favorite in Kurseong. Fresh momos, local tea, and the first "cloud-touch" of the trip.</p>
+                </div>
+                <i class="fa-solid fa-mug-hot" style="font-size: 24px; color: var(--brand-orange); margin-top: 20px;"></i>
+            </div>
+
+            <div class="dj-bento-card dj-card-tall">
+                <div>
+                    <span class="dj-time" style="color: #fff; opacity: 0.6;">The Route Strategy</span>
+                    <h3>The "Back-Road" Climb</h3>
+                    <p>While the tourists are stuck behind trucks on the Rohini Highway, we take the <b>Old Military Road</b> through Dow Hill.</p>
+                    <p style="margin-top: 20px;">It's 20 minutes longer, but you drive through 100-year-old pine forests and see the Toy Train tracks weaving in and out of the road. This is the <b>real</b> mountain experience.</p>
+                </div>
+                <i class="fa-solid fa-route" style="font-size: 40px; color: var(--brand-orange); margin-top: 40px; align-self: flex-end;"></i>
+            </div>
+
+            <div class="dj-bento-card dj-card-wide">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <span class="dj-time">01:30 PM</span>
+                        <h3>Darjeeling Entry</h3>
+                        <p>We reach Darjeeling just in time for lunch. We check you into your hotel—hand-picked to ensure your window faces the Kanchenjunga range.</p>
+                    </div>
+                    <div>
+                        <span class="dj-time">04:00 PM</span>
+                        <h3>The Mall Walk</h3>
+                        <p>A relaxed evening walk at Chowrasta. We’ll show you the hidden bakery that locals use, away from the Instagram crowds.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dj-intel-bar">
+            <i class="fa-solid fa-lightbulb dj-intel-icon"></i>
+            <div class="dj-intel-text">
+                <b>Local Pro Tip: The Window Rule</b>
+                <span>When driving up via Kurseong, sit on the <b>LEFT SIDE</b> of the car. You’ll get the panoramic valley views as we climb the ridge.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+<style>
+    /* --- DAY 02 TACTICAL WRAPPER --- */
+    .dj-day2-wrapper {
+        background: var(--bg-black);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-on-dark);
+        overflow: hidden;
+    }
+
+    .dj-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER --- */
+    .dj-phase-tag {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .dj-phase-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 50px;
+    }
+
+    /* --- THE MISSION BENTO --- */
+    .dj-mission-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 30px;
+    }
+
+    .dj-mission-card {
+        background: var(--bg-charcoal);
+        border: 1px solid var(--brand-green);
+        padding: 45px;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dj-mission-card:hover {
+        border-color: var(--brand-orange);
+        background: #000;
+        transform: translateY(-8px);
+    }
+
+    .dj-mission-wide { grid-column: span 2; }
+    .dj-mission-tall { grid-row: span 2; background: var(--green-shimmer); border: none; }
+
+    /* Card Content */
+    .dj-timestamp {
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .dj-mission-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .dj-mission-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* --- THE INTEL BOX --- */
+    .dj-pro-alert {
+        margin-top: 50px;
+        background: rgba(255, 69, 0, 0.1);
+        border: 1px solid var(--brand-orange);
+        padding: 35px;
+        border-radius: 30px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .dj-pro-alert i { font-size: 32px; color: var(--brand-orange); }
+    .dj-pro-alert div b { display: block; font-size: 14px; text-transform: uppercase; color: var(--brand-orange); margin-bottom: 5px; }
+    .dj-pro-alert div span { font-size: 1.05rem; color: var(--text-on-dark); opacity: 0.9; }
+
+    @media (max-width: 1024px) {
+        .dj-mission-grid { grid-template-columns: 1fr; }
+        .dj-mission-wide, .dj-mission-tall { grid-column: span 1; grid-row: span 1; }
+        .dj-pro-alert { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="dj-day2-wrapper">
+    <div class="dj-max-width">
+        
+        <div class="dj-itinerary-header">
+            <span class="dj-phase-tag">Phase 02 / The Mission</span>
+            <h2 class="dj-phase-title">The Ridge Sunrise.</h2>
+        </div>
+
+        <div class="dj-mission-grid">
+            
+            <div class="dj-mission-card dj-mission-wide">
+                <div>
+                    <span class="dj-timestamp">04:00 AM</span>
+                    <h3>The Tactical Deployment</h3>
+                    <p>While the crowds wait for local taxis, our private SUV is already halfway up the hill. We time our arrival to beat the "Main Gate" rush, ensuring you get a prime spot on the balcony before the noise begins.</p>
+                </div>
+                <div style="margin-top: 30px; display: flex; gap: 20px; font-size: 13px; font-weight: 800; color: var(--brand-orange);">
+                    <span><i class="fa-solid fa-car-side"></i> Heated SUV</span>
+                    <span><i class="fa-solid fa-clock"></i> Zero Wait-time</span>
+                </div>
+            </div>
+
+            <div class="dj-mission-card dj-mission-tall">
+                <div>
+                    <span class="dj-timestamp" style="color: #fff; opacity: 0.7;">The Pro Strategy</span>
+                    <h3 style="color: #fff;">Tiger Hill <br>Done Right.</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Don't follow the crowd to the center railing. We lead you to the <b>North-West corner</b>. </p>
+                    <p style="color: rgba(255,255,255,0.8); margin-top: 20px;">From here, you don't just see the sun; you see the <b>Kanchenjunga</b> turn from dark blue to "Sleeping Buddha" pink before anyone else realizes it's happening.</p>
+                </div>
+                <i class="fa-solid fa-mountain-sun" style="font-size: 60px; color: var(--brand-orange); align-self: flex-end;"></i>
+            </div>
+
+            <div class="dj-mission-card">
+                <div>
+                    <span class="dj-timestamp">08:30 AM</span>
+                    <h3>The Bakery Run</h3>
+                    <p>Standard tours take you to a crowded buffet. We head back to <b>Glenary's</b> or a hidden local haunt for fresh coffee and hot English breakfast while the town is still waking up.</p>
+                </div>
+                <i class="fa-solid fa-bread-slice" style="font-size: 24px; color: var(--brand-orange); margin-top: 25px;"></i>
+            </div>
+
+            <div class="dj-mission-card">
+                <div>
+                    <span class="dj-timestamp">11:00 AM</span>
+                    <h3>Batasia & Ghoom</h3>
+                    <p>We visit the Batasia Loop and the Ghoom Monastery. Our guide knows the specific angle to capture the Toy Train with the mountains in a single frame.</p>
+                </div>
+                <i class="fa-solid fa-train-subway" style="font-size: 24px; color: var(--brand-orange); margin-top: 25px;"></i>
+            </div>
+
+        </div>
+
+        <div class="dj-pro-alert">
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <div>
+                <b>Local Intel: The 10-Minute Rule</b>
+                <span>Most people leave Tiger Hill the moment the sun comes up. **Stay for 10 more minutes.** The sky turns a deep violet-gold, and the crowds are gone. That's when the best photos happen.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- DAY 03 "THE ESCAPE" WRAPPER --- */
+    .dj-day3-wrapper {
+        background: var(--bg-white);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER --- */
+    .dj-escape-tag {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .dj-escape-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 50px;
+        color: var(--brand-green);
+    }
+
+    /* --- THE BENTO GRID --- */
+    .dj-escape-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        grid-template-rows: auto auto;
+        gap: 30px;
+    }
+
+    .dj-escape-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        padding: 45px;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dj-escape-card:hover {
+        border-color: var(--brand-green);
+        background: #ffffff;
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .dj-escape-wide { grid-column: span 2; }
+    .dj-escape-tall { 
+        grid-row: span 2; 
+        background: var(--brand-green); 
+        color: #fff; 
+        border: none;
+    }
+
+    /* Card Typography */
+    .dj-time-pill {
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        background: var(--brand-green-light);
+        padding: 6px 14px;
+        border-radius: 100px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .dj-escape-tall .dj-time-pill {
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+    }
+
+    .dj-escape-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        color: var(--brand-green);
+    }
+
+    .dj-escape-tall h3 { color: #fff; }
+
+    .dj-escape-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .dj-escape-tall p { color: rgba(255,255,255,0.8); }
+
+    /* --- THE "OP" INTEL BAR --- */
+    .dj-mist-bar {
+        margin-top: 50px;
+        background: var(--green-shimmer);
+        padding: 35px 50px;
+        border-radius: 35px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        color: #fff;
+    }
+
+    .dj-mist-bar i { font-size: 35px; color: var(--brand-orange); }
+    .dj-mist-bar div b { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+    .dj-mist-bar div span { font-size: 1.1rem; opacity: 0.9; }
+
+    @media (max-width: 1024px) {
+        .dj-escape-grid { grid-template-columns: 1fr; }
+        .dj-escape-wide, .dj-escape-tall { grid-column: span 1; grid-row: span 1; }
+        .dj-mist-bar { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="dj-day3-wrapper">
+    <div class="dj-max-width">
+        
+        <div class="dj-escape-header">
+            <span class="dj-escape-tag">Phase 03 / The Deep Nature</span>
+            <h2 class="dj-escape-title">The Forest Escape.</h2>
+        </div>
+
+        <div class="dj-escape-grid">
+            
+            <div class="dj-escape-card">
+                <div>
+                    <span class="dj-time-pill">09:30 AM</span>
+                    <h3>Exit Strategy</h3>
+                    <p>We leave Darjeeling town early to avoid the day-trip crowds. We drive 22km into the Rangli Rangliot valley—one of the quietest tea zones in the district.</p>
+                </div>
+                <i class="fa-solid fa-leaf" style="font-size: 28px; color: var(--brand-green); margin-top: 25px;"></i>
+            </div>
+
+            <div class="dj-escape-card dj-escape-tall">
+                <div>
+                    <span class="dj-time-pill">The Local Secret</span>
+                    <h3>Beyond the <br>Roadside Selfie.</h3>
+                    <p>Most travelers just take a photo at the Lamahatta gate and leave. **We don't.**</p>
+                    <p style="margin-top: 20px;">We take you to the **Upper Pine Trail**. It's a 20-minute silent walk that leads to a sacred "Pokhari" (lake) hidden at the top of the hill. No selfie sticks, no noise—just the sound of wind through the prayer flags.</p>
+                </div>
+                <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                    <span style="font-size: 12px; font-weight: 800; display: block; margin-bottom: 10px; color: var(--brand-orange);">GEAR CHECK:</span>
+                    <span style="font-size: 14px;">Comfortable sneakers / Walking shoes.</span>
+                </div>
+            </div>
+
+            <div class="dj-escape-card">
+                <div>
+                    <span class="dj-time-pill">12:30 PM</span>
+                    <h3>The Takdah Loop</h3>
+                    <p>We visit the old British cantonment area. Think stone houses, 100-year-old gardens, and the famous Orchid Center. It feels like 1920s Darjeeling.</p>
+                </div>
+                <i class="fa-solid fa-house-chimney-window" style="font-size: 28px; color: var(--brand-green); margin-top: 25px;"></i>
+            </div>
+
+            <div class="dj-escape-card dj-escape-wide">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <span class="dj-time-pill">03:30 PM</span>
+                        <h3>Tinchuley Ridge</h3>
+                        <p>We end the day at Tinchuley. It’s a small hamlet famous for "Three Peaks." We grab some local orange-juice and watch the clouds roll into the Teesta Valley below.</p>
+                    </div>
+                    <div style="background: var(--grey-apple); padding: 25px; border-radius: 25px;">
+                        <h4 style="font-size: 14px; font-weight: 900; margin-bottom: 10px; color: var(--brand-green);">EVENING LOG:</h4>
+                        <p style="font-size: 13px;">Return to Darjeeling for a final quiet dinner, or stay overnight in a Tinchuley homestay for the real experience.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dj-mist-bar">
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+            <div>
+                <b>Local Intel: The Mist Window</b>
+                <span>At Lamahatta, the mist usually rolls in exactly at **12:15 PM**. If you want that "tactical forest" photo with the foggy pines, that is your window. Be ready.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- DAY 04 "THE BORDER LOOP" WRAPPER --- */
+    .dj-day4-wrapper {
+        background: var(--bg-black);
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-on-dark);
+        overflow: hidden;
+    }
+
+    .dj-max-width {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER --- */
+    .dj-border-tag {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .dj-border-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 50px;
+    }
+
+    /* --- THE TACTICAL BENTO GRID --- */
+    .dj-border-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 30px;
+    }
+
+    .dj-border-card {
+        background: var(--bg-charcoal);
+        border: 1px solid var(--brand-green);
+        padding: 45px;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dj-border-card:hover {
+        border-color: var(--brand-orange);
+        background: #000;
+        transform: translateY(-8px);
+    }
+
+    .dj-border-wide { grid-column: span 2; }
+    .dj-border-tall { 
+        grid-row: span 2; 
+        background: var(--green-shimmer); 
+        border: none;
+        position: relative;
+    }
+
+    /* Card Content */
+    .dj-stamp {
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .dj-border-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .dj-border-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .dj-border-tall p { color: rgba(255,255,255,0.85); }
+
+    /* --- THE FINAL INTEL BAR --- */
+    .dj-final-bar {
+        margin-top: 50px;
+        background: rgba(255, 69, 0, 0.1);
+        border: 1px solid var(--brand-orange);
+        padding: 35px;
+        border-radius: 30px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .dj-final-bar i { font-size: 32px; color: var(--brand-orange); }
+    .dj-final-bar div b { display: block; font-size: 14px; text-transform: uppercase; color: var(--brand-orange); margin-bottom: 5px; }
+    .dj-final-bar div span { font-size: 1.05rem; color: var(--text-on-dark); opacity: 0.9; }
+
+    @media (max-width: 1024px) {
+        .dj-border-grid { grid-template-columns: 1fr; }
+        .dj-border-wide, .dj-border-tall { grid-column: span 1; grid-row: span 1; }
+        .dj-final-bar { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="dj-day4-wrapper">
+    <div class="dj-max-width">
+        
+        <div class="dj-border-header">
+            <span class="dj-border-tag">Phase 04 / The Final Descent</span>
+            <h2 class="dj-border-title">The International Loop.</h2>
+        </div>
+
+        <div class="dj-border-grid">
+            
+            <div class="dj-border-card dj-border-wide">
+                <div>
+                    <span class="dj-stamp">09:00 AM</span>
+                    <h3>The Simana Ridge</h3>
+                    <p>We skip the main highway. Instead, we drive along the <b>Nepal Border Road</b>. For 20 kilometers, Nepal is on your right and India is on your left. It’s a high-altitude ridge drive through silent pine forests that most tourists never see.</p>
+                </div>
+                <div style="margin-top: 30px; display: flex; gap: 20px; font-size: 13px; font-weight: 800; color: var(--brand-orange);">
+                    <span><i class="fa-solid fa-map-location-dot"></i> Border-Side Drive</span>
+                    <span><i class="fa-solid fa-tree"></i> Pine Corridor</span>
+                </div>
+            </div>
+
+            <div class="dj-border-card dj-border-tall">
+                <div>
+                    <span class="dj-stamp" style="color: #fff; opacity: 0.7;">The Pro Tactical Stop</span>
+                    <h3 style="color: #fff;">Pashupati <br>Cross-Over.</h3>
+                    <p>We stop at the Pashupati Gate. As a Local Pro service, we’ll guide you through the 15-minute entry process so you can walk into the <b>Nepal Market</b>.</p>
+                    <p style="margin-top: 20px;">This is the spot for electronics, trekking gear, and authentic Nepal snacks. It’s a "trip within a trip" before we even hit the lake.</p>
+                </div>
+                <i class="fa-solid fa-passport" style="font-size: 60px; color: var(--brand-orange); align-self: flex-end;"></i>
+            </div>
+
+            <div class="dj-border-card">
+                <div>
+                    <span class="dj-stamp">12:30 PM</span>
+                    <h3>Sumendu Lake</h3>
+                    <p>We reach Mirik for a final lakeside lunch. We skip the crowded boat-side stalls and head to the quieter <b>South Bank</b> for a peaceful view of the arched bridge.</p>
+                </div>
+                <i class="fa-solid fa-water" style="font-size: 24px; color: var(--brand-orange); margin-top: 25px;"></i>
+            </div>
+
+            <div class="dj-border-card">
+                <div>
+                    <span class="dj-stamp">03:00 PM</span>
+                    <h3>The Dudhia Exit</h3>
+                    <p>The final descent. We drive through the <b>Dudhia orange orchards</b> and tea gardens. The road is smooth, wide, and brings you back to the Siliguri plains by late afternoon.</p>
+                </div>
+                <i class="fa-solid fa-car-on-road" style="font-size: 24px; color: var(--brand-orange); margin-top: 25px;"></i>
+            </div>
+
+        </div>
+
+        <div class="dj-final-bar">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <b>Local Intel: The Smooth Descent</b>
+                <span>Most drivers prefer the Kurseong road to go down because it's shorter. **We don't.** The Mirik-Dudhia road is 40% smoother with less truck traffic, making sure you reach home relaxed, not dizzy from curves.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<style>
+    /* --- DJ FIELD GUIDE WRAPPER --- */
+    .dj-guide-wrapper {
+        background: var(--bg-white);
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-guide-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADER --- */
+    .dj-guide-header {
+        margin-bottom: 80px;
+    }
+
+    .dj-guide-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-guide-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* --- THE INTEL GRID --- */
+    .dj-guide-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .dj-guide-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .dj-guide-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .dj-guide-card i { color: var(--brand-orange); }
+
+    /* Weather Logic */
+    .dj-season-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .dj-season-row:last-child { border: none; }
+    .dj-season-name { font-weight: 800; color: var(--text-main); }
+    .dj-season-vibe { font-size: 0.95rem; color: var(--text-muted); text-align: right; max-width: 250px; }
+
+    /* --- THE LOG TABLE --- */
+    .dj-table-wrap {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        margin-top: 40px;
+    }
+
+    .dj-dist-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    .dj-dist-table th {
+        background: var(--brand-green);
+        color: #fff;
+        padding: 25px 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .dj-dist-table td {
+        padding: 25px 40px;
+        border-bottom: 1px solid var(--grey-apple);
+        font-weight: 600;
+    }
+
+    .dj-dist-table tr:last-child td { border: none; }
+    .dj-dist-table b { color: var(--brand-orange); }
+
+    /* --- THE ROAD TRUTH (Green Shimmer) --- */
+    .dj-road-alert {
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px;
+        border-radius: 32px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+        .dj-guide-grid { grid-template-columns: 1fr; }
+        .dj-dist-table th, .dj-dist-table td { padding: 20px; font-size: 13px; }
+        .dj-road-alert { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<section class="dj-guide-wrapper">
+    <div class="dj-guide-max">
+        
+        <div class="dj-guide-header">
+            <span class="dj-guide-kicker">Local Intelligence</span>
+            <h2 class="dj-guide-title">The Darjeeling <br>Field Guide.</h2>
+        </div>
+
+        <div class="dj-guide-grid">
+            
+            <div class="dj-guide-card">
+                <h3><i class="fa-solid fa-temperature-half"></i> Climate Windows</h3>
+                <div class="dj-season-row">
+                    <span class="dj-season-name">Spring (Mar - May)</span>
+                    <span class="dj-season-vibe">Peak bloom. Rhododendrons and clear Kanchenjunga mornings.</span>
+                </div>
+                <div class="dj-season-row">
+                    <span class="dj-season-name">Autumn (Oct - Nov)</span>
+                    <span class="dj-season-vibe">The "Golden Window." Sharpest visibility for Tiger Hill sunrise.</span>
+                </div>
+                <div class="dj-season-row">
+                    <span class="dj-season-name">Winter (Dec - Feb)</span>
+                    <span class="dj-season-vibe">Very cold, but no crowds. Crystal blue skies and sunset fire.</span>
+                </div>
+                <div class="dj-season-row">
+                    <span class="dj-season-name">Monsoon (June - Sept)</span>
+                    <span class="dj-season-vibe">The "Deep Green" phase. Mist and rain. Peaks are hidden but tea gardens glow.</span>
+                </div>
+            </div>
+
+            <div class="dj-guide-card">
+                <h3><i class="fa-solid fa-map-location-dot"></i> Road Strategy</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">We choose roads based on **Vision, not Speed.**</p>
+                <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">
+                    While the <b>Rohini Highway</b> is the fastest, it is full of commercial trucks and heat. We use the <b>Kurseong Heritage Route</b> for the ascent—passing through colonial tea estates and pine corridors where the air is 5°C cooler.
+                </p>
+            </div>
+
+        </div>
+
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px; color: var(--brand-green);">Distance & Time Log</h3>
+        <div class="dj-table-wrap">
+            <table class="dj-dist-table">
+                <thead>
+                    <tr>
+                        <th>Circuit Segment</th>
+                        <th>Distance</th>
+                        <th>Recommended Route</th>
+                        <th>Travel Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Siliguri to Kurseong</td>
+                        <td>35 KM</td>
+                        <td>Old Military Road</td>
+                        <td><b>~1.5 Hours</b></td>
+                    </tr>
+                    <tr>
+                        <td>Kurseong to Darjeeling</td>
+                        <td>31 KM</td>
+                        <td>Hill Cart Track</td>
+                        <td><b>~1.5 Hours</b></td>
+                    </tr>
+                    <tr>
+                        <td>Darjeeling to Mirik</td>
+                        <td>49 KM</td>
+                        <td>Nepal Border Ridge</td>
+                        <td><b>~2.5 Hours</b></td>
+                    </tr>
+                    <tr>
+                        <td>Mirik to Siliguri</td>
+                        <td>52 KM</td>
+                        <td>Dudhia / Orchards</td>
+                        <td><b>~1.5 Hours</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="dj-road-alert">
+            <i class="fa-solid fa-compass" style="font-size: 40px; color: var(--brand-orange);"></i>
+            <div>
+                <h4 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">The High Loop Advantage</h4>
+                <p style="font-size: 1.1rem; opacity: 0.9;">By using the Mirik descent on Day 04, we reduce the steep "hairpin" curves by 30%. This makes the return journey much more comfortable for children and seniors, avoiding the typical motion sickness of the main highway.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .djt-places-wrapper {
+        background: #ffffff; 
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .djt-places-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .djt-places-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .djt-places-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .djt-places-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE PLACES GRID */
+    .djt-places-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .djt-place-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .djt-place-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .djt-place-img {
+        height: 320px;
+        background: var(--bg-soft);
+        position: relative;
+    }
+
+    .djt-place-img img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .djt-place-content {
+        padding: 40px;
+    }
+
+    .djt-place-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .djt-place-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+    }
+
+    /* 4. THE PRO TIP INSET */
+    .djt-place-pro {
+        background: var(--bg-soft);
+        padding: 20px 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-left: 4px solid var(--brand-orange);
+    }
+
+    .djt-place-pro i { color: var(--brand-orange); font-size: 18px; }
+    .djt-place-pro span { font-size: 14px; font-weight: 700; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .djt-places-grid { grid-template-columns: 1fr; }
+        .djt-place-content { padding: 30px; }
+    }
+</style>
+
+<section class="djt-places-wrapper">
+    <div class="djt-places-max">
+        
+        <div class="djt-places-header">
+            <span class="djt-places-kicker">Circuit Highlights</span>
+            <h2 class="djt-places-title">Important Spots.</h2>
+        </div>
+
+        <div class="djt-places-grid">
+            
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Kurseong+Tea+Gardens" alt="Kurseong">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Kurseong Ridge</h3>
+                    <p>The "Land of White Orchids." Unlike the commercial climb, we pass through the old heritage tracks and massive tea estates of Castleton and Makaibari. The air here is 5 degrees cooler than the highway.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> The best place for "First Flush" tea tasting away from town noise.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Tiger+Hill+Sunrise" alt="Tiger Hill">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Tiger Hill Peak</h3>
+                    <p>The highest point in the Darjeeling hills. You get a 360-degree view of Mount Everest and Kanchenjunga. We execute a 4:00 AM mission to secure the best balcony slot for you.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> Stay 10 mins after sunrise for the violet-gold sky "glow."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Lamahatta+Pine+Forest" alt="Lamahatta">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Lamahatta Pines</h3>
+                    <p>A silent eco-park surrounded by Dhupi and Pine trees. It feels like a movie set. Most tourists stay at the road level; we take you to the upper trail where the sacred lake is hidden.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> The upper sacred lake trail is the quietest spot in the district.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Nepal+Border+Market" alt="Pashupati">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Pashupati (Nepal)</h3>
+                    <p>The international twist in our loop. Located right on the India-Nepal border. You get to walk across into Nepal for an hour of electronics and gear shopping at local rates.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> Best place for high-quality jackets and trekking gear.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Mirik+Sumendu+Lake" alt="Mirik">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Mirik Sumendu Lake</h3>
+                    <p>A massive natural lake with a 240ft arched bridge. The descent via Mirik is the smoothest road in the hills, passing through the beautiful orange orchards of Dudhia.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> Walk to the South Bank for the best bridge photos without crowds.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="djt-place-card">
+                <div class="djt-place-img">
+                    <img src="https://placehold.co/800x600/ffffff/1d1d1f?text=Darjeeling+Mall+Road" alt="Mall Road">
+                </div>
+                <div class="djt-place-content">
+                    <h3>Darjeeling Chowrasta</h3>
+                    <p>The social heart of the town. No cars allowed. It's a place for long walks, old bookstores, and the heritage Glenary's bakery. Perfect for people-watching and evening mists.</p>
+                    <div class="djt-place-pro">
+                        <i class="fa-solid fa-star"></i>
+                        <span><b>Local Tip:</b> Visit the hidden lane behind the horse-stable for local snacks.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-fit-wrapper {
+        background: var(--bg-white);
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-fit-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-fit-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-fit-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-fit-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE FITNESS CARDS */
+    .dj-fit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .dj-fit-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .dj-fit-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .dj-fit-card i {
+        font-size: 35px;
+        color: var(--brand-orange);
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .dj-fit-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+    }
+
+    .dj-fit-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE REALITY BOX (Green Shimmer) */
+    .dj-truth-box {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .dj-truth-icon { font-size: 50px; color: var(--brand-orange); }
+    .dj-truth-content h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+    .dj-truth-content p { font-size: 1.2rem; opacity: 0.9; line-height: 1.6; margin: 0; }
+
+    /* 5. TECH STATS */
+    .dj-fit-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dj-stat-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .dj-stat-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .dj-stat-pill span { font-size: 15px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .dj-fit-grid { grid-template-columns: 1fr; }
+        .dj-truth-box { grid-column: span 1; flex-direction: column; text-align: center; }
+        .dj-fit-stats { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="dj-fit-wrapper">
+    <div class="dj-fit-max">
+        
+        <div class="dj-fit-header">
+            <span class="dj-fit-kicker">Honest Strategy</span>
+            <h2 class="dj-fit-title">Is the Loop for you?</h2>
+        </div>
+
+        <div class="dj-fit-grid">
+            
+            <div class="dj-fit-card">
+                <i class="fa-solid fa-clock"></i>
+                <h3>The 4:00 AM Call</h3>
+                <p>The "mission" starts early. To beat the Tiger Hill traffic, you need to be in the SUV by 4:00 AM. It’s a short, cold wait, but if you value sleep over sunrises, this trip might feel intense.</p>
+            </div>
+
+            <div class="dj-fit-card">
+                <i class="fa-solid fa-person-walking-arrow-up-right"></i>
+                <h3>Hilly Footsteps</h3>
+                <p>Darjeeling isn't flat. Even the Mall Road has inclines. You should be comfortable walking 3-4 KM a day on slanted paths. If you can walk through **Sevoke Road** for an hour, you're ready.</p>
+            </div>
+
+            <div class="dj-fit-card">
+                <i class="fa-solid fa-tree"></i>
+                <h3>Silent Trails</h3>
+                <p>Day 03 in Lamahatta involves a 20-minute uphill forest walk. It is high altitude (~7,000 ft), so the air is thinner. We go slow, but you should have healthy knees and a steady heart.</p>
+            </div>
+
+            <div class="dj-truth-box">
+                <div class="dj-truth-icon"><i class="fa-solid fa-mountain"></i></div>
+                <div class="dj-truth-content">
+                    <h4>The Local Pro Truth</h4>
+                    <p>This is a **High-Energy Circuit**. You will be moving across different altitudes every day—from the heat of Siliguri to the frost of Tiger Hill. We handle the driving and the bags, but you bring the stamina. **It is 70% sightseeing and 30% active mission.**</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dj-fit-stats">
+            <div class="dj-stat-pill">
+                <b>Difficulty</b>
+                <span>Easy / Moderate</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Max Altitude</b>
+                <span>~8,482 Feet</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Average Temp</b>
+                <span>8°C to 18°C</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Best Gear</b>
+                <span>Light Layers</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-doc-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-doc-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-doc-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-doc-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-doc-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE DOCUMENTS GRID */
+    .dj-doc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .dj-doc-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .dj-doc-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    }
+
+    .dj-doc-card i {
+        font-size: 28px;
+        color: var(--brand-orange);
+        margin-top: 5px;
+    }
+
+    .dj-doc-info h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 12px;
+    }
+
+    .dj-doc-info p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE ID WARNING BOX (Forest Green Shimmer) */
+    .dj-alert-box {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .dj-alert-icon { font-size: 50px; color: var(--brand-orange); }
+    .dj-alert-txt h4 { font-size: 1.6rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+    .dj-alert-txt p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin: 0; }
+
+    /* 5. TECH PILLS */
+    .dj-doc-pills {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dj-stat-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .dj-stat-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .dj-stat-pill span { font-size: 14px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .dj-doc-grid { grid-template-columns: 1fr; }
+        .dj-alert-box { grid-column: span 1; flex-direction: column; text-align: center; }
+        .dj-doc-pills { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="dj-doc-wrapper">
+    <div class="dj-doc-max">
+        
+        <div class="dj-doc-header">
+            <span class="dj-doc-kicker">Identity & Gear</span>
+            <h2 class="dj-doc-title">Essential Intel.</h2>
+        </div>
+
+        <div class="dj-doc-grid">
+            
+            <div class="dj-doc-card">
+                <i class="fa-solid fa-address-card"></i>
+                <div class="dj-doc-info">
+                    <h3>Primary Identity</h3>
+                    <p>For the Darjeeling circuit, a <b>Driving License, Voter ID, or Passport</b> is required. Since we cross the Pashupati (Nepal) border, physical original cards are mandatory for entry.</p>
+                </div>
+            </div>
+
+            <div class="dj-doc-card">
+                <i class="fa-solid fa-camera-retro"></i>
+                <div class="dj-doc-info">
+                    <h3>Carry Prints</h3>
+                    <p>Keep <b>02 passport-size photos</b> ready. While most permits are digital now, some forest checkpoints at Lamahatta or border gates still require physical copies for verification.</p>
+                </div>
+            </div>
+
+            <div class="dj-doc-card">
+                <i class="fa-solid fa-file-shield"></i>
+                <div class="dj-doc-info">
+                    <h3>Tiger Hill Passes</h3>
+                    <p>The 4:00 AM mission to Tiger Hill requires a specific vehicle permit. We pre-book this 24 hours in advance to ensure our SUV gets the priority entry slot.</p>
+                </div>
+            </div>
+
+            <div class="dj-doc-card">
+                <i class="fa-solid fa-passport"></i>
+                <div class="dj-doc-info">
+                    <h3>Border Entry</h3>
+                    <p>To enter the Pashupati Market (Nepal), Indian citizens only need to show their ID at the gate. There are <b>no visa fees</b> or hidden charges for this 1-hour international excursion.</p>
+                </div>
+            </div>
+
+            <div class="dj-alert-box">
+                <div class="dj-alert-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                <div class="dj-alert-txt">
+                    <h4>The Local Pro Truth: Aadhaar Cards</h4>
+                    <p>Border authorities and local mountain security <b>often reject Aadhaar Cards</b> if they are printed on simple paper or if the QR code fails. For a 100% smooth trip, please bring your <b>Original Voter ID or Driving License.</b></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dj-doc-pills">
+            <div class="dj-stat-pill">
+                <b>Best ID</b>
+                <span>Voter ID Card</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Photos</b>
+                <span>02 Prints</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Aadhaar</b>
+                <span>Not Preferred</span>
+            </div>
+            <div class="dj-stat-pill">
+                <b>Border Fee</b>
+                <span>₹0 (Free)</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-rev-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-rev-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-rev-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-rev-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-rev-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE REVIEWS BENTO GRID */
+    .dj-rev-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .dj-rev-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dj-rev-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .dj-rev-stars {
+        color: var(--brand-orange);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .dj-rev-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-style: italic;
+    }
+
+    .dj-rev-user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-top: 1px solid var(--grey-apple);
+        padding-top: 25px;
+    }
+
+    .dj-user-info b {
+        display: block;
+        font-size: 15px;
+        color: var(--text-main);
+        font-weight: 800;
+    }
+
+    .dj-user-info span {
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    /* 4. THE TRUST BAR (Green Shimmer) */
+    .dj-trust-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .dj-trust-txt h4 { font-size: 1.6rem; font-weight: 900; margin-bottom: 5px; color: #fff; }
+    .dj-trust-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .dj-rev-grid { grid-template-columns: 1fr 1fr; }
+        .dj-trust-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .dj-rev-grid { grid-template-columns: 1fr; }
+        .dj-trust-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+
+<section class="dj-rev-wrapper">
+    <div class="dj-rev-max">
+        
+        <div class="dj-rev-header">
+            <span class="dj-rev-kicker">Debriefings</span>
+            <h2 class="dj-rev-title">Guest Intel.</h2>
+        </div>
+
+        <div class="dj-rev-grid">
+            
+            <div class="dj-rev-card">
+                <div>
+                    <div class="dj-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="dj-rev-text">"The Kurseong heritage route was a game changer. We saw the Toy Train tracks and zero trucks. Avoiding the Rohini traffic made the first day feel like a real holiday instead of a commute."</p>
+                </div>
+                <div class="dj-rev-user">
+                    <div class="dj-user-info">
+                        <b>Rahul Sharma</b>
+                        <span>Travelled from Siliguri</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-rev-card">
+                <div>
+                    <div class="dj-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="dj-rev-text">"I’ve been to Tiger Hill before, but their North-West balcony trick was brilliant. We had the clearest view of Kanchenjunga without the main crowd elbowing us. True local expertise."</p>
+                </div>
+                <div class="dj-rev-user">
+                    <div class="dj-user-info">
+                        <b>Anjali Gupta</b>
+                        <span>Family Trip</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-rev-card">
+                <div>
+                    <div class="dj-rev-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="dj-rev-text">"The drive down via the Nepal border road was the highlight. Pashupati market was a great surprise and the Mirik lake lunch was so peaceful. Best way to end the loop!"</p>
+                </div>
+                <div class="dj-rev-user">
+                    <div class="dj-user-info">
+                        <b>Vikram Singh</b>
+                        <span>Photography Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-trust-bar">
+                <div class="dj-trust-txt">
+                    <h4>The Local Pro Standard</h4>
+                    <p>We don't just drive; we strategize. We manage every permit and choose routes that prioritize your comfort and the views.</p>
+                </div>
+                <div style="font-size: 30px;"><i class="fa-solid fa-handshake-simple"></i></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-faq-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-faq-max {
+        max-width: 900px; 
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-faq-header {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .dj-faq-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE ACCORDION UX */
+    .dj-faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dj-faq-item {
+        border: 1px solid var(--grey-apple);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .dj-faq-item:hover {
+        border-color: var(--brand-green);
+    }
+
+    /* The Question Trigger */
+    .dj-faq-trigger {
+        width: 100%;
+        padding: 32px;
+        background: #ffffff;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .dj-faq-trigger span {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-main);
+        padding-right: 20px;
+    }
+
+    .dj-faq-trigger i {
+        color: var(--brand-orange);
+        transition: transform 0.3s ease;
+    }
+
+    /* The Answer Box */
+    .dj-faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--bg-soft);
+    }
+
+    .dj-faq-inner {
+        padding: 0 32px 32px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .dj-faq-inner b { color: var(--brand-green); font-weight: 800; }
+
+    /* Open State */
+    .dj-faq-item.active .dj-faq-content {
+        max-height: 400px; 
+    }
+
+    .dj-faq-item.active .dj-faq-trigger i {
+        transform: rotate(180deg);
+    }
+
+    /* 4. THE CALL TO ACTION */
+    .dj-faq-footer {
+        margin-top: 60px;
+        text-align: center;
+        padding: 48px;
+        background: var(--bg-soft);
+        border-radius: 40px;
+    }
+
+    .dj-faq-footer p { font-weight: 700; margin-bottom: 24px; }
+    .dj-faq-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 18px 40px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-block;
+        transition: var(--transition);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 13px;
+    }
+
+    .dj-faq-btn:hover { transform: scale(1.05); background: var(--brand-green); }
+
+</style>
+
+<section class="dj-faq-wrapper">
+    <div class="dj-faq-max">
+        
+        <div class="dj-faq-header">
+            <span style="color:var(--brand-orange); font-weight:900; letter-spacing:5px; text-transform:uppercase; font-size:12px;">Mission Briefing</span>
+            <h2 class="dj-faq-title">The Circuit FAQ.</h2>
+        </div>
+
+        <div class="dj-faq-container">
+            
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Do we need to book Tiger Hill passes separately?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        <b>No.</b> We handle the vehicle permits and priority entry codes for you. Our SUV is registered for the 4:00 AM "Prime Slot" to ensure you beat the main traffic jam at the base.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Why choose Kurseong over the Rohini route?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        Rohini is a commercial highway. The <b>Kurseong Heritage Route</b> is our "OP" choice because it passes through pine forests and 100-year-old tea estates. It is more scenic, cooler, and has 50% less truck traffic.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Is the Nepal border crossing safe and legal?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        <b>100% Safe.</b> The Pashupati Market crossing is a standard international gate. As Indian citizens, you only need to show your ID. We guide you through the process, and you can walk across for shopping and snacks without a visa.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Can I use my Aadhaar Card as ID?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        We highly <b>recommend against it.</b> Aadhaar Cards are frequently rejected at border checkpoints and forest entries if the QR code is blurry. For a guaranteed smooth trip, carry your <b>Original Voter ID or Driving License.</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Isn't the Mirik road longer for the return trip?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        It adds about 40 minutes, but it’s <b>worth it.</b> The descent via Mirik and Dudhia is much smoother, with wider roads and better views. It prevents the motion sickness that usually happens on the steeper Kurseong curves.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Can we find good Pure Veg food in Darjeeling?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        <b>Easily.</b> Darjeeling town and Mirik have excellent Marwari and North Indian restaurants. We can also arrange Jain meals at specific stops if we know 24 hours in advance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-faq-item">
+                <button class="dj-faq-trigger">
+                    <span>Is the SUV private or shared?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dj-faq-content">
+                    <div class="dj-faq-inner">
+                        <b>100% Private.</b> We do not do shared tours. Whether you are 2 people or 6, the SUV and the Local Pro driver stay exclusively with your group for all 4 days.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dj-faq-footer">
+            <p>Have a specific route request?</p>
+            <a href="https://wa.me/YOURNUMBER" class="dj-faq-btn">Consult a Local Pro</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Simple Toggle Logic for DJ FAQ
+    const djFaqItems = document.querySelectorAll('.dj-faq-item');
+    djFaqItems.forEach(item => {
+        const trigger = item.querySelector('.dj-faq-trigger');
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            djFaqItems.forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        });
+    });
+</script>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-safe-wrapper {
+        background: var(--bg-white);
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-safe-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-safe-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-safe-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-safe-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE SAFETY GRID */
+    .dj-safe-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .dj-safe-card {
+        background: var(--bg-white);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px 40px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dj-safe-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .dj-safe-card i {
+        font-size: 32px;
+        color: var(--brand-orange);
+    }
+
+    .dj-safe-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin: 0;
+    }
+
+    .dj-safe-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE EMERGENCY BAR (Green Shimmer) */
+    .dj-emergency-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .dj-em-txt h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+    .dj-em-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; max-width: 750px; }
+
+    .dj-sos-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 18px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+
+    .dj-sos-btn:hover { background: #fff; color: var(--text-main); transform: scale(1.05); }
+
+    /* 5. TECH STATS */
+    .dj-safe-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dj-safe-pill {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .dj-safe-pill b { display: block; font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; }
+    .dj-safe-pill span { font-size: 14px; font-weight: 800; color: var(--text-main); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .dj-safe-grid { grid-template-columns: 1fr 1fr; }
+        .dj-emergency-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .dj-safe-grid { grid-template-columns: 1fr; }
+        .dj-emergency-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+        .dj-safe-stats { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+
+<section class="dj-safe-wrapper">
+    <div class="dj-safe-max">
+        
+        <div class="dj-safe-header">
+            <span class="dj-safe-kicker">Strategic Support</span>
+            <h2 class="dj-safe-title">Your Safety is <br>our Priority.</h2>
+        </div>
+
+        <div class="dj-safe-grid">
+            
+            <div class="dj-safe-card">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <h3>Real-time Local Intel</h3>
+                <p>Weather in the hills changes in minutes. Our Siliguri and Darjeeling teams are in constant contact with forest rangers and Tiger Hill security to pivot your route before you even hit traffic.</p>
+            </div>
+
+            <div class="dj-safe-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>AWD Stability</h3>
+                <p>The "High Loop" involves steep ridge drives. We only use maintained private SUVs (Innova/Xylo/Scorpio) with drivers who have a minimum of 10 years of experience on the Mirik-Darjeeling circuit.</p>
+            </div>
+
+            <div class="dj-safe-card">
+                <i class="fa-solid fa-kit-medical"></i>
+                <h3>Altitude Readiness</h3>
+                <p>Tiger Hill and Sandakphu ridges can get very cold. Our drivers carry basic medical kits and know the shortest routes to the Darjeeling Planters Hospital or local centers in case of emergency.</p>
+            </div>
+
+            <div class="dj-emergency-bar">
+                <div class="dj-em-txt">
+                    <h4>The Local Pro Network</h4>
+                    <p>We are part of the local Hill Transport Syndicate. If a road is blocked due to mist or a landslide, we have priority access to alternative routes that regular "outside" taxi apps simply don't know about.</p>
+                </div>
+                <a href="https://wa.me/YOURNUMBER" class="dj-sos-btn">Direct Support Line</a>
+            </div>
+
+        </div>
+
+        <div class="dj-safe-stats">
+            <div class="dj-safe-pill">
+                <b>On-Call Support</b>
+                <span>24/7 Response</span>
+            </div>
+            <div class="dj-safe-pill">
+                <b>Vehicle Grade</b>
+                <span>Private SUV Only</span>
+            </div>
+            <div class="dj-safe-pill">
+                <b>Driver Exp.</b>
+                <span>10+ Years</span>
+            </div>
+            <div class="dj-safe-pill">
+                <b>Risk Level</b>
+                <span>Managed / Low</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-book-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-book-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-book-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-book-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-book-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE STEP-BY-STEP GRID */
+    .dj-book-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .dj-book-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 45px;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dj-book-card:hover {
+        border-color: var(--brand-green);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+
+    .dj-step-num {
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .dj-book-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin: 0;
+    }
+
+    .dj-book-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 4. THE CALL TO ACTION BAR (Green Shimmer) */
+    .dj-action-bar {
+        grid-column: span 3;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .dj-act-txt h4 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+    .dj-act-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    .dj-book-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 20px 45px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: var(--transition);
+        white-space: nowrap;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .dj-book-btn:hover { background: #fff; color: var(--text-main); transform: scale(1.05); }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .dj-book-grid { grid-template-columns: 1fr 1fr; }
+        .dj-action-bar { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+        .dj-book-grid { grid-template-columns: 1fr; }
+        .dj-action-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 30px; }
+    }
+</style>
+
+<section class="dj-book-wrapper">
+    <div class="dj-book-max">
+        
+        <div class="dj-book-header">
+            <span class="dj-book-kicker">Secure Booking</span>
+            <h2 class="dj-book-title">Tactical Onboarding.</h2>
+        </div>
+
+        <div class="dj-book-grid">
+            
+            <div class="dj-book-card">
+                <span class="dj-step-num">Step 01</span>
+                <h3>Route Intelligence</h3>
+                <p>Click the WhatsApp button to share your dates. We instantly check for the best "Local Pro" driver availability and hotel view slots for those specific days.</p>
+            </div>
+
+            <div class="dj-book-card">
+                <span class="dj-step-num">Step 02</span>
+                <h3>ID Verification</h3>
+                <p>Send a photo of your Voter ID or DL. We need this to apply for your **Tiger Hill Priority Vehicle Pass** and prepare your Pashupati border entry docs.</p>
+            </div>
+
+            <div class="dj-book-card">
+                <span class="dj-step-num">Step 03</span>
+                <h3>SUV Lockdown</h3>
+                <p>Pay a small token deposit to reserve your dedicated SUV. Unlike regular apps, we lock a specific high-maintenance vehicle for your entire 4-day circuit.</p>
+            </div>
+
+            <div class="dj-book-card">
+                <span class="dj-step-num">Step 04</span>
+                <h3>Permit Delivery</h3>
+                <p>Within 12 hours, we send you your **Mission Itinerary** and confirmed permit numbers via WhatsApp. Your 4:00 AM sunrise slot is now 100% secured.</p>
+            </div>
+
+            <div class="dj-book-card">
+                <span class="dj-step-num">Step 05</span>
+                <h3>The Pickup</h3>
+                <p>We meet at your doorstep in Siliguri on Day 01. You inspect the SUV, meet your Local Pro driver, and settle the balance as the mission begins.</p>
+            </div>
+
+            <div class="dj-action-bar">
+                <div class="dj-act-txt">
+                    <h4>Deployment Ready?</h4>
+                    <p>We only accept 3 private loop bookings per week to maintain service quality. Check if your dates are open.</p>
+                </div>
+                <a href="https://wa.me/YOURNUMBER" class="dj-book-btn">Check Availability</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-two-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-two-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-two-header {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .dj-two-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-two-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE PRICE BOX (Green Shimmer) */
+    .dj-two-box {
+        background: var(--bg-soft);
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 80px 40px;
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .dj-two-amount {
+        font-size: clamp(3.5rem, 10vw, 7rem);
+        font-weight: 900;
+        background: var(--green-shimmer);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        letter-spacing: -4px;
+        margin-bottom: 10px;
+    }
+
+    .dj-two-sub {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--brand-green);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    /* 4. THE 2X INCLUSION GRID */
+    .dj-grid-2x {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .dj-card-2x {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .dj-card-2x h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 30px;
+    }
+
+    .dj-list-2x {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dj-list-2x li {
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-bottom: 1px solid var(--grey-apple);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .dj-list-2x li:last-child { border: none; }
+    .dj-list-2x li i { color: var(--brand-orange); font-size: 18px; }
+    .dj-list-2x li b { color: var(--text-main); font-weight: 800; }
+
+    /* 5. THE ADDED VALUE BAR */
+    .dj-value-bar {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px 60px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .dj-value-bar h4 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; color: #fff; }
+    .dj-value-bar p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* CTA */
+    .dj-cta-2x { text-align: center; }
+    .dj-btn-2x {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-block;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .dj-btn-2x:hover { background: var(--brand-green); transform: scale(1.05); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .dj-grid-2x { grid-template-columns: 1fr; }
+        .dj-value-bar { flex-direction: column; text-align: center; gap: 20px; padding: 40px 30px;}
+    }
+</style>
+
+<section class="dj-two-wrapper">
+    <div class="dj-two-max">
+        
+        <div class="dj-two-header">
+            <span class="dj-two-kicker">Transparent Premium</span>
+            <h2 class="dj-two-title">The 2X Balanced Tier.</h2>
+        </div>
+
+        <div class="dj-two-box">
+            <div class="dj-two-amount">₹ 34,999</div>
+            <div class="dj-two-sub">Per Couple / Private SUV Loop</div>
+        </div>
+
+        <div class="dj-grid-2x">
+            
+            <div class="dj-card-2x">
+                <h3>Loop Inclusions</h3>
+                <ul class="dj-list-2x">
+                    <li><i class="fa-solid fa-utensils"></i> <b>Dinner Included:</b> All 3 Nights (Chef's Choice)</li>
+                    <li><i class="fa-solid fa-hotel"></i> <b>Premium Stays:</b> Best Ridge-View Rooms</li>
+                    <li><i class="fa-solid fa-ticket"></i> <b>All Entry Fees:</b> Monasteries, Parks & Batasia</li>
+                    <li><i class="fa-solid fa-passport"></i> <b>Nepal Crossing:</b> Guided Pashupati Entry</li>
+                    <li><i class="fa-solid fa-mug-hot"></i> <b>High Tea:</b> Tinchuley Ridge Experience</li>
+                </ul>
+            </div>
+
+            <div class="dj-card-2x">
+                <h3>Strategic Service</h3>
+                <ul class="dj-list-2x">
+                    <li><i class="fa-solid fa-car-side"></i> <b>Dedicated SUV:</b> Innova/Xylo for 4 Days</li>
+                    <li><i class="fa-solid fa-house-user"></i> <b>Doorstep Pickup:</b> Siliguri Home-to-Home</li>
+                    <li><i class="fa-solid fa-mountain-sun"></i> <b>VIP Permits:</b> Tiger Hill Early Access</li>
+                    <li><i class="fa-solid fa-route"></i> <b>Route Choice:</b> Kurseong & Mirik Scenic Roads</li>
+                    <li><i class="fa-solid fa-headset"></i> <b>24/7 Intel:</b> On-Call Local Pro</li>
+                </ul>
+            </div>
+
+            <div class="dj-value-bar">
+                <div>
+                    <h4>The "No-Hassle" Promise</h4>
+                    <p>Unlike standard tours, we pre-pay all parking, toll taxes, and driver allowances. You only pay for lunch and shopping.</p>
+                </div>
+                <div style="font-size: 35px;"><i class="fa-solid fa-circle-check"></i></div>
+            </div>
+
+        </div>
+
+        <div class="dj-cta-2x">
+            <a href="https://wa.me/YOURNUMBER" class="dj-btn-2x">Secure the Loop</a>
+            <p style="margin-top: 25px; font-size: 14px; color: var(--text-muted); font-weight: 700;">*Pricing may vary slightly based on seasonal hotel demand.</p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-deposit-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-deposit-max {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* 2. THE HEADER */
+    .dj-dep-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .dj-dep-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 40px;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE DEPOSIT BOX */
+    .dj-dep-box {
+        background: var(--bg-soft);
+        border: 2px solid var(--brand-green);
+        border-radius: 50px;
+        padding: 80px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+    }
+
+    .dj-dep-amount-area { text-align: left; }
+    
+    .dj-dep-big-num {
+        font-size: clamp(4rem, 8vw, 6rem);
+        font-weight: 900;
+        color: var(--text-main);
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .dj-dep-label {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--brand-green);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* 4. THE STEP LIST */
+    .dj-dep-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .dj-dep-list li {
+        display: flex;
+        gap: 15px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--grey-apple);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .dj-dep-list li:last-child { border: none; }
+    .dj-dep-list li i { color: var(--brand-orange); margin-top: 5px; }
+    .dj-dep-list li b { color: var(--text-main); }
+
+    /* 5. THE CTA */
+    .dj-dep-footer {
+        grid-column: span 2;
+        margin-top: 20px;
+    }
+
+    .dj-pay-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 25px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(255, 69, 0, 0.2);
+    }
+
+    .dj-pay-btn:hover {
+        background: var(--brand-green);
+        transform: scale(1.05);
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .dj-dep-box { grid-template-columns: 1fr; padding: 60px 30px; text-align: center; }
+        .dj-dep-amount-area { text-align: center; }
+        .dj-dep-footer { grid-column: span 1; }
+        .dj-pay-btn { width: 100%; justify-content: center; }
+    }
+</style>
+
+<section class="dj-deposit-wrapper">
+    <div class="dj-deposit-max">
+        
+        <span class="dj-dep-kicker">Limited Deployments</span>
+        <h2 class="dj-dep-title">Secure your SUV <br>with a token.</h2>
+
+        <div class="dj-dep-box">
+            
+            <div class="dj-dep-amount-area">
+                <div class="dj-dep-big-num">₹ 10,000</div>
+                <div class="dj-dep-label">Booking Token</div>
+                <p style="margin-top: 20px; color: var(--text-muted); line-height: 1.5;">
+                    This amount is used to **lock your dedicated SUV** and secure your **Tiger Hill VIP permits** before they are sold out for your dates.
+                </p>
+            </div>
+
+            <ul class="dj-dep-list">
+                <li><i class="fa-solid fa-car-side"></i> <div><b>SUV Lockdown:</b> Your private Innova/Xylo is reserved.</div></li>
+                <li><i class="fa-solid fa-ticket"></i> <div><b>VIP Permits:</b> Tiger Hill sunrise slots secured.</div></li>
+                <li><i class="fa-solid fa-house-lock"></i> <div><b>Hotel Priority:</b> Best ridge-view rooms blocked.</div></li>
+                <li><i class="fa-solid fa-hand-holding-dollar"></i> <div><b>Pay Later:</b> Settle the rest at pickup in Siliguri.</div></li>
+            </ul>
+
+            <div class="dj-dep-footer">
+                <a href="https://wa.me/YOURNUMBER?text=I%20want%20to%20secure%20my%20Darjeeling%20SUV%20Loop%20for%2010k" class="dj-pay-btn">
+                    Secure ₹10,000 & Lock
+                </a>
+                <p style="margin-top: 25px; font-size: 13px; font-weight: 700; color: var(--text-muted);">
+                    *Remaining balance to be paid on Day 01 during doorstep pickup.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-date-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 100px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-date-max {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE HEADER */
+    .dj-date-header {
+        margin-bottom: 80px;
+        text-align: left;
+    }
+
+    .dj-date-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .dj-date-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0;
+        color: var(--brand-green);
+    }
+
+    /* 3. THE DATES GRID (6-PAX SUV FOCUS) */
+    .dj-date-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .dj-date-card {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        border-radius: 40px;
+        padding: 50px;
+    }
+
+    .dj-date-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--brand-green);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* THE CALENDAR LIST */
+    .dj-cal-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px solid var(--grey-apple);
+    }
+
+    .dj-cal-row:last-child { border: none; }
+
+    .dj-cal-info b { font-size: 1.2rem; display: block; color: var(--text-main); }
+    .dj-cal-info span { font-size: 0.9rem; color: var(--text-muted); font-weight: 700; }
+
+    .dj-seat-badge {
+        background: var(--bg-soft);
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .dj-seat-badge.filling { color: var(--brand-orange); border: 1px solid var(--brand-orange); }
+    .dj-seat-badge.open { color: var(--brand-green); border: 1px solid var(--brand-green); }
+
+    /* 4. THE CANCELLATION BOX */
+    .dj-cancel-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dj-cancel-info li {
+        padding: 15px 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        display: flex;
+        gap: 15px;
+    }
+
+    .dj-cancel-info li i { color: var(--brand-orange); margin-top: 5px; }
+    .dj-cancel-info b { color: var(--text-main); font-weight: 800; }
+
+    /* 5. THE SCARCITY BAR (Green Shimmer) */
+    .dj-scarcity-bar {
+        grid-column: span 2;
+        background: var(--green-shimmer);
+        color: #fff;
+        padding: 40px 50px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .dj-scar-txt h4 { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; color: #fff; }
+    .dj-scar-txt p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+        .dj-date-grid { grid-template-columns: 1fr; }
+        .dj-scarcity-bar { grid-column: span 1; flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+
+<section class="dj-date-wrapper">
+    <div class="dj-date-max">
+        
+        <div class="dj-date-header">
+            <span class="dj-date-kicker">Elite Group Logistics</span>
+            <h2 class="dj-date-title">Upcoming Circuits.</h2>
+        </div>
+
+        <div class="dj-date-grid">
+            
+            <div class="dj-date-card">
+                <h3><i class="fa-solid fa-calendar-check"></i> 2026 Deployment</h3>
+                
+                <div class="dj-cal-row">
+                    <div class="dj-cal-info">
+                        <b>April 18 — April 21</b>
+                        <span>Peak Bloom / Kurseong Tea Phase</span>
+                    </div>
+                    <div class="dj-seat-badge filling">Only 2 Slots Left</div>
+                </div>
+
+                <div class="dj-cal-row">
+                    <div class="dj-cal-info">
+                        <b>May 10 — May 13</b>
+                        <span>Tiger Hill Visibility 10/10</span>
+                    </div>
+                    <div class="dj-seat-badge open">4 Slots Open</div>
+                </div>
+
+                <div class="dj-cal-row">
+                    <div class="dj-cal-info">
+                        <b>October 15 — October 18</b>
+                        <span>Autumn Gold / Clear Ridge Views</span>
+                    </div>
+                    <div class="dj-seat-badge open">6 Slots Open</div>
+                </div>
+
+                <div class="dj-cal-row">
+                    <div class="dj-cal-info">
+                        <b>December 12 — December 15</b>
+                        <span>Winter Peaks / Silent Pine Trails</span>
+                    </div>
+                    <div class="dj-seat-badge open">6 Slots Open</div>
+                </div>
+            </div>
+
+            <div class="dj-date-card" style="background: var(--bg-soft);">
+                <h3><i class="fa-solid fa-handshake-angle"></i> Tactical Policy</h3>
+                <ul class="dj-cancel-info">
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>The Deposit:</b> Your ₹10,000 token locks your <b>Private Innova/Xylo</b> and secures your <b>Tiger Hill VIP entry codes</b>.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Date Shift:</b> You can move your deployment to any other open slot for free if you notify us <b>21 days</b> prior.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Last Minute:</b> Cancellations within 7 days are non-refundable as peak-season hotels and permits are already pre-paid.</div></li>
+                    <li><i class="fa-solid fa-circle-info"></i> <div><b>Pro Guarantee:</b> If weather or logistics force us to cancel, you receive a <b>100% Instant Refund</b>.</div></li>
+                </ul>
+            </div>
+
+            <div class="dj-scarcity-bar">
+                <div class="dj-scar-txt">
+                    <h4>The 6-PAX SUV Limit</h4>
+                    <p>We strictly limit groups to 6 people per SUV. This ensures every guest has a window view and zero luggage-cramming during the loop.</p>
+                </div>
+                <div style="font-size: 35px;"><i class="fa-solid fa-user-shield"></i></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* 1. THE STRUCTURAL RESET */
+    .dj-fam-wrapper {
+        background: #ffffff; /* Strict White */
+        padding: 120px 8%;
+        font-family: var(--font-body);
+        color: var(--text-main);
+    }
+
+    .dj-fam-max {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 2. THE CONTENT GRID */
+    .dj-fam-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    /* 3. TEXT SIDE */
+    .dj-fam-kicker {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .dj-fam-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        margin-bottom: 30px;
+        color: var(--brand-green);
+    }
+
+    .dj-fam-p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+    }
+
+    /* 4. THE BENTO BENEFITS */
+    .dj-fam-benefits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .dj-benefit-card {
+        background: var(--bg-soft);
+        padding: 30px;
+        border-radius: 30px;
+        border: 1px solid var(--grey-apple);
+        transition: var(--transition);
+    }
+
+    .dj-benefit-card:hover {
+        border-color: var(--brand-green);
+        background: #fff;
+        transform: translateY(-5px);
+    }
+
+    .dj-benefit-card i {
+        font-size: 24px;
+        color: var(--brand-orange);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .dj-benefit-card h4 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 10px;
+    }
+
+    .dj-benefit-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    /* 5. THE FINAL CTA BOX (Green Shimmer) */
+    .dj-final-cta-box {
+        background: var(--green-shimmer);
+        border-radius: 50px;
+        padding: 80px 40px;
+        text-align: center;
+        color: #fff;
+        grid-column: span 2;
+        margin-top: 40px;
+    }
+
+    .dj-final-cta-box h3 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+        color: #fff;
+    }
+
+    .dj-final-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        padding: 22px 60px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        transition: var(--transition);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .dj-final-btn:hover {
+        background: #fff;
+        color: var(--text-main);
+        transform: scale(1.05);
+    }
+
+    /* Mobile */
+    @media (max-width: 1000px) {
+        .dj-fam-grid { grid-template-columns: 1fr; }
+        .dj-final-cta-box { grid-column: span 1; padding: 60px 30px; }
+        .dj-fam-benefits { grid-template-columns: 1fr; }
+    }
+</style>
+
+<section class="dj-fam-wrapper">
+    <div class="dj-fam-max">
+        
+        <div class="dj-fam-grid">
+            
+            <div class="dj-fam-text">
+                <span class="dj-fam-kicker">Private Deployment</span>
+                <h2 class="dj-fam-title">Your Circle. <br>Our Strategy.</h2>
+                <p class="dj-fam-p">We don't mix groups. If you are 4 to 6 people, you get the entire private SUV circuit to yourselves. No strangers, no rigid timing, just a personalized loop through the hills.</p>
+                
+                <div class="dj-fam-benefits">
+                    <div class="dj-benefit-card">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                        <h4>100% Private</h4>
+                        <p>The car and the "Local Pro" guide are dedicated only to your inner circle for all 4 days.</p>
+                    </div>
+                    <div class="dj-benefit-card">
+                        <i class="fa-solid fa-gauge-simple-high"></i>
+                        <h4>Tactical Pace</h4>
+                        <p>Want to spend 30 more minutes at the Tiger Hill peaks? No problem. The schedule moves at your tempo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dj-fam-visual">
+                <div class="dj-benefit-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 50px; background: var(--bg-soft);">
+                    <i class="fa-solid fa-house-user" style="font-size: 50px; color: var(--brand-orange);"></i>
+                    <h3 style="font-family: var(--font-heading); font-size: 2rem; margin: 20px 0; color: var(--brand-green);">Siliguri Doorstep Start</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-muted);">Forget the taxi stands and bus stations. We pick your family up directly from your front gate in Siliguri. The mission starts and ends at your doorstep.</p>
+                </div>
+            </div>
+
+            <div class="dj-final-cta-box">
+                <h3>Ready to deploy your loop?</h3>
+                <p style="margin-bottom: 40px; font-size: 1.2rem; opacity: 0.9;">We are currently taking bookings for the April Rhododendron Bloom. Message us to lock your dates.</p>
+                
+                <a href="https://wa.me/YOURNUMBER?text=I%20want%20to%20book%20a%20private%20SUV%20deployment%20for%20my%20family" class="dj-final-btn">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i>
+                    Lock your SUV Circuit
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<style>
+    /* 1. THE NAV CONTAINER */
+    .djt-nav-aside {
+        position: fixed;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 2. DESKTOP LINKS (Vertical Strip) */
+    .djt-nav-strip {
+        background: #ffffff;
+        border: 1px solid var(--grey-apple);
+        padding: 20px 12px;
+        border-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    .djt-nav-link {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .djt-nav-link:hover {
+        background: var(--bg-soft);
+        color: var(--brand-orange);
+    }
+
+    /* Tooltip Label (Desktop Only) */
+    .djt-nav-link::after {
+        content: attr(data-label);
+        position: absolute;
+        left: 55px;
+        background: var(--text-main);
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .djt-nav-link:hover::after {
+        opacity: 1;
+        visibility: visible;
+        left: 60px;
+    }
+
+    /* 3. THE MOBILE TOGGLE BUTTON (Hidden on Desktop) */
+    .djt-mobile-toggle {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 65px;
+        height: 65px;
+        background: var(--brand-green);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        z-index: 10001;
+        box-shadow: 0 10px 30px rgba(27, 51, 45, 0.3);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    /* 4. MOBILE OVERLAY MENU */
+    .djt-mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .djt-mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .djt-mobile-overlay a {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--text-main);
+        text-decoration: none;
+        letter-spacing: -1px;
+    }
+
+    .djt-mobile-overlay a span {
+        color: var(--brand-orange);
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    /* 5. RESPONSIVE LOGIC */
+    @media (max-width: 1024px) {
+        .djt-nav-aside { display: none; } /* Hide Desktop Sidebar */
+        .djt-mobile-toggle { display: flex; } /* Show Mobile Button */
+    }
+</style>
+
+<aside class="djt-nav-aside">
+    <div class="djt-nav-strip">
+        <a href="#day01" class="djt-nav-link" data-label="Day 01"><i class="fa-solid fa-map-pin"></i></a>
+        <a href="#day05" class="djt-nav-link" data-label="The Hike"><i class="fa-solid fa-mountain-sun"></i></a>
+        <a href="#pricing" class="djt-nav-link" data-label="Pricing"><i class="fa-solid fa-indian-rupee-sign"></i></a>
+        <a href="#faq" class="djt-nav-link" data-label="FAQ"><i class="fa-solid fa-circle-question"></i></a>
+        <a href="#book" class="djt-nav-link" data-label="Book Now" style="color:var(--brand-orange);"><i class="fa-solid fa-calendar-check"></i></a>
+    </div>
+</aside>
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}
+    

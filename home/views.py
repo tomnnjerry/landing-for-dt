@@ -12,7 +12,7 @@ def home(request):
 
 # --- THE NARRATIVES ---
 def about_us(request):
-    return render(request, 'pages/about.html')
+    return render(request, 'about.html')
 
 def team_list(request):
     # Fetch all team members from your database/context
