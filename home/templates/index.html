@@ -2,7 +2,48 @@
 {% load static %}
 
 {% block header %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Himalaya Hives | Exclusive Luxury Himalayan Expeditions & Private Tours</title>
+        
+        <meta name="description" content="Experience the Himalayas with integrity. Himalaya Hives offers bespoke, 100% locally-guided luxury expeditions in Darjeeling, Sikkim, and Nepal. Limited to 4 journeys a month for an authentic, unmapped experience. Request your invitation today.">
+        <meta name="keywords" content="Luxury Himalayan tours, private Himalayan expeditions, authentic travel Darjeeling, Sikkim luxury travel, bespoke Nepal heritage tours, unmapped Himalayan trails, premium corporate retreats Himalayas, Himalayan Hives">
+        <meta name="author" content="Himalaya Hives">
+        
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Himalaya Hives | Exclusive Luxury Himalayan Expeditions">
+        <meta property="og:description" content="Journey beyond the brochure. We provide soul-deep, locally-managed luxury travel in the Himalayas. Small groups, real roots, lifetime memories.">
+        <meta property="og:url" content="https://himalayahives.com/">
+        <meta property="og:image" content="https://himalayahives.com/assets/og-image.jpg"> <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Himalaya Hives | Exclusive Luxury Himalayan Expeditions">
+        <meta name="twitter:description" content="Authentic, locally-guided luxury travel across the Eastern Himalayas.">
+        <meta name="twitter:image" content="https://himalayahives.com/assets/og-image.jpg">
 
+        <link rel="canonical" href="https://himalayahives.com/">
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          "name": "Himalaya Hives",
+          "url": "https://himalayahives.com/",
+          "description": "Boutique, locally-guided luxury travel expeditions in the Himalayas, focusing on heritage, safety, and authentic local experiences.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Siliguri",
+            "addressRegion": "West Bengal",
+            "addressCountry": "IN"
+          },
+          "priceRange": "$$$$",
+          "offers": {
+            "@type": "Offer",
+            "category": "Luxury Travel Expeditions"
+          }
+        }
+        </script>
+    </head>
 {% endblock header %}
 
 {% block css %}
@@ -35,7 +76,7 @@
 
             <div class="hero-btns">
                 <a href="/itineraries" class="master-btn btn-orange">See Our Trips</a>
-                <a href="javascript:void(0)" onclick="openQuote('Hello Himalaya')" class="master-btn btn-dark">Talk to an Expert</a>
+                <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="master-btn btn-dark">Talk to an Expert</a>
             </div>
         </div>
     </div>
@@ -111,7 +152,7 @@
                     <strong>24/7 Ground</strong>
                 </div>
             </div>
-            <a href="#talk" style="background:#fff; color:#0F3D2E; padding: 15px 35px; border-radius: 50px; text-decoration:none; font-weight:900; text-transform:uppercase; font-size:12px; letter-spacing:1px;">Talk to an Expert</a>
+            <button onclick="openInquiryModal('expert')" style="background:#fff; color:#0F3D2E; padding: 15px 35px; border-radius: 50px; border:none; cursor:pointer; font-weight:900; text-transform:uppercase; font-size:12px; letter-spacing:1px;">Talk to an Expert</button>
         </div>
 
     </div>
@@ -143,7 +184,7 @@
                     <p class="exp-hook">The complete Himalayan soul. We handle your luxury stay, all mountain permits, and hidden trails. You just live the story.</p>
                     
                     <div class="exp-footer">
-                        <a href="#talk" class="pop-btn">Book a Spot</a>
+                        <a href="javascript:void(0)" onclick="openInquiryModal('booking')" class="pop-btn">Book a Spot</a>
                         <div class="origin-tag"><i class="fa-solid fa-plane-arrival" style="color:#0F3D2E;"></i> Kathmandu-Pokhara</div>
                     </div>
                 </div>
@@ -164,7 +205,7 @@
                     <p class="exp-hook">Experience the misty sunrise and the world's best tea estates. A short, perfect escape managed 100% by our local roots.</p>
                     
                     <div class="exp-footer">
-                        <a href="#talk" class="pop-btn">Book a Spot </a>
+                        <a href="javascript:void(0)" onclick="openInquiryModal('booking')" class="pop-btn">Book a Spot </a>
                         <div class="origin-tag"><i class="fa-solid fa-plane-arrival" style="color:#0F3D2E;"></i> Kurseong-Darjeeling-Mirik</div>
                     </div>
                 </div>
@@ -350,7 +391,7 @@
 
         <div class="proof-footer">
             <p style="margin-bottom: 40px; font-size: 1.5rem; font-weight: 500; color: #86868b;">Join 500+ souls who found their story in the East.</p>
-            <a href="#talk" class="proof-btn">Start Your Story</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('booking')" class="proof-btn">Start Your Story</a>
         </div>
 
     </div>
@@ -383,7 +424,7 @@
         </div>
 
         <div class="soul-footer">
-            <a href="#talk" class="pop-expert-btn">Talk to a Host</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="pop-expert-btn">Talk to a Host</a>
             <div class="soul-note">No sales pitch. No pressure. Just honest mountain advice from people who live here.</div>
         </div>
 
@@ -444,7 +485,7 @@
                 <strong>Request an Invitation.</strong>
                 We only partner with travelers who respect the silence of the peaks and the soul of the East.
             </div>
-            <a href="#talk" class="pop-btn">Apply Now</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('partner')" class="pop-btn">Apply Now</a>
         </div>
 
     </div>
@@ -490,7 +531,7 @@
 
         <div class="m-footer">
             <p style="color: #86868b; margin-bottom: 45px; font-size: 1.3rem; font-weight: 500;">Your story is waiting. Will you write it with us?</p>
-            <a href="#talk" class="pop-action">Consult a Local Host</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="pop-action">Consult a Local Host</a>
         </div>
 
     </div>
@@ -649,7 +690,7 @@
 
         <div class="z-footer-action">
             <p class="z-footer-text">The mountains are calling. How will you answer?</p>
-            <a href="#talk" class="z-pop-button">Consult a Local Host</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="z-pop-button">Consult a Local Host</a>
         </div>
 
     </div>
@@ -705,7 +746,7 @@
 
         <div class="safety-footer">
             <p style="margin-bottom: 40px; font-size: 1.5rem; font-weight: 500; color: #86868b;">Travel with the people who know the way home.</p>
-            <a href="#talk" class="safety-btn">Talk to a Safety Expert</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="safety-btn">Talk to a Safety Expert</a>
         </div>
 
     </div>
@@ -849,7 +890,7 @@
 
         <div class="faq-footer">
             <p style="margin-bottom: 40px; font-size: 1.5rem; font-weight: 500; color: #86868b;">Still have a question? Ask us directly.</p>
-            <a href="#talk" class="faq-btn">Talk to a Local Host</a>
+            <a href="javascript:void(0)" onclick="openInquiryModal('expert')" class="faq-btn">Talk to a Local Host</a>
         </div>
 
     </div>
@@ -868,7 +909,7 @@
         </div>
 
         <div class="lead-card">
-            <form action="#">
+            <form action="javascript:void(0);" onsubmit="openInquiryModal('dossier'); return false;">
                 <div class="form-grid">
                     <div class="form-group full-width">
                         <input type="text" class="form-input" placeholder="Full Name" required>
@@ -896,7 +937,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="lead-pop-btn">Secure My Dossier</button>
+                <button type="button" onclick="openInquiryModal('dossier')" class="lead-pop-btn">Secure My Dossier</button>
                 <span class="security-note"><i class="fa-solid fa-lock" style="margin-right:8px;"></i> Encrypted Gateway. No Spam.</span>
             </form>
         </div>

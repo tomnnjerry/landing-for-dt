@@ -438,7 +438,7 @@
             <i class="fa-brands fa-whatsapp"></i>
             <span>Chat with Host</span>
         </a>
-        <a href="javascript:void(0)" onclick="openQuote('General Inquiry')" class="v-quote-btn">Get Quote</a>
+        <a href="javascript:void(0)" onclick="openInquiryModal('general')" class="v-quote-btn">Get Quote</a>
         <div class="v-menu-toggle"><i class="fa-solid fa-bars-staggered"></i></div>
     </div>
 </nav>
@@ -522,7 +522,7 @@
         <a href="#itineraries">Itineraries</a>
         <a href="#team">The Team</a>
         <a href="#locations">Locations</a>
-        <a href="javascript:void(0)" onclick="openQuote('Mobile Inquiry')" class="v-quote-btn-mobile">Get Quote</a>
+        <a href="javascript:void(0)" onclick="openInquiryModal('general')" class="v-quote-btn-mobile">Get Quote</a>
     </div>
 </div>
 
@@ -1187,7 +1187,501 @@
     </script>
   {% block js %}{% endblock js %}
     
+<!-- ========== INQUIRY POPUP MODAL ========== -->
+<div id="inquiryModal" class="inquiry-modal-overlay">
+    <div class="inquiry-modal-container">
+        <!-- Close Button -->
+        <button class="inquiry-modal-close" onclick="closeInquiryModal()">&times;</button>
+        
+        <!-- Modal Content -->
+        <div class="inquiry-modal-content">
+            <!-- Header -->
+            <div class="inquiry-modal-header">
+                <h2>Let's Plan Your Adventure</h2>
+                <p>Tell us about your dream Himalayan journey</p>
+            </div>
+            
+            <!-- Form -->
+            <form id="inquiryForm" class="inquiry-form">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input"
+                        placeholder="Your full name"
+                        required
+                    >
+                    <span class="form-error" id="nameError"></span>
+                </div>
+                
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone_number" 
+                        class="form-input"
+                        placeholder="Your phone number"
+                        required
+                    >
+                    <span class="form-error" id="phoneError"></span>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input"
+                        placeholder="your@email.com"
+                        required
+                    >
+                    <span class="form-error" id="emailError"></span>
+                </div>
+                
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="description">Tell Us More *</label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        class="form-textarea"
+                        placeholder="Describe your trip preferences, dates, budget, or any special requests..."
+                        rows="5"
+                        required
+                    ></textarea>
+                    <span class="form-error" id="descriptionError"></span>
+                </div>
+                
+                <!-- Hidden Field for Inquiry Type -->
+                <input 
+                    type="hidden" 
+                    id="inquiryType" 
+                    name="inquiry_type" 
+                    value="general"
+                >
+                
+                <!-- Submit Button -->
+                <button type="submit" class="inquiry-submit-btn">
+                    <span class="btn-text">Send My Inquiry</span>
+                    <span class="btn-loader" style="display:none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="form-success" style="display:none;">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="successText"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
+<style>
+/* ========== INQUIRY MODAL STYLES ========== */
+.inquiry-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.inquiry-modal-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.inquiry-modal-container {
+    background: #ffffff;
+    border-radius: 24px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideUp 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inquiry-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #999;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.inquiry-modal-close:hover {
+    color: var(--brand-orange);
+    transform: rotate(90deg);
+}
+
+.inquiry-modal-content {
+    padding: 50px 40px 40px;
+}
+
+.inquiry-modal-header {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.inquiry-modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--deep-black);
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.inquiry-modal-header p {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ========== FORM STYLES ========== */
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--deep-black);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea {
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: var(--deep-black);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #aaa;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--brand-orange);
+    box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.1);
+    background: rgba(255, 69, 0, 0.02);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-error {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 4px;
+    display: none;
+}
+
+.form-error.show {
+    display: block;
+}
+
+/* ========== SUBMIT BUTTON ========== */
+.inquiry-submit-btn {
+    padding: 16px 32px;
+    background: var(--brand-orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.2);
+}
+
+.inquiry-submit-btn:hover:not(:disabled) {
+    background: #ff5a1a;
+    box-shadow: 0 12px 30px rgba(255, 69, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.inquiry-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.inquiry-submit-btn .btn-loader {
+    font-size: 16px;
+}
+
+/* ========== SUCCESS MESSAGE ========== */
+.form-success {
+    padding: 16px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #c3e6cb;
+    animation: slideUp 0.4s ease-out;
+}
+
+.form-success i {
+    font-size: 18px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+    .inquiry-modal-content {
+        padding: 40px 24px 30px;
+    }
+    
+    .inquiry-modal-header h2 {
+        font-size: 26px;
+    }
+    
+    .inquiry-modal-header p {
+        font-size: 14px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        font-size: 16px;
+    }
+}
+</style>
+
+<script>
+// ========== INQUIRY MODAL FUNCTIONS ==========
+
+// Email validation helper function
+function isValidEmail(email) {
+    // Simple regex pattern for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Open Modal with Inquiry Type
+function openInquiryModal(inquiryType = 'general') {
+    const modal = document.getElementById('inquiryModal');
+    document.getElementById('inquiryType').value = inquiryType;
+    
+    // Reset form
+    document.getElementById('inquiryForm').reset();
+    document.getElementById('successMessage').style.display = 'none';
+    
+    // Clear errors
+    document.querySelectorAll('.form-error').forEach(el => {
+        el.classList.remove('show');
+        el.textContent = '';
+    });
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close Modal
+function closeInquiryModal() {
+    const modal = document.getElementById('inquiryModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Legacy function name support
+function openQuote(inquiryType = 'general') {
+    openInquiryModal(inquiryType);
+}
+
+// Close modal when clicking overlay
+document.getElementById('inquiryModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeInquiryModal();
+    }
+});
+
+// Form Submission
+document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Clear previous errors
+    document.querySelectorAll('.form-error').forEach(el => {
+        el.classList.remove('show');
+        el.textContent = '';
+    });
+    
+    // Get form data
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const inquiryType = document.getElementById('inquiryType').value;
+    
+    // Validate form
+    let isValid = true;
+    
+    if (!name) {
+        document.getElementById('nameError').textContent = 'Name is required';
+        document.getElementById('nameError').classList.add('show');
+        isValid = false;
+    }
+    
+    if (!phone) {
+        document.getElementById('phoneError').textContent = 'Phone number is required';
+        document.getElementById('phoneError').classList.add('show');
+        isValid = false;
+    }
+    
+    if (!email) {
+        document.getElementById('emailError').textContent = 'Email is required';
+        document.getElementById('emailError').classList.add('show');
+        isValid = false;
+    } else if (!isValidEmail(email)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address';
+        document.getElementById('emailError').classList.add('show');
+        isValid = false;
+    }
+    
+    if (!description) {
+        document.getElementById('descriptionError').textContent = 'Description is required';
+        document.getElementById('descriptionError').classList.add('show');
+        isValid = false;
+    }
+    
+    if (!isValid) return;
+    
+    // Disable submit button and show loader
+    const submitBtn = document.querySelector('.inquiry-submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader');
+    
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoader.style.display = 'inline';
+    
+    try {
+        // Send AJAX request
+        const response = await fetch('{% url "home:submit_inquiry" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}',
+            },
+            body: JSON.stringify({
+                name: name,
+                phone_number: phone,
+                email: email,
+                description: description,
+                inquiry_type: inquiryType
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            // Show success message
+            document.getElementById('successText').textContent = data.message;
+            document.getElementById('successMessage').style.display = 'flex';
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                document.getElementById('inquiryForm').reset();
+                document.getElementById('successMessage').style.display = 'none';
+                closeInquiryModal();
+            }, 3000);
+        } else {
+            // Show error message
+            alert('Error: ' + data.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoader.style.display = 'none';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeInquiryModal();
+    }
+});
+</script>
 
 </body>
 </html>

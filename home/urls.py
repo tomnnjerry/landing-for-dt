@@ -24,4 +24,7 @@ urlpatterns = [
     path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
     path('terms-and-conditions/', views.terms_conditions, name='terms_conditions'),
     path('refund-policy/', views.refund_policy, name='refund_policy'),
+    
+    # AJAX Endpoints
+    path('submit-inquiry/', views.submit_inquiry, name='submit_inquiry'),
 ] 
